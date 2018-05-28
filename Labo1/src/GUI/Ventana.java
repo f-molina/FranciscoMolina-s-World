@@ -26,15 +26,23 @@ import javax.swing.JLabel;
 public class Ventana extends JPanel {
     
     public int WIDTH = 600, widthTF = 120, widthB = 120;
-    public int HEIGHT = 450, heightTF = 30, heightB = 30;
-    public JTextField textF1, textF2, textF3, textF4;
+    public int HEIGHT = 500, heightTF = 30, heightB = 30;
+    public JTextField textF1, textF2, textF3, textF4, textF5;
     public JButton multi, divi, rest, sum, binario;
-    public JLabel n1, n2, n3, resultado;
+    public JLabel n1, n2, n3, resultado, resultado1, t1, t2;
     
     AbstractFactory factory = FactoryProducer.getFactory("Aritmetica");
     AbstractFactory factory1 = FactoryProducer.getFactory("Conversion");
 
     public Ventana(){
+        t1 = new JLabel();
+        t1.setText("ARITMETICA");
+        t1.setBounds(250,5,70,30);
+        
+        t2 = new JLabel();
+        t2.setText("CONVERSION");
+        t2.setBounds(250,235,100,30);
+        
         n1 = new JLabel();
         n1.setText("Numero 1: ");
         n1.setBounds(20,40,70,30);
@@ -45,23 +53,30 @@ public class Ventana extends JPanel {
         
         n3 = new JLabel();
         n3.setText("Numero: ");
-        n3.setBounds(180,152,150,80);
-        
+        n3.setBounds(180,260,150,80);
+        //res binario
         resultado = new JLabel();
         resultado.setText("Resultado: ");
-        resultado.setBounds(165,350,70,30);
+        resultado.setBounds(165,410,70,30);
+        
+        resultado1 = new JLabel();
+        resultado1.setText("Resultado: ");
+        resultado1.setBounds(165,180,70,30);
         
         textF1 = new JTextField();
         textF1.setBounds(new Rectangle(100,40,widthTF,heightTF));
         
         textF2 = new JTextField();
         textF2.setBounds(new Rectangle(380,40,widthTF,heightTF));
-        
+        //resultado conversion
         textF3 = new JTextField();
-        textF3.setBounds(new Rectangle(250,350,widthTF,heightTF));
-        
+        textF3.setBounds(new Rectangle(250,410,widthTF,heightTF));
+        //rsultado operaciones
+        textF5 = new JTextField();
+        textF5.setBounds(new Rectangle(250,180,widthTF,heightTF));
+        //caja binario
         textF4 = new JTextField();
-        textF4.setBounds(new Rectangle(250,180,widthTF,heightTF));
+        textF4.setBounds(new Rectangle(250,290,widthTF,heightTF));
         
         multi = new JButton("Multiplicacion");
         multi.setBounds(new Rectangle(50,115,widthB,heightB));
@@ -76,11 +91,13 @@ public class Ventana extends JPanel {
         sum.setBounds(new Rectangle(440,115,widthB,heightB));
         
         binario = new JButton("Binario");
-        binario.setBounds(new Rectangle(250,250,widthB,heightB));
+        binario.setBounds(new Rectangle(250,350,widthB,heightB));
         
         textF1.setEditable(true);
         textF2.setEditable(true);
         textF3.setEditable(false);
+        textF4.setEditable(true);
+        textF5.setEditable(false);
         
         multi.addActionListener(new ActionListener(){
             @Override
@@ -92,7 +109,7 @@ public class Ventana extends JPanel {
                 double num2 = Double.parseDouble(text2);
                 double res = Multiplicacion.operacion(num1, num2);
                 String result = String.valueOf(res);
-                textF3.setText(result);
+                textF5.setText(result);
             }
         });
         
@@ -106,7 +123,7 @@ public class Ventana extends JPanel {
                 double num2 = Double.parseDouble(text2);
                 double res = Division.operacion(num1, num2);
                 String result = String.valueOf(res);
-                textF3.setText(result);
+                textF5.setText(result);
             }
         });
         
@@ -120,7 +137,7 @@ public class Ventana extends JPanel {
                 double num2 = Double.parseDouble(text2);
                 double res = Resta.operacion(num1, num2);
                 String result = String.valueOf(res);
-                textF3.setText(result);
+                textF5.setText(result);
             }
         });
         
@@ -134,7 +151,7 @@ public class Ventana extends JPanel {
                 double num2 = Double.parseDouble(text2);
                 double res = Suma.operacion(num1, num2);
                 String result = String.valueOf(res);
-                textF3.setText(result);
+                textF5.setText(result);
             }
         });
         
@@ -147,14 +164,18 @@ public class Ventana extends JPanel {
                 textF3.setText(Binario.conversor(n));
             }
         });
+        add(t1);
+        add(t2);
         add(n1);
         add(n2);
         add(n3);
         add(resultado);
+        add(resultado1);
         add(textF1);
         add(textF2);
         add(textF3);
         add(textF4);
+        add(textF5);
         add(multi);
         add(divi);
         add(rest);
