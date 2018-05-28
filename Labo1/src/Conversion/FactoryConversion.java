@@ -3,32 +3,28 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Operaciones;
+package Conversion;
 import AbstractFactory.AbstractFactory;
-import Conversion.Conversion;
+import Operaciones.Aritmetica;
+
 /**
  *
  * @author fmolina
  */
-public class OperacionesFactory implements AbstractFactory {
+public class FactoryConversion implements AbstractFactory{
     
     @Override
     public Aritmetica getAritmetica(String type){
-        switch(type){
-            case "Multiplicacion":
-                return new Multiplicacion();
-            case "Division":
-                return new Division();
-            case "Resta":
-                return new Resta();
-            case "Suma":
-                return new Suma();    
-        }
         return null;
     }
     
     @Override
     public Conversion getConversion(String type){
+        switch(type){
+            case "Binario":
+                return new Binario();
+        }
         return null;
     }
+    
 }
