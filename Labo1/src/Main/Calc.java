@@ -15,7 +15,7 @@ import javax.swing.JFrame;
 public class Calc {
     
     public static void main(String[] args){
-        JFrame ventana = new JFrame("Ventana");
+        JFrame ventana = new JFrame("Calculadora");
         ventana.setContentPane(new Ventana());
         ventana.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ventana.setResizable(false);
