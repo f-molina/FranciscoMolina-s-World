@@ -12,5 +12,4 @@ package Razas;
 public interface Razas {
     int attack(int damage);
     int defend(int damage);
-    int escuadron(int health);
 }

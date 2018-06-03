@@ -6,6 +6,7 @@
 package Razas;
 
 import AbstractFactory.AbstractFactory;
+import Vehiculos.Vehiculos;
 
 /**
  *
@@ -24,6 +25,11 @@ public class RazasFactory implements AbstractFactory {
             case "Romanos":
                 return new Romanos();    
         }
+        return null;
+    }
+    
+    @Override
+    public Vehiculos getVehiculos(String type){
         return null;
     }
     

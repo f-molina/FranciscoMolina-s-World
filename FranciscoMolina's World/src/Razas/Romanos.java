@@ -23,10 +23,4 @@ public class Romanos implements Razas {
     public int defend(int damage){
         return damage;
     }
-    
-    @Override
-    public int escuadron(int health){
-        return health;
-    }
-    
 }
