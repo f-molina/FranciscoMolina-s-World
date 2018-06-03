@@ -9,8 +9,13 @@ package Recursos;
  *
  * @author fmolina
  */
-public interface Recursos {
+public class Madera implements Recursos{
     
-    int contador(int cantidad);
+    public int cantidad = 150;
+    
+    @Override
+    public int contador(int cantidad){
+        return cantidad;
+    }
     
 }
