@@ -9,8 +9,8 @@ package Recursos;
  *
  * @author fmolina
  */
-public class RecolectorMetal {
+public interface Recursos {
     
-    public int health = 100;
+    int life(int health);
     
 }
