@@ -11,7 +11,6 @@ package Razas;
  */
 public class Vikingos implements Razas {
     
-    public int health = 150;
     public int damage = 100;
     
     @Override

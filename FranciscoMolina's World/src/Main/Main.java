@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package Main;
+import Juego.Jugador;
+
 
 /**
  *
@@ -11,7 +13,8 @@ package Main;
  */
 public class Main {
     public static void main(String[] args) {
-        
+        Jugador j = new Jugador();
+        j.addJugador();    
     }
     
     

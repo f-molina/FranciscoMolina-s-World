@@ -6,7 +6,9 @@
 package Vehiculos;
 
 import AbstractFactory.AbstractFactory;
+import Edificaciones.Edificaciones;
 import Razas.Razas;
+import Recursos.Recursos;
 
 /**
  *
@@ -28,6 +30,16 @@ public class VehiculosFactory implements AbstractFactory{
             case "Barco":
                 return new Barco();    
         }
+        return null;
+    }
+    
+    @Override
+    public Recursos getRecursos(String type){
+        return null;
+    }
+    
+    @Override
+    public Edificaciones getEdificaciones(String type){
         return null;
     }
     

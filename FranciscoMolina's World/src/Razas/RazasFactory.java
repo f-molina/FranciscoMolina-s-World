@@ -6,6 +6,8 @@
 package Razas;
 
 import AbstractFactory.AbstractFactory;
+import Edificaciones.Edificaciones;
+import Recursos.Recursos;
 import Vehiculos.Vehiculos;
 
 /**
@@ -30,6 +32,16 @@ public class RazasFactory implements AbstractFactory {
     
     @Override
     public Vehiculos getVehiculos(String type){
+        return null;
+    }
+    
+    @Override
+    public Recursos getRecursos(String type){
+        return null;
+    }
+    
+    @Override
+    public Edificaciones getEdificaciones(String type){
         return null;
     }
     

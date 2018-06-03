@@ -5,7 +5,10 @@
  */
 package AbstractFactory;
 
+import Edificaciones.Edificaciones;
 import Razas.Razas;
+import Recursos.Recursos;
+import Vehiculos.Vehiculos;
 
 /**
  *
@@ -14,5 +17,8 @@ import Razas.Razas;
 public interface AbstractFactory {
     
     Razas getRazas(String type);
+    Vehiculos getVehiculos(String type);
+    Recursos getRecursos(String type);
+    Edificaciones getEdificaciones(String type);
     
 }
