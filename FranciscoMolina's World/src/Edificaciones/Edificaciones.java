@@ -11,6 +11,9 @@ package Edificaciones;
  */
 public interface Edificaciones{
     
-    int life(int health);
+    int lifeCentro(int health);
+    int lifeVikingos(int health);
+    int lifeMongoles(int health);
+    int lifeRomanos(int health);
     
 }

@@ -10,11 +10,28 @@ package Edificaciones;
  * @author fmolina
  */
 public class CentroMando implements Edificaciones{
-    
-    public int health = 500;
+
+    @Override
+    public int lifeCentro(int health){
+        health = 500;
+        return health;
+    }
     
     @Override
-    public int life(int health){
+    public int lifeVikingos(int health){
+        health = 100;
+        return health;
+    }
+    
+    @Override
+    public int lifeMongoles(int health){
+        health = 200;
+        return health;
+    }
+    
+    @Override
+    public int lifeRomanos(int health){
+        health = 200;
         return health;
     }
     
