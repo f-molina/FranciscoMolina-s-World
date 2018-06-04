@@ -10,16 +10,16 @@ package Razas;
  * @author fmolina
  */
 public class Mongoles implements Razas {
-
-    public int damage = 75;
-
+    
     @Override
     public int attack(int damage){
+        damage = 75;
         return damage;
     }
     
     @Override
     public int defend(int damage){
+        damage = 75;
         return damage;
     }
 }

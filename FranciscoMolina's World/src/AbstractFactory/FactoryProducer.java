@@ -7,6 +7,7 @@ package AbstractFactory;
 
 import Edificaciones.EdificacionesFactory;
 import Razas.RazasFactory;
+import Recursos.RecursosFactory;
 import Vehiculos.VehiculosFactory;
 
 /**
@@ -21,8 +22,8 @@ public class FactoryProducer {
                 return new RazasFactory();
             case "Vehiculos":
                 return new VehiculosFactory(); 
-            /*case "Recursos":
-                return new RecursosFactory();*/
+            case "Recursos":
+                return new RecursosFactory();
             case "Edificaciones":
                 return new EdificacionesFactory();
         }

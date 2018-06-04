@@ -4,7 +4,11 @@
  * and open the template in the editor.
  */
 package Main;
+import AbstractFactory.AbstractFactory;
+import AbstractFactory.FactoryProducer;
+import Edificaciones.Edificaciones;
 import Juego.Jugador;
+import Juego.Menu;
 
 
 /**
@@ -14,7 +18,9 @@ import Juego.Jugador;
 public class Main {
     public static void main(String[] args) {
         Jugador j = new Jugador();
-        j.addJugador();    
+        j.addJugador();
+        Menu m = new Menu();
+        m.Menu1();
     }
     
     

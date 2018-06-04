@@ -11,15 +11,15 @@ package Razas;
  */
 public class Vikingos implements Razas {
     
-    public int damage = 100;
-    
     @Override
     public int attack(int damage){
+        damage =100;
         return damage;
     }
     
     @Override
     public int defend(int damage){
+        damage =100;
         return damage;
     }
 }
