@@ -11,10 +11,9 @@ package Recursos;
  */
 public class Metal implements Recursos{
     
-    public int cantidad = 150;
-    
     @Override
     public int contador(int cantidad){
+        cantidad = 150;
         return cantidad;
     }
     
