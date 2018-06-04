@@ -7,6 +7,7 @@ package Juego;
 
 import AbstractFactory.AbstractFactory;
 import AbstractFactory.FactoryProducer;
+import Recursos.Recursos;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -24,6 +25,9 @@ public class Jugador {
     
     public ArrayList<String> jugador = new ArrayList();
     AbstractFactory raza = FactoryProducer.getFactory("Razas");
+    AbstractFactory vehiculo = FactoryProducer.getFactory("Vehiculos");
+    AbstractFactory edificacion = FactoryProducer.getFactory("Edificaciones");
+    AbstractFactory recurso = FactoryProducer.getFactory("Recursos");
 
     public Jugador() {
     }
@@ -85,18 +89,21 @@ public class Jugador {
     
     public void addJugador(){
         Scanner leer = new Scanner(System.in);
+        Recursos Madera = recurso.getRecursos("Madera");
+        Recursos Metal = recurso.getRecursos("Metal");
+        Recursos Pocion = recurso.getRecursos("Pocion");
         System.out.println("Jugador 1, digite su nombre: ");
         String player1 = leer.nextLine();
         System.out.println("Elige tu raza: ");
         String r = leer.nextLine();
-        if(r.equals("Vikingos")){
+        if(r.equalsIgnoreCase("Vikingos")){
             raza.getRazas("Vikingos");
             System.out.println("success");
         }else{
             System.out.println("no lo he hecho todavia lol");
         }
         jugador.add(player1);
-        System.out.println("Jugador 2,, digite su nombre: ");
+        /*System.out.println("Jugador 2,, digite su nombre: ");
         String player2 = leer.nextLine();
         System.out.println("Elige tu raza: ");
         String r1 = leer.nextLine();
@@ -107,7 +114,8 @@ public class Jugador {
             System.out.println("no lo he hecho todavia lol");
         }
         jugador.add(player2);
-        System.out.println("Jugador1: "+player1 + " " + "Jugador2: "+player2);
+        System.out.println("Jugador1: "+player1 + " " + "Jugador2: "+player2);*/
+        System.out.println("Jugador1: "+player1);
     }
     
     public int getTurn(){
