@@ -10,10 +10,11 @@ package Playstation;
  * @author fmolina
  */
 public interface Playstation {
-    
-    void attack();
-    void life();
+
     void construir();
     void recoger();
+    int getLife();
+    void setLife(int newLife);
+    int getAttack();
     
 }
