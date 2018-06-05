@@ -59,9 +59,10 @@ public class Menu {
         Razas r = raza.getRazas("Vikingos");
         Razas r1 = raza.getRazas("Mongoles");
         System.out.println("danio: "+r.attack(danio));
-        System.out.println("danio: "+r1.attack(danio));
-        total = r.attack(danio)-r1.defend(danio);
+        System.out.println("defensa: "+r1.life(health));
+        total = r.attack(danio)-r1.life(health);
         System.out.println("Ataque realizado: "+total);
+                    System.out.println(r1.life(total));
         
         
         break;

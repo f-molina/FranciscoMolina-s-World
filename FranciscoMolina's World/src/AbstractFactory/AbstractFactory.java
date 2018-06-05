@@ -4,11 +4,10 @@
  * and open the template in the editor.
  */
 package AbstractFactory;
+import Nintendo.Nintendo;
+import Playstation.Playstation;
+import Xbox.Xbox;
 
-import Edificaciones.Edificaciones;
-import Razas.Razas;
-import Recursos.Recursos;
-import Vehiculos.Vehiculos;
 
 /**
  *
@@ -16,9 +15,8 @@ import Vehiculos.Vehiculos;
  */
 public interface AbstractFactory {
     
-    Razas getRazas(String type);
-    Vehiculos getVehiculos(String type);
-    Recursos getRecursos(String type);
-    Edificaciones getEdificaciones(String type);
+    Nintendo getNintendo(String type);
+    Playstation getPlayStation(String type);
+    Xbox getXbox(String type);
     
 }

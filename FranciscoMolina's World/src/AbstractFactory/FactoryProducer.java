@@ -4,11 +4,9 @@
  * and open the template in the editor.
  */
 package AbstractFactory;
-
-import Edificaciones.EdificacionesFactory;
-import Razas.RazasFactory;
-import Recursos.RecursosFactory;
-import Vehiculos.VehiculosFactory;
+import Nintendo.NintendoFactory;
+import Playstation.PlaystationFactory;
+import Xbox.XboxFactory;
 
 /**
  *
@@ -18,14 +16,12 @@ public class FactoryProducer {
     
     public static AbstractFactory getFactory(String type){
         switch(type){
-            case "Razas":
-                return new RazasFactory();
-            case "Vehiculos":
-                return new VehiculosFactory(); 
-            case "Recursos":
-                return new RecursosFactory();
-            case "Edificaciones":
-                return new EdificacionesFactory();
+            case "Nintendo":
+                return new NintendoFactory();
+            case "PlayStation":
+                return new PlaystationFactory(); 
+            case "Xbox":
+                return new XboxFactory();
         }
         return null;
     }
