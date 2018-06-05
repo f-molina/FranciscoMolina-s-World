@@ -10,10 +10,11 @@ package Nintendo;
  * @author fmolina
  */
 public interface Nintendo {
-    
-    void attack();
-    void life();
+
     void construir();
     void recoger();
+    int getLife();
+    void setLife(int newLife);
+    int getAttack();
     
 }
