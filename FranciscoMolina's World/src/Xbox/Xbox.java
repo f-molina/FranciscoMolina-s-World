@@ -10,10 +10,11 @@ package Xbox;
  * @author fmolina
  */
 public interface Xbox {
-    
-    void attack();
-    void life();
+
     void construir();
     void recoger();
+    int getLife();
+    void setLife(int newLife);
+    int getAttack();
     
 }
