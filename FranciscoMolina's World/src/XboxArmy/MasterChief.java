@@ -13,15 +13,8 @@ import Xbox.Xbox;
  */
 public class MasterChief implements Xbox{
     
-    @Override
-    public void attack(){
-        int damage = 300;
-    }
-    
-    @Override
-    public void life(){
-        int health = 300;
-    }
+    int health;
+    int damage;
     
     @Override
     public void construir(){
@@ -29,6 +22,20 @@ public class MasterChief implements Xbox{
     
     @Override
     public void recoger(){
+    }
+    
+    @Override
+    public int getLife(){
+        return health;
+    }
+    
+    @Override
+    public void setLife(int newLife){
+    }
+    
+    @Override
+    public int getAttack(){
+        return damage;
     }
     
 }

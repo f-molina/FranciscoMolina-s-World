@@ -14,14 +14,8 @@ import Xbox.Xbox;
 //entrenar
 public class Campo implements Xbox{
     
-    @Override
-    public void attack(){
-    }
-    
-    @Override
-    public void life(){
-        int health = 250;
-    }
+    int health;
+    int damage;
     
     @Override
     public void construir(){
@@ -29,6 +23,20 @@ public class Campo implements Xbox{
     
     @Override
     public void recoger(){
+    }
+    
+    @Override
+    public int getLife(){
+        return health;
+    }
+    
+    @Override
+    public void setLife(int newLife){
+    }
+    
+    @Override
+    public int getAttack(){
+        return damage;
     }
     
 }

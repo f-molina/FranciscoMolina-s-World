@@ -14,22 +14,30 @@ import Nintendo.Nintendo;
 //nave star fox 
 public class Arwing implements Nintendo{
     
-    @Override
-    public void attack(){
-        int damage = 250;
-    }
-    
-    @Override
-    public void life(){
-        int health = 250;
-    }
-    
+    int health;
+    int damage;
+
     @Override
     public void construir(){
     }
     
     @Override
     public void recoger(){
+    }
+    
+    @Override
+    public int getLife(){
+        return health;
+    }
+    
+    @Override
+    public void setLife(int newLife){
+        health = newLife;
+    }
+    
+    @Override
+    public int getAttack(){
+        return damage;
     }
     
 }

@@ -12,15 +12,8 @@ import Playstation.Playstation;
  */
 public class Hunters implements Playstation{
     
-    @Override
-    public void attack(){
-        int damage = 75;
-    }
-    
-    @Override
-    public void life(){
-        int health = 75;
-    }
+    int damage =75;
+    int health = 75;
     
     @Override
     public void construir(){
@@ -28,6 +21,20 @@ public class Hunters implements Playstation{
     
     @Override
     public void recoger(){
+    }
+    
+    @Override
+    public int getLife(){
+        return health;
+    }
+    
+    @Override
+    public void setLife(int newLife){
+    }
+    
+    @Override
+    public int getAttack(){
+        return damage;
     }
     
 }

@@ -13,14 +13,8 @@ import Xbox.Xbox;
  */
 public class PolvoraStorage implements Xbox{
     
-    @Override
-    public void attack(){
-    }
-    
-    @Override
-    public void life(){
-        int health = 250;
-    }
+    int health;
+    int damage;
     
     @Override
     public void construir(){
@@ -28,6 +22,20 @@ public class PolvoraStorage implements Xbox{
     
     @Override
     public void recoger(){
+    }
+    
+    @Override
+    public int getLife(){
+        return health;
+    }
+    
+    @Override
+    public void setLife(int newLife){
+    }
+    
+    @Override
+    public int getAttack(){
+        return damage;
     }
     
 }

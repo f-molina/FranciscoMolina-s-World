@@ -13,14 +13,7 @@ import Nintendo.Nintendo;
  */
 public class MushroomGenerator implements Nintendo{
     
-    @Override
-    public void attack(){
-    }
-    
-    @Override
-    public void life(){
-        int health = 250;
-    }
+    int health, damage;
     
     @Override
     public void construir(){
@@ -28,6 +21,20 @@ public class MushroomGenerator implements Nintendo{
     
     @Override
     public void recoger(){
+    }
+    
+    @Override
+    public int getLife(){
+        return health;
+    }
+    
+    @Override
+    public void setLife(int newLife){
+    }
+    
+    @Override
+    public int getAttack(){
+        return damage;
     }
     
 }

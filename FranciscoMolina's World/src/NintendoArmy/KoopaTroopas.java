@@ -12,15 +12,7 @@ import Nintendo.Nintendo;
  */
 public class KoopaTroopas implements Nintendo {
     
-    @Override
-    public void attack(){
-        int damage = 100;
-    }
-    
-    @Override
-    public void life(){
-        int health = 100;
-    }
+    int health, damage;
     
     @Override
     public void construir(){
@@ -28,5 +20,20 @@ public class KoopaTroopas implements Nintendo {
     
     @Override
     public void recoger(){
+    }
+    
+    @Override
+    public int getLife(){
+        return health;
+    }
+    
+    @Override
+    public void setLife(int newLife){
+        health = newLife;
+    }
+    
+    @Override
+    public int getAttack(){
+        return damage;
     }
 }

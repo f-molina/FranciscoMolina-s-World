@@ -13,20 +13,31 @@ import Playstation.Playstation;
  */
 public class Ecos implements Playstation{
     
-    @Override
-    public void attack(){
-    }
-    
-    @Override
-    public void life(){
-    }
+    int health, damage;
     
     @Override
     public void construir(){
+        
+        int cantidad = 250;
+        System.out.println("Ecos: "+cantidad);
     }
     
     @Override
     public void recoger(){
+    }
+    
+    @Override
+    public int getLife(){
+        return health;
+    }
+    
+    @Override
+    public void setLife(int newLife){
+    }
+    
+    @Override
+    public int getAttack(){
+        return damage;
     }
     
 }

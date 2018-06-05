@@ -13,20 +13,31 @@ import Nintendo.Nintendo;
  */
 public class Acero implements Nintendo{
     
-    @Override
-    public void attack(){
-    }
-    
-    @Override
-    public void life(){
-    }
+    int damage, health;
     
     @Override
     public void construir(){
+        int cantidad = 150;
+        System.out.println("Acero:"+cantidad);
     }
     
     @Override
     public void recoger(){
+    }
+    
+    @Override
+    public int getLife(){
+        return health;
+    }
+    
+    @Override
+    public void setLife(int newLife){
+        health = newLife;
+    }
+    
+    @Override
+    public int getAttack(){
+        return damage;
     }
     
 }
