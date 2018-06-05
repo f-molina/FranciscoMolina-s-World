@@ -7,7 +7,7 @@ package Juego;
 
 import AbstractFactory.AbstractFactory;
 import AbstractFactory.FactoryProducer;
-import Recursos.Recursos;
+import Nintendo.Nintendo;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -25,6 +25,7 @@ public class Jugador {
     
     public ArrayList<String> jugador = new ArrayList();
     AbstractFactory raza = FactoryProducer.getFactory("Razas");
+    AbstractFactory n = FactoryProducer.getFactory("Nintendo");
     AbstractFactory vehiculo = FactoryProducer.getFactory("Vehiculos");
     AbstractFactory edificacion = FactoryProducer.getFactory("Edificaciones");
     AbstractFactory recurso = FactoryProducer.getFactory("Recursos");
@@ -89,16 +90,13 @@ public class Jugador {
     
     public void addJugador(){
         Scanner leer = new Scanner(System.in);
-        Recursos Madera = recurso.getRecursos("Madera");
-        Recursos Metal = recurso.getRecursos("Metal");
-        Recursos Pocion = recurso.getRecursos("Pocion");
         System.out.println("Jugador 1, digite su nombre: ");
         String player1 = leer.nextLine();
         System.out.println("Elige tu raza: ");
         String r = leer.nextLine();
-        if(r.equalsIgnoreCase("Vikingos")){
-            raza.getRazas("Vikingos");
-            System.out.println("success");
+        if(r.equalsIgnoreCase("Nintendo")){
+            //raza.getRazas("Vikingos");
+            System.out.println("eligio nintendo");
         }else{
             System.out.println("no lo he hecho todavia lol");
         }
@@ -118,18 +116,40 @@ public class Jugador {
         System.out.println("Jugador1: "+player1);
     }
     
+    public void addJugador2(){
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Jugador 2, digite su nombre: ");
+        String player2 = leer.nextLine();
+        System.out.println("Elige tu raza: ");
+        String r = leer.nextLine();
+        if(r.equalsIgnoreCase("Playstation")){
+            //raza.getRazas("Vikingos");
+            System.out.println("eligio play");
+        }else{
+            System.out.println("no lo he hecho todavia lol");
+        }
+        jugador.add(player2);
+        /*System.out.println("Jugador 2,, digite su nombre: ");
+        String player2 = leer.nextLine();
+        System.out.println("Elige tu raza: ");
+        String r1 = leer.nextLine();
+        if(r1.equals("Vikingos")){
+            raza.getRazas("Vikingos");
+            System.out.println("success");
+        }else{
+            System.out.println("no lo he hecho todavia lol");
+        }
+        jugador.add(player2);
+        System.out.println("Jugador1: "+player1 + " " + "Jugador2: "+player2);*/
+        System.out.println("Jugador1: "+player2);
+    }
+    
     public int getTurn(){
         return turn;
         
     }
     
-    /*public void finTurno(){
-        
-        for(Jugador j : jugador )
-            j.getTurn();  
-    }*/
-    
-    public void addMadera(int cantidad){
+    /*public void addMadera(int cantidad){
         madera += cantidad;
     }
     
@@ -139,5 +159,5 @@ public class Jugador {
     
     public void addPocion(int cantidad){
         pocion += cantidad;
-    }   
+    }   */
 }
