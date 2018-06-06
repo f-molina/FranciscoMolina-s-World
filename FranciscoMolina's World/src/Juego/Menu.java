@@ -18,9 +18,31 @@ import java.util.Scanner;
  */
 public class Menu {
     
+    public Jugador jugador;
+    
+    public Menu(){
+    }
+
+    public Menu(Jugador jugador) {
+        this.jugador = jugador;
+    }
+    
     AbstractFactory nintendo = FactoryProducer.getFactory("Nintendo");
-    AbstractFactory plays = FactoryProducer.getFactory("Playstation");
+    AbstractFactory play = FactoryProducer.getFactory("Playstation");
     AbstractFactory xbox = FactoryProducer.getFactory("Xbox");
+    
+    Playstation p = play.getPlayStation("Titanio");
+    Playstation p1 = play.getPlayStation("Ecos");
+    Playstation p2 = play.getPlayStation("Carbon");
+    Nintendo nint = nintendo.getNintendo("AceroStorage");
+        
+    Nintendo n = nintendo.getNintendo("Acero");
+    Nintendo n1 = nintendo.getNintendo("Cristal");
+    Nintendo n2 = nintendo.getNintendo("Mushrooms");
+    
+    Xbox x = xbox.getXbox("Adamantium");
+    Xbox x1 = xbox.getXbox("Energia");
+    Xbox x2 = xbox.getXbox("Polvora");
     
     public void MenuRaza(){
         Menu menu = new Menu();
@@ -56,18 +78,13 @@ public class Menu {
     }
 
     public void MenuNintendo() {
-        Nintendo n = nintendo.getNintendo("Acero");
-        Nintendo n1 = nintendo.getNintendo("Cristal");
-        Nintendo n2 = nintendo.getNintendo("Mushrooms");
-        int health=0;      
-        int cant = 0;
-        System.out.println("----------------------RECURSOS---------------------");
-        n.construir();
-        n1.construir();
-        n2.construir();
         
         int opc=0;
         do{
+            System.out.println("----------------------RECURSOS---------------------");
+            n.getCantidad();
+            n1.getCantidad();
+            n2.getCantidad();
             System.out.println("\n********FRANCISCO-MOLINA'S WORLD********");
             System.out.println("1. Atacar");
             System.out.println("2. Defender");
@@ -85,22 +102,24 @@ public class Menu {
             
             switch(opc){
                 case 1:
-        break;       
+                break; 
+                case 2:
+                    System.out.println("vda: "+nint.getLife());
+                break;
+                case 3:
+                    System.out.println("Se creo AceroStorage con vida: "+nint.getLife());
+                break;    
             }
 
         }while(opc!=4); 
     }  
     
     public void MenuPlay() {
-        AbstractFactory play = FactoryProducer.getFactory("Playstation");
-        Playstation p = play.getPlayStation("Titanio");
-        Playstation p1 = play.getPlayStation("Ecos");
-        Playstation p2 = play.getPlayStation("Carbon");
 
         System.out.println("----------------------RECURSOS---------------------");
-        p.construir();
-        p1.construir();
-        p2.construir();
+        p.getCantidad();
+        p1.getCantidad();
+        p2.getCantidad();
         
         int opc=0;
         do{
@@ -121,6 +140,22 @@ public class Menu {
             
             switch(opc){
                 case 1:
+                    Playstation plays = play.getPlayStation("Kratos");
+                    int total;
+                    System.out.println("Vida AceroStorage: "+nint.getLife());
+                    //total = nint.getLife()-plays.getAttack();
+                    System.out.println("ataque successful");
+                    //nint.setLife(total);
+                    System.out.println("Nueva vida AceroStorage: "+nint.getLife());
+                    break;
+                    case 2:
+                        System.out.println(":vidaL: "+nint.getLife());
+                break;
+                case 4:
+                    Menu m = new Menu();
+                    m.MenuNintendo();
+                    break;
+                /*case 1:
                     int total=0;
                     int danio=0;
                     Playstation plays = play.getPlayStation("Kratos");
@@ -130,22 +165,18 @@ public class Menu {
                     System.out.println("danio: "+total);
                     nint.setLife(total);
                     System.out.println("despues: "+nint.getLife());
-        break;       
+        break;    */   
             }
 
-        }while(opc!=4); 
+        }while(opc!=5); 
     }  
     
     public void MenuXbox(){
-        AbstractFactory xbox = FactoryProducer.getFactory("Xbox");
-        Xbox x = xbox.getXbox("Adamantium");
-        Xbox x1 = xbox.getXbox("Energia");
-        Xbox x2 = xbox.getXbox("Polvora");
-        
+
         System.out.println("----------------------RECURSOS---------------------");
-        x.construir();
-        x1.construir();
-        x2.construir();
+        x.getCantidad();
+        x1.getCantidad();
+        x2.getCantidad();
         
         int opc=0;
         do{
