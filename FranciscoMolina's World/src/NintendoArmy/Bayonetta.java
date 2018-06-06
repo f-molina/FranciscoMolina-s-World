@@ -15,6 +15,17 @@ public class Bayonetta implements Nintendo {
     
     int health=500;
     int damage = 350;
+    int cantidad;
+    
+    @Override
+    public int getCantidad(){
+        return cantidad;
+    }
+    
+    @Override
+    public void setCantidad(int newCantidad){
+        cantidad = newCantidad;
+    }
     
     @Override
     public void construir(){

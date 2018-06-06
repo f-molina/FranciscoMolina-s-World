@@ -14,6 +14,17 @@ public class Kratos implements Playstation{
     
     int damage =300;
     int health = 300;
+    int cantidad;
+    
+    @Override
+    public int getCantidad(){
+        return cantidad;
+    }
+    
+    @Override
+    public void setCantidad(int newCantidad){
+        cantidad = newCantidad;
+    }
     
     @Override
     public void construir(){

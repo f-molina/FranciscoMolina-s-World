@@ -14,7 +14,17 @@ import Nintendo.Nintendo;
 //ed. vehiculo2
 public class LuigisMansion implements Nintendo{
     
-    int damage, health;
+    int damage, health,cantidad;
+    
+    @Override
+    public int getCantidad(){
+        return cantidad;
+    }
+    
+    @Override
+    public void setCantidad(int newCantidad){
+        cantidad = newCantidad;
+    }
     
     @Override
     public void construir(){

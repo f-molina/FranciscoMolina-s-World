@@ -11,6 +11,8 @@ package Xbox;
  */
 public interface Xbox {
 
+    int getCantidad();
+    void setCantidad(int newCantidad);
     void construir();
     void recoger();
     int getLife();

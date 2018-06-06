@@ -13,7 +13,17 @@ import Playstation.Playstation;
  */
 public class Carbon implements Playstation{
     
-    int health, damage;
+    int health, damage, cantidad;
+    
+    @Override
+    public int getCantidad(){
+        return cantidad;
+    }
+    
+    @Override
+    public void setCantidad(int newCantidad){
+        cantidad = newCantidad;
+    }
     
     @Override
     public void construir(){

@@ -10,7 +10,9 @@ package Playstation;
  * @author fmolina
  */
 public interface Playstation {
-
+    
+    int getCantidad();
+    void setCantidad(int newCantidad);
     void construir();
     void recoger();
     int getLife();

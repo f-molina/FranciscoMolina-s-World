@@ -15,6 +15,17 @@ public class Xwing implements Playstation{
     
     int health;
     int damage;
+    int cantidad;
+    
+    @Override
+    public int getCantidad(){
+        return cantidad;
+    }
+    
+    @Override
+    public void setCantidad(int newCantidad){
+        cantidad = newCantidad;
+    }
     
     @Override
     public void construir(){

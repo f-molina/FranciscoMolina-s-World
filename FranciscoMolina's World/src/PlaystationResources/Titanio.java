@@ -13,12 +13,20 @@ import Playstation.Playstation;
  */
 public class Titanio implements Playstation{
     
-    int health, damage;
+    int health, damage, cantidad;
+    
+    @Override
+    public int getCantidad(){
+        return cantidad;
+    }
+    
+    @Override
+    public void setCantidad(int newCantidad){
+        cantidad = newCantidad;
+    }
     
     @Override
     public void construir(){
-        int cantidad = 200;
-        System.out.println("Titanio: "+cantidad);
     }
     
     @Override

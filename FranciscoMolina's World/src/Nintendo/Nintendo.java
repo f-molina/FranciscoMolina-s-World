@@ -10,7 +10,9 @@ package Nintendo;
  * @author fmolina
  */
 public interface Nintendo {
-
+    
+    int getCantidad();
+    void setCantidad(int newCantidad);
     void construir();
     void recoger();
     int getLife();
