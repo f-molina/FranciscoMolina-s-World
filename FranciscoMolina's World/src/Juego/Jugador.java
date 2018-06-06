@@ -4,10 +4,7 @@
  * and open the template in the editor.
  */
 package Juego;
-
-import AbstractFactory.AbstractFactory;
-import AbstractFactory.FactoryProducer;
-import Nintendo.Nintendo;
+import CentroMando.CentroMando;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -17,64 +14,34 @@ import java.util.Scanner;
  */
 public class Jugador {
     
-    public String nombre1, nombre2;
-    public int madera;
-    public int metal;
-    public int pocion;
-    public int turn = 0;
+    public String nombre;
+    public CentroMando cm;
     
     public ArrayList<String> jugador = new ArrayList();
 
     public Jugador() {
     }
-    public Jugador(String nombre1, String nombre2, int madera, int metal, int pocion) {
-        this.nombre1 = nombre1;
-        this.nombre2 = nombre2;
-        this.madera = madera;
-        this.metal = metal;
-        this.pocion = pocion;
+    public Jugador(String nombre, CentroMando cm) {
+        this.nombre = nombre;
+        this.cm = cm;
     }
 
-    public String getNombre1() {
-        return nombre1;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombre1(String nombre1) {
-        this.nombre1 = nombre1;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getNombre2() {
-        return nombre2;
+    public CentroMando getCm() {
+        return cm;
     }
 
-    public void setNombre2(String nombre2) {
-        this.nombre2 = nombre2;
+    public void setCm(CentroMando cm) {
+        this.cm = cm;
     }
-
-    public int getMadera() {
-        return madera;
-    }
-
-    public void setMadera(int madera) {
-        this.madera = madera;
-    }
-
-    public int getMetal() {
-        return metal;
-    }
-
-    public void setMetal(int metal) {
-        this.metal = metal;
-    }
-
-    public int getPocion() {
-        return pocion;
-    }
-
-    public void setPocion(int pocion) {
-        this.pocion = pocion;
-    }
-
+    
     public ArrayList<String> getJugador() {
         return jugador;
     }
@@ -84,33 +51,34 @@ public class Jugador {
     }
     
     public void addJugador(){
-        Jugador j = new Jugador();
+        CentroMando m1 = new CentroMando();
+        //Jugador j1 = new Jugador();
         Menu m = new Menu();
         Scanner leer = new Scanner(System.in);
         System.out.println("Jugador 1, digite su nombre: ");
         String player1 = leer.nextLine();
-        j.setNombre1(player1);
-        jugador.add(player1);
-        System.out.println("Jugador1: "+j.getNombre1());
+        Jugador j1 = new Jugador(player1, m1);
+        System.out.println("Jugador 1: "+j1.getNombre()+" Vida centro mando: "+j1.cm.getHealth());
         m.MenuRaza();
     }
     
     public void addJugador2(){
+        CentroMando m2 = new CentroMando();
         Menu m = new Menu();
-        Jugador j = new Jugador();
+        Jugador j2 = new Jugador();
         Scanner leer = new Scanner(System.in);
         System.out.println("Jugador 2, digite su nombre: ");
         String player2 = leer.nextLine();
-        j.setNombre1(player2);
+        //j.setNombre(player2);
         jugador.add(player2);
-        System.out.println("Jugador1: "+j.getNombre2());
+        //System.out.println("Jugador 2: "+j.getNombre());
         m.MenuRaza();
     }
     
-    public int getTurn(){
+    /*public int getTurn(){
         return turn;
         
-    }
+    }*/
     
     /*public void addMadera(int cantidad){
         madera += cantidad;
