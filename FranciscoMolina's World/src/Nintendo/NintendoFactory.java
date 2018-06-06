@@ -6,6 +6,7 @@
 package Nintendo;
 
 import AbstractFactory.AbstractFactory;
+import EdificacionesNintendo.AceroStorage;
 import NintendoArmy.Bayonetta;
 import NintendoArmy.KoopaTroopas;
 import NintendoResources.Acero;
@@ -32,7 +33,9 @@ public class NintendoFactory implements AbstractFactory{
             case "Acero":
                 return new Acero();
             case "Cristal":
-                return new Cristal();     
+                return new Cristal(); 
+            case "AceroStorage":
+                return new AceroStorage();
         }
         return null;
     }

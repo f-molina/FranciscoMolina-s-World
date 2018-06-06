@@ -13,10 +13,12 @@ import Playstation.Playstation;
  */
 public class Titanio implements Playstation{
     
-    int health, damage, cantidad;
+    int health, damage;
+    int cantidad = 150;
     
     @Override
     public int getCantidad(){
+        System.out.println("Titanio:"+cantidad);
         return cantidad;
     }
     

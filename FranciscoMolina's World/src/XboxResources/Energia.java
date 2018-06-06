@@ -13,10 +13,12 @@ import Xbox.Xbox;
  */
 public class Energia implements Xbox{
     
-    int health, damage, cantidad;
+    int health, damage;
+    int cantidad = 150;
     
     @Override
     public int getCantidad(){
+        System.out.println("Energia:"+cantidad);
         return cantidad;
     }
     

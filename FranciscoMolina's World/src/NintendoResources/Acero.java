@@ -13,10 +13,12 @@ import Nintendo.Nintendo;
  */
 public class Acero implements Nintendo{
     
-    int damage, health,cantidad;
+    int damage, health;
+    int cantidad = 150;
     
     @Override
     public int getCantidad(){
+        System.out.println("Acero:"+cantidad);
         return cantidad;
     }
     
@@ -27,8 +29,6 @@ public class Acero implements Nintendo{
     
     @Override
     public void construir(){
-        int cantidad = 150;
-        System.out.println("Acero:"+cantidad);
     }
     
     @Override
@@ -39,7 +39,7 @@ public class Acero implements Nintendo{
     public int getLife(){
         return health;
     }
-    
+
     @Override
     public void setLife(int newLife){
         health = newLife;

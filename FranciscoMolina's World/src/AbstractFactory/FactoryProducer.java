@@ -18,7 +18,7 @@ public class FactoryProducer {
         switch(type){
             case "Nintendo":
                 return new NintendoFactory();
-            case "PlayStation":
+            case "Playstation":
                 return new PlaystationFactory(); 
             case "Xbox":
                 return new XboxFactory();

@@ -13,10 +13,12 @@ import Nintendo.Nintendo;
  */
 public class Cristal implements Nintendo{
     
-    int damage,health, cantidad;
+    int damage,health;
+    int cantidad=150;
     
     @Override
     public int getCantidad(){
+        System.out.println("Cristal:"+cantidad);
         return cantidad;
     }
     
@@ -27,8 +29,6 @@ public class Cristal implements Nintendo{
     
     @Override
     public void construir(){
-        int cantidad = 150;
-        System.out.println("Cristal:"+cantidad);
     }
     
     @Override

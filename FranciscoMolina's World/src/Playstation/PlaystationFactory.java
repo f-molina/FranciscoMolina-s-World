@@ -35,7 +35,7 @@ public class PlaystationFactory implements AbstractFactory{
                 return new Kratos();
             case "Titanio":
                 return new Titanio();   
-            case "Ecos Sangre":
+            case "Ecos":
                 return new Ecos();
             case "Carbon":
                 return new Carbon();     

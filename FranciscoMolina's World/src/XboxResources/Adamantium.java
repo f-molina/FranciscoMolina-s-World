@@ -13,10 +13,12 @@ import Xbox.Xbox;
  */
 public class Adamantium implements Xbox{
     
-    int health, damage, cantidad;
+    int health, damage;
+    int cantidad = 150;
     
     @Override
     public int getCantidad(){
+        System.out.println("Adamantium:"+cantidad);
         return cantidad;
     }
     

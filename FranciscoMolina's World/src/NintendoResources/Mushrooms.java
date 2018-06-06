@@ -13,10 +13,12 @@ import Nintendo.Nintendo;
  */
 public class Mushrooms implements Nintendo{
     
-    int health, damage, cantidad;
+    int health, damage;
+    int cantidad = 150;
     
     @Override
     public int getCantidad(){
+        System.out.println("Mushrooms:"+cantidad);
         return cantidad;
     }
     
@@ -27,8 +29,6 @@ public class Mushrooms implements Nintendo{
     
     @Override
     public void construir(){
-        int cantidad = 150;
-        System.out.println("Mushrooms:"+cantidad);
     }
     
     @Override

@@ -13,10 +13,12 @@ import Playstation.Playstation;
  */
 public class Carbon implements Playstation{
     
-    int health, damage, cantidad;
+    int health, damage;
+    int cantidad = 150;
     
     @Override
     public int getCantidad(){
+        System.out.println("Carbon:"+cantidad);
         return cantidad;
     }
     

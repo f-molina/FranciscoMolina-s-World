@@ -13,7 +13,8 @@ import Nintendo.Nintendo;
  */
 public class AceroStorage implements Nintendo{
     
-    int health, damage, cantidad;
+    int damage, cantidad=50;
+    int health = 500;
     
     @Override
     public int getCantidad(){
@@ -40,6 +41,7 @@ public class AceroStorage implements Nintendo{
     
     @Override
     public void setLife(int newLife){
+        health = newLife;
     }
     
     @Override
