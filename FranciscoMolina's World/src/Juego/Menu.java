@@ -20,9 +20,42 @@ public class Menu {
     
     AbstractFactory nintendo = FactoryProducer.getFactory("Nintendo");
     AbstractFactory plays = FactoryProducer.getFactory("Playstation");
+    AbstractFactory xbox = FactoryProducer.getFactory("Xbox");
+    
+    public void MenuRaza(){
+        Menu menu = new Menu();
+        Scanner leer = new Scanner(System.in);
+        int opc =0;
+        System.out.println("Eliga su raza:\n");
+        System.out.println("1. Nintendo Army");
+        System.out.println("2. PlayStation Army");
+        System.out.println("3. Xbox Army\n");
+        System.out.println("Digite una opcion: ");
+        opc = leer.nextInt();
+        
+        switch(opc){
+            case 1:
+                System.out.println("Eligio nintendo");
+                menu.MenuNintendo();
+            break;
+            
+            case 2:
+                System.out.println("Eligio play");
+                menu.MenuPlay();
+            break;
+            
+            case 3:
+                System.out.println("Eligio xbox");
+                menu.MenuXbox();
+            break;
+            
+            default:
+                System.out.println("eligio nintendo");
+                menu.MenuNintendo();
+        }
+    }
 
     public void MenuNintendo() {
-        AbstractFactory nintendo = FactoryProducer.getFactory("Nintendo");
         Nintendo n = nintendo.getNintendo("Acero");
         Nintendo n1 = nintendo.getNintendo("Cristal");
         Nintendo n2 = nintendo.getNintendo("Mushrooms");
@@ -52,15 +85,6 @@ public class Menu {
             
             switch(opc){
                 case 1:
-                    int total=0;
-                    int danio=0;
-        //Razas r = raza.getRazas("Vikingos");
-        //Razas r1 = raza.getRazas("Mongoles");
-        /*System.out.println("danio: "+r.attack(danio));
-        System.out.println("defensa: "+r1.life(health));
-        total = r.attack(danio)-r1.life(health);
-        System.out.println("Ataque realizado: "+total);
-                    System.out.println(r1.life(total));*/
         break;       
             }
 
@@ -73,8 +97,6 @@ public class Menu {
         Playstation p1 = play.getPlayStation("Ecos");
         Playstation p2 = play.getPlayStation("Carbon");
 
-        int health=0;      
-        int cant = 0;
         System.out.println("----------------------RECURSOS---------------------");
         p.construir();
         p1.construir();
@@ -103,9 +125,6 @@ public class Menu {
                     int danio=0;
                     Playstation plays = play.getPlayStation("Kratos");
                     Nintendo nint = nintendo.getNintendo("Bayonetta");
-                    /*System.out.println("antes: "+plays.getLife());
-                    plays.setLife(850);
-                    System.out.println("despues: "+plays.getLife());*/
                     System.out.println("antes: "+nint.getLife());
                     total = nint.getLife()-plays.getAttack();
                     System.out.println("danio: "+total);
@@ -122,9 +141,7 @@ public class Menu {
         Xbox x = xbox.getXbox("Adamantium");
         Xbox x1 = xbox.getXbox("Energia");
         Xbox x2 = xbox.getXbox("Polvora");
-
-        int health=0;      
-        int cant = 0;
+        
         System.out.println("----------------------RECURSOS---------------------");
         x.construir();
         x1.construir();
@@ -149,8 +166,6 @@ public class Menu {
             
             switch(opc){
                 case 1:
-                    int total=0;
-                    int danio=0;
                 break;
             }
 
