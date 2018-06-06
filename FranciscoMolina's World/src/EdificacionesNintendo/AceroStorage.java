@@ -6,6 +6,8 @@
 package EdificacionesNintendo;
 
 import Nintendo.Nintendo;
+import NintendoResources.Acero;
+import NintendoResources.Cristal;
 
 /**
  *
@@ -13,21 +15,36 @@ import Nintendo.Nintendo;
  */
 public class AceroStorage implements Nintendo{
     
-    int damage, cantidad=50;
+    int damage, cantidad;
     int health = 500;
+    int costo = 100;
+    Acero a = new Acero();
+    Cristal c = new Cristal();
     
     @Override
     public int getCantidad(){
-        return cantidad;
+        return a.getCantidad();
     }
     
     @Override
-    public void setCantidad(int newCantidad){
-        cantidad = newCantidad;
+    public void setCantidad(int cantidad){
+        this.cantidad = cantidad;
     }
     
     @Override
-    public void construir(){
+    public int construir(int cantidad){
+        int total=0, total1=0;
+        if(a.getCantidad()>=costo && c.getCantidad()>=costo){
+            total = a.getCantidad()-costo;   
+            a.setCantidad(total);
+            total1 = c.getCantidad()-costo;
+            c.setCantidad(total1);
+            System.out.println("Construccion realizada, acero restante: "+total);
+            System.out.println("cirstal restante: "+total1);
+        }else{
+            System.out.println("No tiene recursos suficientes");
+        }
+        return total;
     }
     
     @Override

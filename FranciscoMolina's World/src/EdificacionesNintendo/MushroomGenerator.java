@@ -6,6 +6,7 @@
 package EdificacionesNintendo;
 
 import Nintendo.Nintendo;
+import NintendoResources.Mushrooms;
 
 /**
  *
@@ -13,20 +14,32 @@ import Nintendo.Nintendo;
  */
 public class MushroomGenerator implements Nintendo{
     
-    int health, damage, cantidad;
+    int damage, cantidad;
+    int health = 500;
+    int costo = 150;
+    Mushrooms m = new Mushrooms();
     
     @Override
     public int getCantidad(){
-        return cantidad;
+        return m.getCantidad();
     }
     
     @Override
-    public void setCantidad(int newCantidad){
-        cantidad = newCantidad;
+    public void setCantidad(int cantidad){
+        this.cantidad = cantidad;
     }
     
     @Override
-    public void construir(){
+    public int construir(int cantidad){
+        int total=0;
+        if(m.getCantidad()>=costo){
+            total = m.getCantidad()-costo;   
+            m.setCantidad(total);
+            System.out.println("Construccion realizada, mushrooms restantes: "+total);
+        }else{
+            System.out.println("No tiene recursos suficientes");
+        }
+        return total;
     }
     
     @Override
