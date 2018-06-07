@@ -18,17 +18,17 @@ public class Acero implements Nintendo{
     
     @Override
     public int getCantidad(){
-        System.out.println("Acero:"+cantidad);
         return cantidad;
     }
     
     @Override
-    public void setCantidad(int newCantidad){
-        cantidad = newCantidad;
+    public void setCantidad(int cantidad){
+        this.cantidad = cantidad;
     }
     
     @Override
-    public void construir(){
+    public int construir(int cantidad){
+        return cantidad;
     }
     
     @Override
@@ -41,8 +41,8 @@ public class Acero implements Nintendo{
     }
 
     @Override
-    public void setLife(int newLife){
-        health = newLife;
+    public void setLife(int health){
+        this.health = health;
     }
     
     @Override
