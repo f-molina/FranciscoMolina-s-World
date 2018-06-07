@@ -48,7 +48,11 @@ public class AceroStorage implements Nintendo{
     }
     
     @Override
-    public void recoger(){
+    public int recoger(){
+        int num;
+        num = a.getCantidad();
+        setCantidad(0);
+        return num;
     }
     
     @Override

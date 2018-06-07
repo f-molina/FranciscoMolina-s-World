@@ -34,7 +34,8 @@ public class PokemonGym implements Nintendo{
     }
     
     @Override
-    public void recoger(){
+    public int recoger(){
+        return cantidad;
     }
     
     @Override
