@@ -26,28 +26,35 @@ public class Menu {
     public Menu(Jugador jugador) {
         this.jugador = jugador;
     }
-    
+    //abstracts
     AbstractFactory nintendo = FactoryProducer.getFactory("Nintendo");
     AbstractFactory play = FactoryProducer.getFactory("Playstation");
     AbstractFactory xbox = FactoryProducer.getFactory("Xbox");
     
+    //recursos play
     Playstation p = play.getPlayStation("Titanio");
     Playstation p1 = play.getPlayStation("Ecos");
     Playstation p2 = play.getPlayStation("Carbon");
-    Nintendo nint = nintendo.getNintendo("AceroStorage");
-        
+    
+    //recursos nintendo    
     Nintendo n = nintendo.getNintendo("Acero");
     Nintendo n1 = nintendo.getNintendo("Cristal");
     Nintendo n2 = nintendo.getNintendo("Mushrooms");
     
+    //recursos xbox
     Xbox x = xbox.getXbox("Adamantium");
     Xbox x1 = xbox.getXbox("Energia");
     Xbox x2 = xbox.getXbox("Polvora");
     
+    //edificaciones nintendo
+    Nintendo nint = nintendo.getNintendo("AceroStorage");
+    Nintendo nint1 = nintendo.getNintendo("CristalStorage");
+    Nintendo nint2 = nintendo.getNintendo("MushroomGenerator");
+    
     public void MenuRaza(){
         Menu menu = new Menu();
         Scanner leer = new Scanner(System.in);
-        int opc =0;
+        int opc;
         System.out.println("Eliga su raza:\n");
         System.out.println("1. Nintendo Army");
         System.out.println("2. PlayStation Army");
@@ -80,16 +87,29 @@ public class Menu {
     public void MenuNintendo() {
         
         int opc=0;
+        int cantidad=0;
         do{
             System.out.println("----------------------RECURSOS---------------------");
-            n.getCantidad();
-            n1.getCantidad();
-            n2.getCantidad();
+            System.out.println("Acero: "+nint.getCantidad());
+            System.out.println("Cristal: "+nint.getCantidad());
+            System.out.println("Mushrooms: "+nint2.getCantidad());
             System.out.println("\n********FRANCISCO-MOLINA'S WORLD********");
             System.out.println("1. Atacar");
             System.out.println("2. Defender");
-            System.out.println("3. Construir");
-            System.out.println("4. Terminar turno");
+            System.out.println("3. Construir Acero Storage");
+            System.out.println("4. Construir Cristal Storage");
+            System.out.println("5. Construir Mushroom Generator");
+            System.out.println("6. Construir Luigis Mansion");
+            System.out.println("7. Construir Pokemon Gym");
+            System.out.println("8. Construir StarFox Base");
+            System.out.println("9. Construir Arwing");
+            System.out.println("10. Construir Tanque");
+            System.out.println("11. Entrenar Koopa Troopas");
+            System.out.println("12. Entrenar Bayonetta");
+            System.out.println("13. Recoger Acero");
+            System.out.println("14. Recoger Cristal");
+            System.out.println("15. Mejorar Centro Mando");
+            System.out.println("16. Terminar turno");
             
             Scanner leer = new Scanner(System.in);
             try{
@@ -104,14 +124,19 @@ public class Menu {
                 case 1:
                 break; 
                 case 2:
-                    System.out.println("vda: "+nint.getLife());
                 break;
                 case 3:
-                    System.out.println("Se creo AceroStorage con vida: "+nint.getLife());
+                    nint.construir(cantidad);
                 break;    
+                case 4:
+                    nint1.construir(cantidad);
+                break;
+                case 5:
+                    nint2.construir(cantidad);
+                break;
             }
 
-        }while(opc!=4); 
+        }while(opc!=16); 
     }  
     
     public void MenuPlay() {
@@ -126,8 +151,20 @@ public class Menu {
             System.out.println("\n********FRANCISCO-MOLINA'S WORLD********");
             System.out.println("1. Atacar");
             System.out.println("2. Defender");
-            System.out.println("3. Construir");
-            System.out.println("4. Terminar turno");
+            System.out.println("3. Construir Titanio Storage");
+            System.out.println("4. Construir Carbon Storage");
+            System.out.println("5. Construir Ecos Producer");
+            System.out.println("6. Construir Bonfire");
+            System.out.println("7. Construir Aircraft");
+            System.out.println("8. Construir Puerto");
+            System.out.println("9. Construir Submarino");
+            System.out.println("10. Construir Xwing");
+            System.out.println("11. Entrenar Hunters");
+            System.out.println("12. Entrenar Kratos");
+            System.out.println("13. Recoger Titanio");
+            System.out.println("14. Recoger carbon");
+            System.out.println("15. Mejorar Centro Mando");
+            System.out.println("16. Terminar turno");
             
             Scanner leer = new Scanner(System.in);
             try{
@@ -143,9 +180,9 @@ public class Menu {
                     Playstation plays = play.getPlayStation("Kratos");
                     int total;
                     System.out.println("Vida AceroStorage: "+nint.getLife());
-                    //total = nint.getLife()-plays.getAttack();
+                    total = nint.getLife()-plays.getAttack();
                     System.out.println("ataque successful");
-                    //nint.setLife(total);
+                    nint.setLife(total);
                     System.out.println("Nueva vida AceroStorage: "+nint.getLife());
                     break;
                     case 2:
@@ -155,20 +192,9 @@ public class Menu {
                     Menu m = new Menu();
                     m.MenuNintendo();
                     break;
-                /*case 1:
-                    int total=0;
-                    int danio=0;
-                    Playstation plays = play.getPlayStation("Kratos");
-                    Nintendo nint = nintendo.getNintendo("Bayonetta");
-                    System.out.println("antes: "+nint.getLife());
-                    total = nint.getLife()-plays.getAttack();
-                    System.out.println("danio: "+total);
-                    nint.setLife(total);
-                    System.out.println("despues: "+nint.getLife());
-        break;    */   
             }
 
-        }while(opc!=5); 
+        }while(opc!=16); 
     }  
     
     public void MenuXbox(){
@@ -183,8 +209,20 @@ public class Menu {
             System.out.println("\n********FRANCISCO-MOLINA'S WORLD********");
             System.out.println("1. Atacar");
             System.out.println("2. Defender");
-            System.out.println("3. Construir");
-            System.out.println("4. Terminar turno");
+            System.out.println("3. Construir Adamantium Storage");
+            System.out.println("4. Construir Polvora Storage");
+            System.out.println("5. Construir Energia Generator");
+            System.out.println("6. Construir Campo");
+            System.out.println("7. Construir Fabrica");
+            System.out.println("8. Construir Mothership");
+            System.out.println("9. Construir Armoured Train");
+            System.out.println("10. Construir AT-AT Walker");
+            System.out.println("11. Entrenar Locust");
+            System.out.println("12. Entrenar Master Chief");
+            System.out.println("13. Recoger Adamantium");
+            System.out.println("14. Recoger Polvora");
+            System.out.println("15. Mejorar Centro Mando");
+            System.out.println("16. Terminar turno");
             
             Scanner leer = new Scanner(System.in);
             try{
@@ -200,6 +238,6 @@ public class Menu {
                 break;
             }
 
-        }while(opc!=4); 
+        }while(opc!=16); 
     }  
 }
