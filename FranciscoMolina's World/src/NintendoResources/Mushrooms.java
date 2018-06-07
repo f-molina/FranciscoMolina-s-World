@@ -32,7 +32,8 @@ public class Mushrooms implements Nintendo{
     }
     
     @Override
-    public void recoger(){
+    public int recoger(){
+        return cantidad;
     }
     
     @Override
