@@ -10,6 +10,7 @@ import AbstractFactory.FactoryProducer;
 import Nintendo.Nintendo;
 import Playstation.Playstation;
 import Xbox.Xbox;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -18,6 +19,7 @@ import java.util.Scanner;
  */
 public class Menu {
     
+    public ArrayList<Nintendo> mushroomGen =new ArrayList<>();
     public Jugador jugador;
     
     public Menu(){
@@ -26,6 +28,15 @@ public class Menu {
     public Menu(Jugador jugador) {
         this.jugador = jugador;
     }
+
+    public Jugador getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
+    
     //abstracts
     AbstractFactory nintendo = FactoryProducer.getFactory("Nintendo");
     AbstractFactory play = FactoryProducer.getFactory("Playstation");
@@ -133,7 +144,18 @@ public class Menu {
                 break;
                 case 5:
                     nint2.construir(cantidad);
+                    Nintendo mush = nintendo.getNintendo("MushroomGenerator");
+                    mushroomGen.add(mush);
+                    System.out.println("Mushroom Generator built");
                 break;
+                case 13:
+                    System.out.println("hola: "+nint.recoger());
+                    break;
+                case 15:
+                    int cap1 = getJugador().getCm().getCapacidad1();
+                    int cap2 = getJugador().getCm().getCapacidad2();
+                    int cap3 = getJugador().getCm().getCapacidad3();
+                    break;
             }
 
         }while(opc!=16); 
