@@ -12,7 +12,10 @@ package CentroMando;
 public class CentroMando {
     
     int health = 1000;
-    int recurso1, recurso2, recurso3, lim1, lim2, lim3;
+    int recurso1, recurso2, recurso3;
+    int capacidad1 = 10000;
+    int capacidad2 = 5000;
+    int capacidad3 = 3000;
 
     public int getHealth() {
         return health;
@@ -46,30 +49,31 @@ public class CentroMando {
         this.recurso3 = recurso3;
     }
 
-    public int getLim1() {
-        return lim1;
+    public int getCapacidad1() {
+        return capacidad1;
     }
 
-    public void setLim1(int lim1) {
-        this.lim1 = lim1;
+    public void setCapacidad1(int capacidad1) {
+        this.capacidad1 = capacidad1;
     }
 
-    public int getLim2() {
-        return lim2;
+    public int getCapacidad2() {
+        return capacidad2;
     }
 
-    public void setLim2(int lim2) {
-        this.lim2 = lim2;
+    public void setCapacidad2(int capacidad2) {
+        this.capacidad2 = capacidad2;
     }
 
-    public int getLim3() {
-        return lim3;
+    public int getCapacidad3() {
+        return capacidad3;
     }
 
-    public void setLim3(int lim3) {
-        this.lim3 = lim3;
+    public void setCapacidad3(int capacidad3) {
+        this.capacidad3 = capacidad3;
     }
     
-    
-    
+    public void upgrade(){
+        
+    }
 }
