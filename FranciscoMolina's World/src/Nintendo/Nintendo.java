@@ -13,9 +13,10 @@ public interface Nintendo {
     int getCantidad();
     void setCantidad(int cantidad);
     int construir(int cantidad);
-    void recoger();
+    int recoger();
     int getLife();
     void setLife(int health);
     int getAttack();
+    
     
 }
