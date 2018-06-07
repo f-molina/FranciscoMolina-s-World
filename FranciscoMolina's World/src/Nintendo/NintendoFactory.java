@@ -7,6 +7,8 @@ package Nintendo;
 
 import AbstractFactory.AbstractFactory;
 import EdificacionesNintendo.AceroStorage;
+import EdificacionesNintendo.CristalStorage;
+import EdificacionesNintendo.MushroomGenerator;
 import NintendoArmy.Bayonetta;
 import NintendoArmy.KoopaTroopas;
 import NintendoResources.Acero;
@@ -36,6 +38,10 @@ public class NintendoFactory implements AbstractFactory{
                 return new Cristal(); 
             case "AceroStorage":
                 return new AceroStorage();
+            case "CristalStorage":
+                return new CristalStorage();
+            case "MushroomGenerator":
+                return new MushroomGenerator();
         }
         return null;
     }
