@@ -28,7 +28,8 @@ public class Bayonetta implements Nintendo {
     }
     
     @Override
-    public void construir(){
+    public int construir(int cantidad){
+        return cantidad;
     }
     
     @Override
