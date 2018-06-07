@@ -11,11 +11,11 @@ package Nintendo;
 public interface Nintendo {
     
     int getCantidad();
-    void setCantidad(int newCantidad);
-    void construir();
+    void setCantidad(int cantidad);
+    int construir(int cantidad);
     void recoger();
     int getLife();
-    void setLife(int newLife);
+    void setLife(int health);
     int getAttack();
     
 }
