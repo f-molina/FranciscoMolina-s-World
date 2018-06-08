@@ -20,7 +20,7 @@ public class Mushrooms implements Nintendo{
     public int getCantidad(){
         return cantidad;
     }
-    
+
     @Override
     public void setCantidad(int cantidad){
         this.cantidad = cantidad;
