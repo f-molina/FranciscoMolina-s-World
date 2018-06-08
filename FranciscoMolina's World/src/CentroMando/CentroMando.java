@@ -12,10 +12,13 @@ package CentroMando;
 public class CentroMando {
     
     int health = 1000;
-    int recurso1, recurso2, recurso3;
+    int recurso1 = 2000, recurso2=2000, recurso3=2000;
     int capacidad1 = 10000;
     int capacidad2 = 5000;
     int capacidad3 = 3000;
+    int capacidad1upgrade = 11000;
+    int capacidad2upgrade = 6500;
+    int capacidad3upgrade = 4500;
 
     public int getHealth() {
         return health;
@@ -74,6 +77,9 @@ public class CentroMando {
     }
     
     public void upgrade(){
-        
+        setCapacidad1(capacidad1upgrade);
+        setCapacidad2(capacidad2upgrade);
+        setCapacidad3(capacidad3upgrade);
     }
+    
 }
