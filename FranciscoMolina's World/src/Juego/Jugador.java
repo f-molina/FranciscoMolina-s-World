@@ -5,7 +5,6 @@
  */
 package Juego;
 import CentroMando.CentroMando;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -16,8 +15,6 @@ public class Jugador {
     
     public String nombre;
     public CentroMando cm;
-    
-    public ArrayList<String> jugador = new ArrayList();
 
     public Jugador() {
     }
@@ -42,37 +39,27 @@ public class Jugador {
         this.cm = cm;
     }
     
-    public ArrayList<String> getJugador() {
-        return jugador;
-    }
-
-    public void setJugador(ArrayList<String> jugador) {
-        this.jugador = jugador;
-    }
-    
     public void addJugador(){
         CentroMando m1 = new CentroMando();
-        //Jugador j1 = new Jugador();
-        Menu m = new Menu();
         Scanner leer = new Scanner(System.in);
         System.out.println("Jugador 1, digite su nombre: ");
         String player1 = leer.nextLine();
         Jugador j1 = new Jugador(player1, m1);
         System.out.println("Jugador 1: "+j1.getNombre()+" Vida centro mando: "+j1.cm.getHealth());
+        Menu m = new Menu(j1);
         m.MenuRaza();
     }
     
     public void addJugador2(){
         CentroMando m2 = new CentroMando();
-        Menu m = new Menu();
-        Jugador j2 = new Jugador();
         Scanner leer = new Scanner(System.in);
         System.out.println("Jugador 2, digite su nombre: ");
         String player2 = leer.nextLine();
-        //j.setNombre(player2);
-        jugador.add(player2);
-        //System.out.println("Jugador 2: "+j.getNombre());
+        Jugador j2 = new Jugador(player2, m2);
+        System.out.println("Jugador 2: "+j2.getNombre()+" Vida centro mando: "+j2.cm.getHealth());
+        Menu m = new Menu(j2);
         m.MenuRaza();
+
     }
     
     /*public int getTurn(){
