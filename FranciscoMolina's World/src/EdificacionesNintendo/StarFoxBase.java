@@ -17,15 +17,15 @@ public class StarFoxBase implements Nintendo{
     int health;
     int damage;
     int cantidad;
-    
+
     @Override
     public int getCantidad(){
         return cantidad;
     }
     
     @Override
-    public void setCantidad(int newCantidad){
-        cantidad = newCantidad;
+    public void setCantidad(int cantidad){
+        this.cantidad = cantidad;
     }
     
     @Override

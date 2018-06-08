@@ -20,10 +20,10 @@ public class LuigisMansion implements Nintendo{
     public int getCantidad(){
         return cantidad;
     }
-    
+
     @Override
-    public void setCantidad(int newCantidad){
-        cantidad = newCantidad;
+    public void setCantidad(int cantidad){
+        this.cantidad = cantidad;
     }
     
     @Override

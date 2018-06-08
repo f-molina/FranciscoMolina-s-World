@@ -20,7 +20,7 @@ public class CristalStorage implements Nintendo{
     int costo = 75;
     Cristal c = new Cristal();
     Mushrooms m = new Mushrooms();
-    
+
     @Override
     public int getCantidad(){
         return c.getCantidad();
@@ -33,7 +33,7 @@ public class CristalStorage implements Nintendo{
     
     @Override
     public int construir(int cantidad){
-        int total=0, total1=0;
+        int total=0, total1;
         if(c.getCantidad()>=costo && m.getCantidad()>=costo){
             total = c.getCantidad()-costo;   
             c.setCantidad(total);
