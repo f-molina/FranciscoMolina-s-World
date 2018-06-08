@@ -63,10 +63,10 @@ public class Menu {
     Nintendo nint2 = nintendo.getNintendo("MushroomGenerator");
     
     public void MenuRaza(){
-        Menu menu = new Menu();
+        Menu menu = new Menu(jugador);
         Scanner leer = new Scanner(System.in);
         int opc;
-        System.out.println("Eliga su raza:\n");
+        System.out.println("\nEliga su raza\n");
         System.out.println("1. Nintendo Army");
         System.out.println("2. PlayStation Army");
         System.out.println("3. Xbox Army\n");
@@ -152,9 +152,26 @@ public class Menu {
                     System.out.println("hola: "+nint.recoger());
                     break;
                 case 15:
-                    int cap1 = getJugador().getCm().getCapacidad1();
-                    int cap2 = getJugador().getCm().getCapacidad2();
-                    int cap3 = getJugador().getCm().getCapacidad3();
+                    int c1 = getJugador().getCm().getCapacidad1();
+                    int c2 = getJugador().getCm().getCapacidad2();
+                    int c3 = getJugador().getCm().getCapacidad3();
+                    double ca1=c1+(c1*0.10); 
+                    double ca2=c2+(c2*0.30); 
+                    double ca3=c3+(c3*0.50); 
+                    double sum= (ca1+ca2+ca3);
+                    sum=sum*0.25;
+                    sum=(int)sum/3;
+                    
+                    System.out.println("El costo por recurso para la mejora es de: "+sum);
+                    
+                    if(getJugador().getCm().getRecurso1() >= sum && getJugador().getCm().getRecurso2() >= sum && getJugador().getCm().getRecurso3() >= sum){
+                        getJugador().getCm().upgrade();
+                        System.out.println("Recurso 1: "+getJugador().getCm().getRecurso1());
+                        System.out.println("Recurso 2: "+getJugador().getCm().getRecurso3());
+                        System.out.println("Recurso 3: "+getJugador().getCm().getRecurso2());
+                    }else{
+                        System.out.println("No tiene recursos suficientes");
+                    }
                     break;
             }
 
@@ -214,6 +231,28 @@ public class Menu {
                     Menu m = new Menu();
                     m.MenuNintendo();
                     break;
+                case 15:
+                    int c1 = getJugador().getCm().getCapacidad1();
+                    int c2 = getJugador().getCm().getCapacidad2();
+                    int c3 = getJugador().getCm().getCapacidad3();
+                    double ca1=c1+(c1*0.10); 
+                    double ca2=c2+(c2*0.30); 
+                    double ca3=c3+(c3*0.50); 
+                    double sum= (ca1+ca2+ca3);
+                    sum=sum*0.25;
+                    sum=(int)sum/3;
+                    
+                    System.out.println("El costo por recurso para la mejora es de: "+sum);
+                    
+                    if(getJugador().getCm().getRecurso1() >= sum && getJugador().getCm().getRecurso2() >= sum && getJugador().getCm().getRecurso3() >= sum){
+                        getJugador().getCm().upgrade();
+                        System.out.println("Recurso 1: "+getJugador().getCm().getRecurso1());
+                        System.out.println("Recurso 2: "+getJugador().getCm().getRecurso3());
+                        System.out.println("Recurso 3: "+getJugador().getCm().getRecurso2());
+                    }else{
+                        System.out.println("No tiene recursos suficientes");
+                    }
+                break;
             }
 
         }while(opc!=16); 
@@ -257,6 +296,28 @@ public class Menu {
             
             switch(opc){
                 case 1:
+                break;
+                case 15:
+                    int c1 = getJugador().getCm().getCapacidad1();
+                    int c2 = getJugador().getCm().getCapacidad2();
+                    int c3 = getJugador().getCm().getCapacidad3();
+                    double ca1=c1+(c1*0.10); 
+                    double ca2=c2+(c2*0.30); 
+                    double ca3=c3+(c3*0.50); 
+                    double sum= (ca1+ca2+ca3);
+                    sum=sum*0.25;
+                    sum=(int)sum/3;
+                    
+                    System.out.println("El costo por recurso para la mejora es de: "+sum);
+                    
+                    if(getJugador().getCm().getRecurso1() >= sum && getJugador().getCm().getRecurso2() >= sum && getJugador().getCm().getRecurso3() >= sum){
+                        getJugador().getCm().upgrade();
+                        System.out.println("Recurso 1: "+getJugador().getCm().getRecurso1());
+                        System.out.println("Recurso 2: "+getJugador().getCm().getRecurso3());
+                        System.out.println("Recurso 3: "+getJugador().getCm().getRecurso2());
+                    }else{
+                        System.out.println("No tiene recursos suficientes");
+                    }
                 break;
             }
 
