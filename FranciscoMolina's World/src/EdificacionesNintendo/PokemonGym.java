@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package EdificacionesNintendo;
-
+import Juego.Jugador;
 import Nintendo.Nintendo;
 
 /**
@@ -29,7 +29,7 @@ public class PokemonGym implements Nintendo{
     }*/
     
     @Override
-    public void construir(int cantidad){
+    public void construir(Jugador jugador){
         //return cantidad;
     }
     

@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package EdificacionesNintendo;
-
+import Juego.Jugador;
 import Nintendo.Nintendo;
 import NintendoResources.Mushrooms;
 
@@ -30,7 +30,7 @@ public class MushroomGenerator implements Nintendo{
     }*/
     
     @Override
-    public void construir(int cantidad){
+    public void construir(Jugador jugador){
         int total;
         if(m.getCantidad()>=costo){
             total = m.getCantidad()-costo;   

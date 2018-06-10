@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package EdificacionesNintendo;
-
+import Juego.Jugador;
 import Nintendo.Nintendo;
 import NintendoResources.Cristal;
 import NintendoResources.Mushrooms;
@@ -32,7 +32,7 @@ public class CristalStorage implements Nintendo{
     }*/
     
     @Override
-    public void construir(int cantidad){
+    public void construir(Jugador jugador){
         int total, total1;
         if(c.getCantidad()>=costo && m.getCantidad()>=costo){
             total = c.getCantidad()-costo;   
