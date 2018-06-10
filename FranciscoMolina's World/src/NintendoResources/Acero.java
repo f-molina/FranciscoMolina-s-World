@@ -14,9 +14,21 @@ import Nintendo.Nintendo;
 public class Acero implements Nintendo{
     
     int damage, health;
-    int cantidad = 150;
+    public int cantidad;
+
+    public Acero() {
+        this.cantidad = 150;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
     
-    @Override
+    /*@Override
     public int getCantidad(){
         return cantidad;
     }
@@ -24,11 +36,11 @@ public class Acero implements Nintendo{
     @Override
     public void setCantidad(int cantidad){
         this.cantidad = cantidad;
-    }
+    }*/
     
     @Override
-    public int construir(int cantidad){
-        return cantidad;
+    public void construir(int cantidad){
+        //return cantidad;
     }
     
     @Override

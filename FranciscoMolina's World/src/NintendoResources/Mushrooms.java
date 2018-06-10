@@ -14,9 +14,23 @@ import Nintendo.Nintendo;
 public class Mushrooms implements Nintendo{
     
     int health, damage;
-    int cantidad = 150;
+    public int cantidad;
+
+    public Mushrooms() {
+        this.cantidad = 150;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
     
-    @Override
+    
+    
+    /*@Override
     public int getCantidad(){
         return cantidad;
     }
@@ -24,11 +38,11 @@ public class Mushrooms implements Nintendo{
     @Override
     public void setCantidad(int cantidad){
         this.cantidad = cantidad;
-    }
+    }*/
     
     @Override
-    public int construir(int cantidad){
-        return cantidad;
+    public void construir(int cantidad){
+        //return cantidad;
     }
     
     @Override
