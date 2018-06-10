@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package NintendoResources;
-
+import Juego.Jugador;
 import Nintendo.Nintendo;
 
 /**
@@ -14,11 +14,14 @@ import Nintendo.Nintendo;
 public class Acero implements Nintendo{
     
     int damage, health;
-    public int cantidad;
+    int cantidad = 150;
 
     public Acero() {
-        this.cantidad = 150;
     }
+
+    /*public Acero() {
+        this.cantidad = 150;
+    }*/
 
     public int getCantidad() {
         return cantidad;
@@ -39,7 +42,7 @@ public class Acero implements Nintendo{
     }*/
     
     @Override
-    public void construir(int cantidad){
+    public void construir(Jugador jugador){
         //return cantidad;
     }
     
