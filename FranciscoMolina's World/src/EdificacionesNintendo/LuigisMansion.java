@@ -16,7 +16,7 @@ public class LuigisMansion implements Nintendo{
     
     int damage, health,cantidad;
     
-    @Override
+    /*@Override
     public int getCantidad(){
         return cantidad;
     }
@@ -24,11 +24,11 @@ public class LuigisMansion implements Nintendo{
     @Override
     public void setCantidad(int cantidad){
         this.cantidad = cantidad;
-    }
+    }*/
     
     @Override
-    public int construir(int cantidad){
-        return cantidad;
+    public void construir(int cantidad){
+        //return cantidad;
     }
     
     @Override

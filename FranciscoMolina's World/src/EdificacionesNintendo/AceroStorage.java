@@ -20,8 +20,58 @@ public class AceroStorage implements Nintendo{
     int costo = 100;
     Acero a = new Acero();
     Cristal c = new Cristal();
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getCosto() {
+        return costo;
+    }
+
+    public void setCosto(int costo) {
+        this.costo = costo;
+    }
+
+    public Acero getA() {
+        return a;
+    }
+
+    public void setA(Acero a) {
+        this.a = a;
+    }
+
+    public Cristal getC() {
+        return c;
+    }
+
+    public void setC(Cristal c) {
+        this.c = c;
+    }
     
-    @Override
+    
+    
+    /*@Override
     public int getCantidad(){
         return a.getCantidad();
     }
@@ -29,22 +79,22 @@ public class AceroStorage implements Nintendo{
     @Override
     public void setCantidad(int cantidad){
         this.cantidad = cantidad;
-    }
+    }*/
     
     @Override
-    public int construir(int cantidad){
-        int total=0, total1=0;
-        if(a.getCantidad()>=costo && c.getCantidad()>=costo){
+    public void construir(int cantidad){
+        int total, total1;
+        if(a.getCantidad() >= costo && c.getCantidad() >= costo){
             total = a.getCantidad()-costo;   
             a.setCantidad(total);
             total1 = c.getCantidad()-costo;
             c.setCantidad(total1);
-            System.out.println("Construccion realizada, acero restante: "+total);
-            System.out.println("cirstal restante: "+total1);
+            System.out.println("Construccion realizada, acero restante: "+a.getCantidad());
+            System.out.println("cirstal restante: "+c.getCantidad());
         }else{
             System.out.println("No tiene recursos suficientes");
         }
-        return total;
+        //return total;
     }
     
     @Override

@@ -19,7 +19,7 @@ public class MushroomGenerator implements Nintendo{
     int costo = 150;
     Mushrooms m = new Mushrooms();
     
-    @Override
+    /*@Override
     public int getCantidad(){
         return m.getCantidad();
     }
@@ -27,11 +27,11 @@ public class MushroomGenerator implements Nintendo{
     @Override
     public void setCantidad(int cantidad){
         this.cantidad = cantidad;
-    }
+    }*/
     
     @Override
-    public int construir(int cantidad){
-        int total=0;
+    public void construir(int cantidad){
+        int total;
         if(m.getCantidad()>=costo){
             total = m.getCantidad()-costo;   
             m.setCantidad(total);
@@ -39,7 +39,7 @@ public class MushroomGenerator implements Nintendo{
         }else{
             System.out.println("No tiene recursos suficientes");
         }
-        return total;
+        //return total;
     }
     
     @Override

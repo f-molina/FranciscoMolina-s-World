@@ -18,7 +18,7 @@ public class PokemonGym implements Nintendo{
     int damage;
     int cantidad;
     
-    @Override
+    /*@Override
     public int getCantidad(){
         return cantidad;
     }
@@ -26,11 +26,11 @@ public class PokemonGym implements Nintendo{
     @Override
     public void setCantidad(int newCantidad){
         cantidad = newCantidad;
-    }
+    }*/
     
     @Override
-    public int construir(int cantidad){
-        return cantidad;
+    public void construir(int cantidad){
+        //return cantidad;
     }
     
     @Override

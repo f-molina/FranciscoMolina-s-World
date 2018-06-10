@@ -21,7 +21,7 @@ public class CristalStorage implements Nintendo{
     Cristal c = new Cristal();
     Mushrooms m = new Mushrooms();
 
-    @Override
+    /*@Override
     public int getCantidad(){
         return c.getCantidad();
     }
@@ -29,11 +29,11 @@ public class CristalStorage implements Nintendo{
     @Override
     public void setCantidad(int cantidad){
         this.cantidad = cantidad;
-    }
+    }*/
     
     @Override
-    public int construir(int cantidad){
-        int total=0, total1;
+    public void construir(int cantidad){
+        int total, total1;
         if(c.getCantidad()>=costo && m.getCantidad()>=costo){
             total = c.getCantidad()-costo;   
             c.setCantidad(total);
@@ -44,7 +44,7 @@ public class CristalStorage implements Nintendo{
         }else{
             System.out.println("No tiene recursos suficientes");
         }
-        return total;
+        //return total;
     }
     
     @Override
