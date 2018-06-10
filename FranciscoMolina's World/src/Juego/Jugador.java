@@ -23,11 +23,62 @@ public class Jugador {
     public  ArrayList<Cristal> r2;
     public  ArrayList<Mushrooms> r3;
     
+    public Acero a;
+    public Cristal c;
+    public Mushrooms m;
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public CentroMando getCm() {
+        return cm;
+    }
+
+    public void setCm(CentroMando cm) {
+        this.cm = cm;
+    }
+
+    public Acero getA() {
+        return a;
+    }
+
+    public void setA(Acero a) {
+        this.a = a;
+    }
+
+    public Cristal getC() {
+        return c;
+    }
+
+    public void setC(Cristal c) {
+        this.c = c;
+    }
+
+    public Mushrooms getM() {
+        return m;
+    }
+
+    public void setM(Mushrooms m) {
+        this.m = m;
+    }
+
+    public Jugador(String nombre, CentroMando cm, Acero a, Cristal c, Mushrooms m) {
+        this.nombre = nombre;
+        this.cm = cm;
+        this.a = a;
+        this.c = c;
+        this.m = m;
+    }
 
     public Jugador() {
     }
 
-    public Jugador(String nombre, CentroMando cm, ArrayList<Acero> r1, ArrayList<Cristal> r2, ArrayList<Mushrooms> r3) {
+    /*public Jugador(String nombre, CentroMando cm, ArrayList<Acero> r1, ArrayList<Cristal> r2, ArrayList<Mushrooms> r3) {
         this.nombre = nombre;
         this.cm = cm;
         this.r1 = r1;
@@ -73,31 +124,38 @@ public class Jugador {
 
     public void setR3(ArrayList<Mushrooms> r3) {
         this.r3 = r3;
-    }   
+    }   */
     
     public void addJugador(){
         CentroMando m1 = new CentroMando();
-        ArrayList<Acero> r1 =new ArrayList<Acero>();
+        Acero a = new Acero();
+        Cristal c = new Cristal();
+        Mushrooms m = new Mushrooms();
+        /*ArrayList<Acero> r1 =new ArrayList<Acero>();
         ArrayList<Cristal> r2 =new ArrayList<Cristal>();
-        ArrayList<Mushrooms> r3 =new ArrayList<Mushrooms>();
+        ArrayList<Mushrooms> r3 =new ArrayList<Mushrooms>();*/
         Scanner leer = new Scanner(System.in);
         System.out.println("Jugador 1, digite su nombre: ");
         String player1 = leer.nextLine();
-        Jugador j1 = new Jugador(player1, m1, r1, r2, r3);
+        Jugador j1 = new Jugador(player1, m1, a, c, m);
         System.out.println("Jugador 1: "+j1.getNombre()+"\nVida centro mando: "+j1.cm.getHealth());
-        Menu m = new Menu(j1);
-        m.MenuRaza();
+        Menu me = new Menu(j1);
+        me.MenuRaza();
     }
     
     public void addJugador2(){
         CentroMando m2 = new CentroMando();
+        int cantidad=0;
+        Acero a = new Acero();
+        Cristal c = new Cristal();
+        Mushrooms mu = new Mushrooms();
         ArrayList<Acero> r1 =new ArrayList<Acero>();
         ArrayList<Cristal> r2 =new ArrayList<Cristal>();
         ArrayList<Mushrooms> r3 =new ArrayList<Mushrooms>();
         Scanner leer = new Scanner(System.in);
         System.out.println("Jugador 2, digite su nombre: ");
         String player2 = leer.nextLine();
-        Jugador j2 = new Jugador(player2, m2, r1, r2, r3);
+        Jugador j2 = new Jugador(player2, m2, a, c, mu);
         System.out.println("Jugador 2: "+j2.getNombre()+" Vida centro mando: "+j2.cm.getHealth());
         Menu m = new Menu(j2);
         m.MenuRaza();
