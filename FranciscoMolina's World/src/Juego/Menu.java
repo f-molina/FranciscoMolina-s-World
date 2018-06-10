@@ -25,10 +25,10 @@ public class Menu {
     public ArrayList<Nintendo> mushroomGen =new ArrayList<>();
     public ArrayList<Nintendo> aceroStorage =new ArrayList<>();
     public Jugador jugador;
-    
-    public Menu(){
-    }
 
+    public Menu() {
+    }
+    
     public Menu(Jugador jugador) {
         this.jugador = jugador;
     }
@@ -104,12 +104,11 @@ public class Menu {
         Cristal c = new Cristal();
         Mushrooms m = new Mushrooms();
         int opc=0;
-        int cantidad=0;
         do{
             System.out.println("----------------------RECURSOS---------------------");
-            System.out.println("Acero: "+a.getCantidad());
-            System.out.println("Cristal: "+c.getCantidad());
-            System.out.println("Mushrooms: "+m.getCantidad());
+            System.out.println("Acero: "+getJugador().getA().getCantidad());
+            System.out.println("Cristal: "+getJugador().getC().getCantidad());
+            System.out.println("Mushrooms: "+getJugador().getM().getCantidad());
             System.out.println("\n********FRANCISCO-MOLINA'S WORLD********");
             System.out.println("1. Atacar");
             System.out.println("2. Defender");
@@ -143,17 +142,29 @@ public class Menu {
                 case 2:
                 break;
                 case 3:
-                    nint.construir(cantidad);
-                    Nintendo acer = nintendo.getNintendo("AceroStorage");
+                    int total, total1;
+                    int costo = 100;
+                    if(getJugador().getA().getCantidad() >= costo && getJugador().getC().getCantidad() >= costo){
+                    total = getJugador().getA().getCantidad()-costo;  
+                    getJugador().getA().setCantidad(total);
+                    total1 = getJugador().getC().getCantidad()-costo;
+                    getJugador().getC().setCantidad(total1);
+                    System.out.println("Construccion realizada, acero restante: "+getJugador().getA().getCantidad());
+                    System.out.println("cirstal restante: "+getJugador().getC().getCantidad());
+                    }else{
+                        System.out.println("No tiene recursos suficientes");
+                    }
+                    //nint.construir(jugador);
+                    /*Nintendo acer = nintendo.getNintendo("AceroStorage");
                     aceroStorage.add(acer);
                     System.out.println("Se construyo Acero Storage");
-                    System.out.println("hola ");
+                    System.out.println("hola ");*/
                 break;    
                 case 4:
-                    nint1.construir(cantidad);
+                    //nint1.construir(cantidad);
                 break;
                 case 5:
-                    nint2.construir(cantidad);
+                    //nint2.construir(cantidad);
                     Nintendo mush = nintendo.getNintendo("MushroomGenerator");
                     mushroomGen.add(mush);
                     System.out.println("Mushroom Generator built");
@@ -238,7 +249,7 @@ public class Menu {
                         System.out.println(":vidaL: "+nint.getLife());
                 break;
                 case 4:
-                    Menu m = new Menu();
+                    Menu m = new Menu(jugador);
                     m.MenuNintendo();
                     break;
                 case 15:
