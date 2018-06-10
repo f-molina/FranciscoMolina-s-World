@@ -8,6 +8,9 @@ package Juego;
 import AbstractFactory.AbstractFactory;
 import AbstractFactory.FactoryProducer;
 import Nintendo.Nintendo;
+import NintendoResources.Acero;
+import NintendoResources.Cristal;
+import NintendoResources.Mushrooms;
 import Playstation.Playstation;
 import Xbox.Xbox;
 import java.util.ArrayList;
@@ -20,6 +23,7 @@ import java.util.Scanner;
 public class Menu {
     
     public ArrayList<Nintendo> mushroomGen =new ArrayList<>();
+    public ArrayList<Nintendo> aceroStorage =new ArrayList<>();
     public Jugador jugador;
     
     public Menu(){
@@ -96,14 +100,16 @@ public class Menu {
     }
 
     public void MenuNintendo() {
-        
+        Acero a = new Acero();
+        Cristal c = new Cristal();
+        Mushrooms m = new Mushrooms();
         int opc=0;
         int cantidad=0;
         do{
             System.out.println("----------------------RECURSOS---------------------");
-            System.out.println("Acero: "+nint.getCantidad());
-            System.out.println("Cristal: "+nint.getCantidad());
-            System.out.println("Mushrooms: "+nint2.getCantidad());
+            System.out.println("Acero: "+a.getCantidad());
+            System.out.println("Cristal: "+c.getCantidad());
+            System.out.println("Mushrooms: "+m.getCantidad());
             System.out.println("\n********FRANCISCO-MOLINA'S WORLD********");
             System.out.println("1. Atacar");
             System.out.println("2. Defender");
@@ -138,6 +144,10 @@ public class Menu {
                 break;
                 case 3:
                     nint.construir(cantidad);
+                    Nintendo acer = nintendo.getNintendo("AceroStorage");
+                    aceroStorage.add(acer);
+                    System.out.println("Se construyo Acero Storage");
+                    System.out.println("hola ");
                 break;    
                 case 4:
                     nint1.construir(cantidad);
