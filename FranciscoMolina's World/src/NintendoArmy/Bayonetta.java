@@ -5,6 +5,7 @@
  */
 package NintendoArmy;
 
+import Juego.Jugador;
 import Nintendo.Nintendo;
 
 /**
@@ -28,7 +29,7 @@ public class Bayonetta implements Nintendo {
     }*/
     
     @Override
-    public void construir(int cantidad){
+    public void construir(Jugador jugador){
         //return cantidad;
     }
     

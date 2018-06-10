@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package NintendoArmy;
+import Juego.Jugador;
 import Nintendo.Nintendo;
 
 /**
@@ -25,7 +26,7 @@ public class KoopaTroopas implements Nintendo {
     }*/
     
     @Override
-    public void construir(int cantidad){
+    public void construir(Jugador jugador){
         //return cantidad;
     }
     
