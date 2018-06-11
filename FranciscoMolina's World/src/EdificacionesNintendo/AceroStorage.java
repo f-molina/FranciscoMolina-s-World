@@ -5,11 +5,7 @@
  */
 package EdificacionesNintendo;
 import Juego.Jugador;
-import Juego.Menu;
 import Nintendo.Nintendo;
-import NintendoResources.Acero;
-import NintendoResources.Cristal;
-import NintendoResources.Mushrooms;
 
 /**
  *
@@ -18,13 +14,10 @@ import NintendoResources.Mushrooms;
 public class AceroStorage implements Nintendo{
     
     int damage, cantidad;
-    public int health;
-    public int costo;
+    public int health = 500;
+    public int costo = 100;
 
     public Jugador jugador;
-    Acero a = new Acero();
-    Cristal c = new Cristal();
-    Mushrooms m = new Mushrooms();
 
     public AceroStorage() {
     }
@@ -32,13 +25,7 @@ public class AceroStorage implements Nintendo{
     public AceroStorage(Jugador jugador) {
         this.jugador = jugador;
     }
-
-    public AceroStorage(int health, int costo, Jugador jugador) {
-        this.health = 500;
-        this.costo = 100;
-        this.jugador = jugador;
-    }
-
+    
     public Jugador getJugador() {
         return jugador;
     }
@@ -79,35 +66,26 @@ public class AceroStorage implements Nintendo{
         this.costo = costo;
     }
     
-    /*@Override
-    public int getCantidad(){
-        return a.getCantidad();
-    }
-    
-    @Override
-    public void setCantidad(int cantidad){
-        this.cantidad = cantidad;
-    }*/
-    
     @Override
     public void construir(Jugador jugador){
         int total, total1;
-        /*if(st.getJugador().getA().getCantidad() >= costo && st.getJugador().getC().getCantidad() >= costo){
-            total = st.getJugador().getA().getCantidad()-costo;  
-            st.getJugador().getA().setCantidad(total);
-            total1 = st.getJugador().getC().getCantidad()-costo;
-            st.getJugador().getC().setCantidad(total1);
-            System.out.println("Construccion realizada, acero restante: "+st.getJugador().getA().getCantidad());
-            System.out.println("cirstal restante: "+st.getJugador().getA().getCantidad());
+        AceroStorage ac = new AceroStorage(jugador);
+        if(ac.getJugador().getRes1().getAcero().getCantidad() >= costo 
+           && ac.getJugador().getRes2().getCristal().getCantidad() >= costo){
+            total = ac.getJugador().getRes1().getAcero().getCantidad()-costo;  
+            ac.getJugador().getRes1().getAcero().setCantidad(total);
+            total1 = ac.getJugador().getRes2().getCristal().getCantidad()-costo;
+            ac.getJugador().getRes2().getCristal().setCantidad(total1);
+            System.out.println("Construccion realizada");
         }else{
             System.out.println("No tiene recursos suficientes");
-        }*/
+        }
     }
     
     @Override
     public int recoger(){
-        int num;
-        num = a.getCantidad();
+        int num=0;
+        //num = a.getCantidad();
         setCantidad(0);
         return num;
     }

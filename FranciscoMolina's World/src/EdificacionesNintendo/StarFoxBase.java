@@ -14,23 +14,74 @@ import Nintendo.Nintendo;
 //edificacion vehiculo1
 public class StarFoxBase implements Nintendo{
     
-    int health;
+    public int health = 100;
+    public int costo = 25;
     int damage;
     int cantidad;
+    
+    public Jugador jugador;
 
-    /*@Override
-    public int getCantidad(){
+    public StarFoxBase() {
+    }
+
+    public StarFoxBase(Jugador jugador) {
+        this.jugador = jugador;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getCosto() {
+        return costo;
+    }
+
+    public void setCosto(int costo) {
+        this.costo = costo;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getCantidad() {
         return cantidad;
     }
-    
-    @Override
-    public void setCantidad(int cantidad){
+
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
-    }*/
-    
+    }
+
+    public Jugador getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
+
     @Override
     public void construir(Jugador jugador){
-        //return cantidad;
+        int total, total1;
+        StarFoxBase sb = new StarFoxBase(jugador);
+        if(sb.getJugador().getRes2().getCristal().getCantidad() >= costo 
+           && sb.getJugador().getRes3().getMush().getCantidad() >= costo){
+            total = sb.getJugador().getRes2().getCristal().getCantidad()-costo;  
+            sb.getJugador().getRes2().getCristal().setCantidad(total);
+            total1 = sb.getJugador().getRes3().getMush().getCantidad()-costo;
+            sb.getJugador().getRes3().getMush().setCantidad(total1);
+            System.out.println("Construccion realizada");
+        }else{
+            System.out.println("No tiene recursos suficientes");
+        }
     }
     
     @Override

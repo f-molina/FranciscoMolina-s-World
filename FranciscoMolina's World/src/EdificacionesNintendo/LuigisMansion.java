@@ -14,21 +14,73 @@ import Nintendo.Nintendo;
 //ed. vehiculo2
 public class LuigisMansion implements Nintendo{
     
-    int damage, health,cantidad;
+    int damage, cantidad;
+    public int health = 150;
+    public int costo = 25;
     
-    /*@Override
-    public int getCantidad(){
+    public Jugador jugador;
+
+    public LuigisMansion() {
+    }
+
+    public LuigisMansion(Jugador jugador) {
+        this.jugador = jugador;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getCantidad() {
         return cantidad;
     }
 
-    @Override
-    public void setCantidad(int cantidad){
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
-    }*/
-    
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getCosto() {
+        return costo;
+    }
+
+    public void setCosto(int costo) {
+        this.costo = costo;
+    }
+
+    public Jugador getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
+   
     @Override
     public void construir(Jugador jugador){
-        //return cantidad;
+        int total, total1;
+        LuigisMansion lm = new LuigisMansion(jugador);
+        if(lm.getJugador().getRes1().getAcero().getCantidad() >= costo 
+           && lm.getJugador().getRes3().getMush().getCantidad() >= costo){
+            total = lm.getJugador().getRes1().getAcero().getCantidad()-costo;  
+            lm.getJugador().getRes1().getAcero().setCantidad(total);
+            total1 = lm.getJugador().getRes3().getMush().getCantidad()-costo;
+            lm.getJugador().getRes3().getMush().setCantidad(total1);
+            System.out.println("Construccion realizada");
+        }else{
+            System.out.println("No tiene recursos suficientes");
+        }
     }
     
     @Override
