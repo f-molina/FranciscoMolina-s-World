@@ -15,16 +15,6 @@ public class KoopaTroopas implements Nintendo {
     
     int health, damage, cantidad;
     
-    /*@Override
-    public int getCantidad(){
-        return cantidad;
-    }
-    
-    @Override
-    public void setCantidad(int newCantidad){
-        cantidad = newCantidad;
-    }*/
-    
     @Override
     public void construir(Jugador jugador){
         //return cantidad;
