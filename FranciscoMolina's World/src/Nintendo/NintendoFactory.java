@@ -8,7 +8,10 @@ package Nintendo;
 import AbstractFactory.AbstractFactory;
 import EdificacionesNintendo.AceroStorage;
 import EdificacionesNintendo.CristalStorage;
+import EdificacionesNintendo.LuigisMansion;
 import EdificacionesNintendo.MushroomGenerator;
+import EdificacionesNintendo.PokemonGym;
+import EdificacionesNintendo.StarFoxBase;
 import NintendoArmy.Bayonetta;
 import NintendoArmy.KoopaTroopas;
 import NintendoResources.Acero;
@@ -41,6 +44,12 @@ public class NintendoFactory implements AbstractFactory{
                 return new CristalStorage();
             case "MushroomGenerator":
                 return new MushroomGenerator();
+            case "LuigisMansion":
+                return new LuigisMansion();
+            case "PokemonGym":
+                return new PokemonGym();
+            case "Starfox":
+                return new StarFoxBase();
         }
         return null;
     }
