@@ -10,9 +10,7 @@ import Juego.Jugador;
  * @author fmolina
  */
 public interface Nintendo {
-    
-    //int getCantidad();
-    //void setCantidad(int cantidad);
+
     void construir(Jugador jugador);
     int recoger();
     int getLife();

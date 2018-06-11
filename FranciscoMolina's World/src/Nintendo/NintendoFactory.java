@@ -22,7 +22,6 @@ import Xbox.Xbox;
  * @author fmolina
  */
 public class NintendoFactory implements AbstractFactory{
-    
     @Override
     public Nintendo getNintendo(String type){
         switch(type){
