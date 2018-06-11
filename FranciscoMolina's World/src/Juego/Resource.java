@@ -26,7 +26,6 @@ public class Resource {
     public Ecos ecos;
     public Carbon carbon;
     public ArrayList<Acero> ac;
-    int cantidad;
 
     public ArrayList<Acero> getAc() {
         return ac;
@@ -42,7 +41,7 @@ public class Resource {
         this.titanio = new Titanio();
         this.mush = new Mushrooms();
         this.cristal = new Cristal();
-        this.acero = new Acero(cantidad);
+        this.acero = new Acero();
         this.ac = new ArrayList<>();
     }
 
