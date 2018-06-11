@@ -5,6 +5,7 @@
  */
 package NintendoVehicles;
 
+import Juego.Jugador;
 import Nintendo.Nintendo;
 
 /**
@@ -17,20 +18,9 @@ public class Arwing implements Nintendo{
     int health;
     int damage;
     int cantidad;
-    
-    @Override
-    public int getCantidad(){
-        return cantidad;
-    }
-    
-    @Override
-    public void setCantidad(int newCantidad){
-        cantidad = newCantidad;
-    }
 
     @Override
-    public int construir(int cantidad){
-        return cantidad;
+    public void construir(Jugador jugador){
     }
     
     @Override
