@@ -20,10 +20,6 @@ public class Cristal implements Nintendo{
         this.cantidad = 150;
     }
 
-    /*public Cristal() {
-        this.cantidad = 150;
-    }*/
-
     public int getCantidad() {
         return cantidad;
     }
@@ -31,18 +27,6 @@ public class Cristal implements Nintendo{
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-    
-    
-    
-    /*@Override
-    public int getCantidad(){
-        return cantidad;
-    }
-    
-    @Override
-    public void setCantidad(int cantidad){
-        this.cantidad = cantidad;
-    }*/
     
     @Override
     public void construir(Jugador jugador){
