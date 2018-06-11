@@ -8,12 +8,8 @@ package Juego;
 import AbstractFactory.AbstractFactory;
 import AbstractFactory.FactoryProducer;
 import Nintendo.Nintendo;
-import NintendoResources.Acero;
-import NintendoResources.Cristal;
-import NintendoResources.Mushrooms;
 import Playstation.Playstation;
 import Xbox.Xbox;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -22,8 +18,6 @@ import java.util.Scanner;
  */
 public class Menu {
     
-    public ArrayList<Nintendo> mushroomGen =new ArrayList<>();
-    public ArrayList<Nintendo> aceroStorage =new ArrayList<>();
     public Jugador jugador;
 
     public Menu() {
@@ -65,9 +59,13 @@ public class Menu {
     Nintendo nint = nintendo.getNintendo("AceroStorage");
     Nintendo nint1 = nintendo.getNintendo("CristalStorage");
     Nintendo nint2 = nintendo.getNintendo("MushroomGenerator");
+    Nintendo nint3 = nintendo.getNintendo("LuigisMansion");
+    Nintendo nint4 = nintendo.getNintendo("PokemonGym");
+    Nintendo nint5 = nintendo.getNintendo("Starfox");
     
-    public void MenuRaza(){
+    public void MenuRaza(Jugador jugador){
         Menu menu = new Menu(jugador);
+        
         Scanner leer = new Scanner(System.in);
         int opc;
         System.out.println("\nEliga su raza\n");
@@ -80,35 +78,33 @@ public class Menu {
         switch(opc){
             case 1:
                 System.out.println("Eligio nintendo");
-                menu.MenuNintendo();
+                menu.MenuNintendo(jugador);
             break;
             
             case 2:
                 System.out.println("Eligio play");
-                menu.MenuPlay();
+                menu.MenuPlay(jugador);
             break;
             
             case 3:
                 System.out.println("Eligio xbox");
-                menu.MenuXbox();
+                menu.MenuXbox(jugador);
             break;
             
             default:
                 System.out.println("eligio nintendo");
-                menu.MenuNintendo();
+                menu.MenuNintendo(jugador);
         }
     }
 
-    public void MenuNintendo() {
-        Acero a = new Acero();
-        Cristal c = new Cristal();
-        Mushrooms m = new Mushrooms();
+    public void MenuNintendo(Jugador jugador) {
         int opc=0;
+        String answer;
         do{
             System.out.println("----------------------RECURSOS---------------------");
-            System.out.println("Acero: "+getJugador().getA().getCantidad());
-            System.out.println("Cristal: "+getJugador().getC().getCantidad());
-            System.out.println("Mushrooms: "+getJugador().getM().getCantidad());
+            System.out.println("Acero: "+getJugador().getRes1().getAcero().getCantidad());
+            System.out.println("Cristal: "+getJugador().getRes2().getCristal().getCantidad());
+            System.out.println("Mushrooms: "+getJugador().getRes3().getMush().getCantidad());
             System.out.println("\n********FRANCISCO-MOLINA'S WORLD********");
             System.out.println("1. Atacar");
             System.out.println("2. Defender");
@@ -142,32 +138,58 @@ public class Menu {
                 case 2:
                 break;
                 case 3:
-                    int total, total1;
-                    int costo = 100;
-                    if(getJugador().getA().getCantidad() >= costo && getJugador().getC().getCantidad() >= costo){
-                    total = getJugador().getA().getCantidad()-costo;  
-                    getJugador().getA().setCantidad(total);
-                    total1 = getJugador().getC().getCantidad()-costo;
-                    getJugador().getC().setCantidad(total1);
-                    System.out.println("Construccion realizada, acero restante: "+getJugador().getA().getCantidad());
-                    System.out.println("cirstal restante: "+getJugador().getC().getCantidad());
+                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        nint.construir(jugador);
                     }else{
-                        System.out.println("No tiene recursos suficientes");
+                        break;
                     }
-                    //nint.construir(jugador);
-                    /*Nintendo acer = nintendo.getNintendo("AceroStorage");
-                    aceroStorage.add(acer);
-                    System.out.println("Se construyo Acero Storage");
-                    System.out.println("hola ");*/
                 break;    
                 case 4:
-                    //nint1.construir(cantidad);
+                    System.out.println("Cuesta 75 cristal, 75 mushroom. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        nint1.construir(jugador);
+                    }else{
+                        break;
+                    }
                 break;
                 case 5:
-                    //nint2.construir(cantidad);
-                    Nintendo mush = nintendo.getNintendo("MushroomGenerator");
-                    mushroomGen.add(mush);
-                    System.out.println("Mushroom Generator built");
+                    System.out.println("Cuesta 150 cristal, 150 mushroom. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        nint2.construir(jugador);
+                    }else{
+                        break;
+                    }
+                break;
+                case 6:
+                    System.out.println("Cuesta 25 cristal, 25 mushroom. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        nint3.construir(jugador);
+                    }else{
+                        break;
+                    }
+                break;
+                case 7:
+                    System.out.println("Cuesta 100 cristal, 100 mushroom. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        nint4.construir(jugador);
+                    }else{
+                        break;
+                    }
+                break;
+                case 8:
+                    System.out.println("Cuesta 25 cristal, 25 mushroom. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        nint5.construir(jugador);
+                    }else{
+                        break;
+                    }
                 break;
                 case 13:
                     System.out.println("hola: "+nint.recoger());
@@ -199,7 +221,7 @@ public class Menu {
         }while(opc!=16); 
     }  
     
-    public void MenuPlay() {
+    public void MenuPlay(Jugador jugador) {
 
         System.out.println("----------------------RECURSOS---------------------");
         p.getCantidad();
@@ -249,8 +271,6 @@ public class Menu {
                         System.out.println(":vidaL: "+nint.getLife());
                 break;
                 case 4:
-                    Menu m = new Menu(jugador);
-                    m.MenuNintendo();
                     break;
                 case 15:
                     int c1 = getJugador().getCm().getCapacidad1();
@@ -274,12 +294,17 @@ public class Menu {
                         System.out.println("No tiene recursos suficientes");
                     }
                 break;
+                
+                case 16:
+                    Menu m = new Menu(jugador);
+                    m.MenuNintendo(jugador);
+                break;  
             }
 
-        }while(opc!=16); 
+        }while(opc!=17); 
     }  
     
-    public void MenuXbox(){
+    public void MenuXbox(Jugador jugador){
 
         System.out.println("----------------------RECURSOS---------------------");
         x.getCantidad();
