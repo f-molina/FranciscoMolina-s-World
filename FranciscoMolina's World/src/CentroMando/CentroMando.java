@@ -12,7 +12,7 @@ package CentroMando;
 public class CentroMando {
     
     int health = 1000;
-    int recurso1 = 2000, recurso2=2000, recurso3=2000;
+    int recurso1 = 150, recurso2=150, recurso3=150;
     int capacidad1 = 10000;
     int capacidad2 = 5000;
     int capacidad3 = 3000;
