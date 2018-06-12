@@ -4,19 +4,17 @@
  * and open the template in the editor.
  */
 package Playstation;
+import Juego.Jugador;
 
 /**
  *
  * @author fmolina
  */
 public interface Playstation {
-    
-    int getCantidad();
-    void setCantidad(int newCantidad);
-    void construir();
-    void recoger();
-    int getLife();
-    void setLife(int newLife);
+
+    void construir(Jugador jugador);
+    int recoger();
     int getAttack();
+    boolean entrenar(Jugador jugador);
     
 }
