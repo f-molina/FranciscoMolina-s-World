@@ -13,7 +13,58 @@ import Nintendo.Nintendo;
  */
 public class KoopaTroopas implements Nintendo {
     
-    int health, damage, cantidad;
+    public int health = 100;
+    public int damage = 50;
+    public int costo = 100;
+    int cantidad;
+    public Jugador jugador;
+
+    public KoopaTroopas() {
+    }
+
+    public KoopaTroopas(Jugador jugador) {
+        this.jugador = jugador;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getCosto() {
+        return costo;
+    }
+
+    public void setCosto(int costo) {
+        this.costo = costo;
+    }
+    
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public Jugador getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
     
     @Override
     public void construir(Jugador jugador){
@@ -37,6 +88,6 @@ public class KoopaTroopas implements Nintendo {
     
     @Override
     public int getAttack(){
-        return damage;
+        return health;
     }
 }
