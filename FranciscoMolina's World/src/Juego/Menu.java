@@ -62,6 +62,8 @@ public class Menu {
     Nintendo nint3 = nintendo.getNintendo("LuigisMansion");
     Nintendo nint4 = nintendo.getNintendo("PokemonGym");
     Nintendo nint5 = nintendo.getNintendo("Starfox");
+    Nintendo nint6 = nintendo.getNintendo("Arwing");
+    Nintendo nint7 = nintendo.getNintendo("Tanque");
     
     public void MenuRaza(Jugador jugador){
         Menu menu = new Menu(jugador);
@@ -102,9 +104,10 @@ public class Menu {
         String answer;
         do{
             System.out.println("----------------------RECURSOS---------------------");
-            System.out.println("Acero: "+getJugador().getRes1().getAcero().getCantidad());
-            System.out.println("Cristal: "+getJugador().getRes2().getCristal().getCantidad());
-            System.out.println("Mushrooms: "+getJugador().getRes3().getMush().getCantidad());
+            System.out.println("Acero: "+getJugador().getCm().getRecurso1());
+            //System.out.println("Cristal: "+getJugador().getRes2().getCristal().getCantidad());
+            System.out.println("Cristal: "+getJugador().getCm().getRecurso2());
+            System.out.println("Mushrooms: "+getJugador().getCm().getRecurso3());
             System.out.println("\n********FRANCISCO-MOLINA'S WORLD********");
             System.out.println("1. Atacar");
             System.out.println("2. Defender");
@@ -138,6 +141,8 @@ public class Menu {
                 case 2:
                 break;
                 case 3:
+                    System.out.println("isEmpty: "+getJugador().getEd1().isEmpty());
+                    System.out.println("size: "+getJugador().getEd1().size());
                     System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
@@ -145,8 +150,12 @@ public class Menu {
                     }else{
                         break;
                     }
+                    System.out.println("isEmpty: "+getJugador().getEd1().isEmpty());
+                    System.out.println("size: "+getJugador().getEd1().size());
                 break;    
                 case 4:
+                    System.out.println("isEmpty: "+getJugador().getEd1().isEmpty());
+                    System.out.println("size: "+getJugador().getEd1().size());
                     System.out.println("Cuesta 75 cristal, 75 mushroom. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
@@ -154,8 +163,12 @@ public class Menu {
                     }else{
                         break;
                     }
+                    System.out.println("isEmpty: "+getJugador().getEd1().isEmpty());
+                    System.out.println("size: "+getJugador().getEd1().size());
                 break;
                 case 5:
+                    System.out.println("isEmpty: "+getJugador().getEd1().isEmpty());
+                    System.out.println("size: "+getJugador().getEd1().size());
                     System.out.println("Cuesta 150 cristal, 150 mushroom. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
@@ -163,8 +176,12 @@ public class Menu {
                     }else{
                         break;
                     }
+                    System.out.println("isEmpty: "+getJugador().getEd1().isEmpty());
+                    System.out.println("size: "+getJugador().getEd1().size());
                 break;
                 case 6:
+                    System.out.println("isEmpty: "+getJugador().getEd1().isEmpty());
+                    System.out.println("size: "+getJugador().getEd1().size());
                     System.out.println("Cuesta 25 cristal, 25 mushroom. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
@@ -172,6 +189,8 @@ public class Menu {
                     }else{
                         break;
                     }
+                    System.out.println("isEmpty: "+getJugador().getEd1().isEmpty());
+                    System.out.println("size: "+getJugador().getEd1().size());
                 break;
                 case 7:
                     System.out.println("Cuesta 100 cristal, 100 mushroom. Desea continuar?((S/N)");
@@ -187,6 +206,26 @@ public class Menu {
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         nint5.construir(jugador);
+                    }else{
+                        break;
+                    }
+                break;
+                case 9:
+                    System.out.println("isEmpty: "+getJugador().getV1().isEmpty());
+                    System.out.println("size: "+getJugador().getV1().size());
+                    System.out.println("Cuesta 150 acero, 150 cristal. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        nint6.construir(jugador);
+                    }else{
+                        break;
+                    }
+                break;
+                case 10:
+                    System.out.println("Cuesta 125 cristal, 125 acero. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        nint7.construir(jugador);
                     }else{
                         break;
                     }
