@@ -13,9 +13,7 @@ public interface Nintendo {
 
     void construir(Jugador jugador);
     int recoger();
-    int getLife();
-    void setLife(int health);
     int getAttack();
-    
+    boolean entrenar(Jugador jugador);
     
 }
