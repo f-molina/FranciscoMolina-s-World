@@ -5,6 +5,7 @@
  */
 package EdificacionesPlaystation;
 
+import Juego.Jugador;
 import Playstation.Playstation;
 
 /**
@@ -13,40 +14,83 @@ import Playstation.Playstation;
  */
 public class EcosProducer implements Playstation{
     
-    int health;
-    int damage;
-    int cantidad;
-    
-    @Override
-    public int getCantidad(){
+    boolean estado=false;
+    int damage, cantidad;
+    public int health = 500;
+    public int costo = 100;
+    public Jugador jugador;
+
+    public EcosProducer() {
+    }
+
+    public EcosProducer(Jugador jugador) {
+        this.jugador = jugador;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getCantidad() {
         return cantidad;
     }
-    
-    @Override
-    public void setCantidad(int newCantidad){
-        cantidad = newCantidad;
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
-    
-    @Override
-    public void construir(){
-    }
-    
-    @Override
-    public void recoger(){
-    }
-    
-    @Override
-    public int getLife(){
+
+    public int getHealth() {
         return health;
     }
-    
-    @Override
-    public void setLife(int newLife){
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getCosto() {
+        return costo;
+    }
+
+    public void setCosto(int costo) {
+        this.costo = costo;
+    }
+
+    public Jugador getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
     }
     
+    @Override
+    public void construir(Jugador jugador){
+    }
+    
+    @Override
+    public int recoger(){
+        return cantidad;
+    }
+
     @Override
     public int getAttack(){
         return damage;
     }
     
+    @Override
+    public boolean entrenar(Jugador jugador){
+        return estado;
+    }
 }

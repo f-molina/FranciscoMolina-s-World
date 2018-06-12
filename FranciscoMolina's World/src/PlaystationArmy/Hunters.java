@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package PlaystationArmy;
+import Juego.Jugador;
 import Playstation.Playstation;
 
 /**
@@ -12,40 +13,85 @@ import Playstation.Playstation;
  */
 public class Hunters implements Playstation{
     
-    int damage =75;
-    int health = 75;
+    public int damage =75;
+    public int health = 75;
+    public int costo = 75;
     int cantidad;
-    
-    @Override
-    public int getCantidad(){
-        return cantidad;
+    public Jugador jugador;
+    boolean estado=false;
+
+    public Hunters() {
     }
-    
-    @Override
-    public void setCantidad(int newCantidad){
-        cantidad = newCantidad;
+
+    public Hunters(Jugador jugador) {
+        this.jugador = jugador;
     }
-    
-    @Override
-    public void construir(){
+
+    public int getDamage() {
+        return damage;
     }
-    
-    @Override
-    public void recoger(){
+
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
-    
-    @Override
-    public int getLife(){
+
+    public int getHealth() {
         return health;
     }
-    
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getCosto() {
+        return costo;
+    }
+
+    public void setCosto(int costo) {
+        this.costo = costo;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public Jugador getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
     @Override
-    public void setLife(int newLife){
+    public void construir(Jugador jugador){
     }
     
+    @Override
+    public int recoger(){
+        return cantidad;
+    }
+
     @Override
     public int getAttack(){
         return damage;
+    }
+    
+    @Override
+    public boolean entrenar(Jugador jugador){
+        return estado;
     }
     
 }

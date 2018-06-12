@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package PlaystationArmy;
+import Juego.Jugador;
 import Playstation.Playstation;
 
 /**
@@ -12,41 +13,85 @@ import Playstation.Playstation;
  */
 public class Kratos implements Playstation{
     
-    int damage =300;
-    int health = 300;
+    public int damage =300;
+    public int health = 300;
+    public int costo = 200;
     int cantidad;
-    
-    @Override
-    public int getCantidad(){
-        return cantidad;
+    public Jugador jugador;
+    boolean estado=false;
+
+    public Kratos() {
     }
-    
-    @Override
-    public void setCantidad(int newCantidad){
-        cantidad = newCantidad;
+
+    public Kratos(Jugador jugador) {
+        this.jugador = jugador;
     }
-    
-    @Override
-    public void construir(){
+
+    public int getDamage() {
+        return damage;
     }
-    
-    @Override
-    public void recoger(){
+
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
-    
-    @Override
-    public int getLife(){
+
+    public int getHealth() {
         return health;
     }
-    
-    @Override
-    public void setLife(int newLife){
-        health = newLife;
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getCosto() {
+        return costo;
+    }
+
+    public void setCosto(int costo) {
+        this.costo = costo;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public Jugador getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
     
+    @Override
+    public void construir(Jugador jugador){
+    }
+    
+    @Override
+    public int recoger(){
+        return cantidad;
+    }
+
     @Override
     public int getAttack(){
         return damage;
+    }
+    
+    @Override
+    public boolean entrenar(Jugador jugador){
+        return estado;
     }
     
 }

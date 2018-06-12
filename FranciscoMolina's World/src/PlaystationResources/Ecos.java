@@ -5,6 +5,7 @@
  */
 package PlaystationResources;
 
+import Juego.Jugador;
 import Playstation.Playstation;
 
 /**
@@ -17,36 +18,23 @@ public class Ecos implements Playstation{
     int cantidad = 150;
     
     @Override
-    public int getCantidad(){
-        System.out.println("Ecos:"+cantidad);
+    public void construir(Jugador jugador){
+    }
+    
+    @Override
+    public int recoger(){
         return cantidad;
     }
-    
-    @Override
-    public void setCantidad(int newCantidad){
-        cantidad = newCantidad;
-    }
-    
-    @Override
-    public void construir(){
-    }
-    
-    @Override
-    public void recoger(){
-    }
-    
-    @Override
-    public int getLife(){
-        return health;
-    }
-    
-    @Override
-    public void setLife(int newLife){
-    }
-    
+
     @Override
     public int getAttack(){
         return damage;
+    }
+    
+    @Override
+    public boolean entrenar(Jugador jugador){
+        boolean estado = false;
+        return estado;
     }
     
 }
