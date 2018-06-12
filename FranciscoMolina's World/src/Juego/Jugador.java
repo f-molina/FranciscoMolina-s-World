@@ -10,8 +10,6 @@ import Playstation.Playstation;
 import Xbox.Xbox;
 import java.util.ArrayList;
 import java.util.Iterator;
-/*import java.util.ArrayList;
-import java.util.Iterator;*/
 import java.util.Scanner;
 
 /**
@@ -23,14 +21,18 @@ public class Jugador {
     public String nombre;
     public CentroMando cm;
     public Resource res1, res2, res3;
-    
+    //edificaciones
     public ArrayList<Nintendo> ed1;
     public ArrayList<Playstation> ed2;
     public ArrayList<Xbox> ed3;
-    
+    //vehiculos
     public ArrayList<Nintendo> v1;
     public ArrayList<Playstation> v2;
     public ArrayList<Xbox> v3;
+    //milicia
+    public ArrayList<Nintendo> es1;
+    public ArrayList<Playstation> es2;
+    public ArrayList<Xbox> es3;
 
     public Jugador() {
     }
