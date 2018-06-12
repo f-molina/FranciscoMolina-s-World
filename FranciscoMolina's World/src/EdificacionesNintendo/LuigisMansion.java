@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package EdificacionesNintendo;
+import AbstractFactory.AbstractFactory;
+import AbstractFactory.FactoryProducer;
 import Juego.Jugador;
 import Nintendo.Nintendo;
 
@@ -70,14 +72,17 @@ public class LuigisMansion implements Nintendo{
     @Override
     public void construir(Jugador jugador){
         int total, total1;
+        AbstractFactory nintendo = FactoryProducer.getFactory("Nintendo");
+        Nintendo nint2 = nintendo.getNintendo("LuigisMansion");
         LuigisMansion lm = new LuigisMansion(jugador);
-        if(lm.getJugador().getRes1().getAcero().getCantidad() >= costo 
-           && lm.getJugador().getRes3().getMush().getCantidad() >= costo){
-            total = lm.getJugador().getRes1().getAcero().getCantidad()-costo;  
-            lm.getJugador().getRes1().getAcero().setCantidad(total);
-            total1 = lm.getJugador().getRes3().getMush().getCantidad()-costo;
-            lm.getJugador().getRes3().getMush().setCantidad(total1);
+        if(lm.getJugador().getCm().getRecurso1() >= costo 
+           && lm.getJugador().getCm().getRecurso3() >= costo){
+            total = lm.getJugador().getCm().getRecurso1()-costo;  
+            lm.getJugador().getCm().setRecurso1(total);
+            total1 = lm.getJugador().getCm().getRecurso3()-costo;
+            lm.getJugador().getCm().setRecurso3(total1);
             System.out.println("Construccion realizada");
+            lm.getJugador().getEd1().add(nint2);
         }else{
             System.out.println("No tiene recursos suficientes");
         }

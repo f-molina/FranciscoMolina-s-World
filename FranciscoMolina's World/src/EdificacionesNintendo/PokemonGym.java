@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package EdificacionesNintendo;
+import AbstractFactory.AbstractFactory;
+import AbstractFactory.FactoryProducer;
 import Juego.Jugador;
 import Nintendo.Nintendo;
 
@@ -72,13 +74,16 @@ public class PokemonGym implements Nintendo{
     public void construir(Jugador jugador){
         int total, total1;
         PokemonGym pg = new PokemonGym(jugador);
-        if(pg.getJugador().getRes1().getAcero().getCantidad() >= costo 
-           && pg.getJugador().getRes2().getCristal().getCantidad() >= costo){
-            total = pg.getJugador().getRes1().getAcero().getCantidad()-costo;  
-            pg.getJugador().getRes1().getAcero().setCantidad(total);
-            total1 = pg.getJugador().getRes2().getCristal().getCantidad()-costo;
-            pg.getJugador().getRes2().getCristal().setCantidad(total1);
+        AbstractFactory nintendo = FactoryProducer.getFactory("Nintendo");
+        Nintendo nint4 = nintendo.getNintendo("PokemonGym");
+        if(pg.getJugador().getCm().getRecurso1() >= costo 
+           && pg.getJugador().getCm().getRecurso2() >= costo){
+            total = pg.getJugador().getCm().getRecurso1()-costo;  
+            pg.getJugador().getCm().getRecurso2();
+            total1 = pg.getJugador().getCm().getRecurso2()-costo;
+            pg.getJugador().getCm().setRecurso2(total1);
             System.out.println("Construccion realizada");
+            pg.getJugador().getEd1().add(nint4);
         }else{
             System.out.println("No tiene recursos suficientes");
         }

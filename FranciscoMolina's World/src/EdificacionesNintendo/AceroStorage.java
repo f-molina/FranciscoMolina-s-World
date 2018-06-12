@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package EdificacionesNintendo;
+import AbstractFactory.AbstractFactory;
+import AbstractFactory.FactoryProducer;
 import Juego.Jugador;
 import Nintendo.Nintendo;
 
@@ -69,14 +71,17 @@ public class AceroStorage implements Nintendo{
     @Override
     public void construir(Jugador jugador){
         int total, total1;
+        AbstractFactory nintendo = FactoryProducer.getFactory("Nintendo");
+        Nintendo acSt = nintendo.getNintendo("AceroStorage");
         AceroStorage ac = new AceroStorage(jugador);
-        if(ac.getJugador().getRes1().getAcero().getCantidad() >= costo 
-           && ac.getJugador().getRes2().getCristal().getCantidad() >= costo){
-            total = ac.getJugador().getRes1().getAcero().getCantidad()-costo;  
-            ac.getJugador().getRes1().getAcero().setCantidad(total);
-            total1 = ac.getJugador().getRes2().getCristal().getCantidad()-costo;
-            ac.getJugador().getRes2().getCristal().setCantidad(total1);
+        if(ac.getJugador().getCm().getRecurso1() >= costo 
+           && ac.getJugador().getCm().getRecurso2() >= costo){
+            total = ac.getJugador().getCm().getRecurso1()-costo;  
+            ac.getJugador().getCm().setRecurso1(total);
+            total1 = ac.getJugador().getCm().getRecurso2()-costo;
+            ac.getJugador().getCm().setRecurso2(total1);
             System.out.println("Construccion realizada");
+            ac.getJugador().getEd1().add(acSt);
         }else{
             System.out.println("No tiene recursos suficientes");
         }

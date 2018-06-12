@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package EdificacionesNintendo;
+import AbstractFactory.AbstractFactory;
+import AbstractFactory.FactoryProducer;
 import Juego.Jugador;
 import Nintendo.Nintendo;
 
@@ -72,13 +74,16 @@ public class StarFoxBase implements Nintendo{
     public void construir(Jugador jugador){
         int total, total1;
         StarFoxBase sb = new StarFoxBase(jugador);
-        if(sb.getJugador().getRes2().getCristal().getCantidad() >= costo 
-           && sb.getJugador().getRes3().getMush().getCantidad() >= costo){
-            total = sb.getJugador().getRes2().getCristal().getCantidad()-costo;  
-            sb.getJugador().getRes2().getCristal().setCantidad(total);
-            total1 = sb.getJugador().getRes3().getMush().getCantidad()-costo;
-            sb.getJugador().getRes3().getMush().setCantidad(total1);
+        AbstractFactory nintendo = FactoryProducer.getFactory("Nintendo");
+        Nintendo nint5 = nintendo.getNintendo("Starfox");
+        if(sb.getJugador().getCm().getRecurso2() >= costo 
+           && sb.getJugador().getCm().getRecurso3() >= costo){
+            total = sb.getJugador().getCm().getRecurso2()-costo;  
+            sb.getJugador().getCm().setRecurso2(total);
+            total1 = sb.getJugador().getCm().getRecurso3()-costo;
+            sb.getJugador().getCm().setRecurso3(total1);
             System.out.println("Construccion realizada");
+            sb.getJugador().getEd1().add(nint5);
         }else{
             System.out.println("No tiene recursos suficientes");
         }

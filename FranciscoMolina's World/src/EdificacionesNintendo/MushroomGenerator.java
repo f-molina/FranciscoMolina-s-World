@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package EdificacionesNintendo;
+import AbstractFactory.AbstractFactory;
+import AbstractFactory.FactoryProducer;
 import Juego.Jugador;
 import Nintendo.Nintendo;
 
@@ -69,13 +71,16 @@ public class MushroomGenerator implements Nintendo{
     public void construir(Jugador jugador){
         int total, total1;
         MushroomGenerator mg = new MushroomGenerator(jugador);
-        if(mg.getJugador().getRes1().getAcero().getCantidad() >= costo 
-           && mg.getJugador().getRes3().getMush().getCantidad() >= costo){
-            total = mg.getJugador().getRes1().getAcero().getCantidad()-costo;  
-            mg.getJugador().getRes1().getAcero().setCantidad(total);
-            total1 = mg.getJugador().getRes3().getMush().getCantidad()-costo;
-            mg.getJugador().getRes3().getMush().setCantidad(total1);
+        AbstractFactory nintendo = FactoryProducer.getFactory("Nintendo");
+        Nintendo nint3 = nintendo.getNintendo("MushroomGenerator");
+        if(mg.getJugador().getCm().getRecurso1() >= costo 
+           && mg.getJugador().getCm().getRecurso3() >= costo){
+            total = mg.getJugador().getCm().getRecurso1()-costo;  
+            mg.getJugador().getCm().setRecurso1(total);
+            total1 = mg.getJugador().getCm().getRecurso3()-costo;
+            mg.getJugador().getCm().setRecurso3(total1);
             System.out.println("Construccion realizada");
+            mg.getJugador().getEd1().add(nint3);
         }else{
             System.out.println("No tiene recursos suficientes");
         }
