@@ -17,6 +17,8 @@ import NintendoArmy.KoopaTroopas;
 import NintendoResources.Acero;
 import NintendoResources.Cristal;
 import NintendoResources.Mushrooms;
+import NintendoVehicles.Arwing;
+import NintendoVehicles.Tanque;
 import Playstation.Playstation;
 import Xbox.Xbox;
 
@@ -50,6 +52,10 @@ public class NintendoFactory implements AbstractFactory{
                 return new PokemonGym();
             case "Starfox":
                 return new StarFoxBase();
+            case "Arwing":
+                return new Arwing();
+            case "Tanque":
+                return new Tanque();
         }
         return null;
     }
