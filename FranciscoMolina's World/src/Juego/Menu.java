@@ -64,6 +64,8 @@ public class Menu {
     Nintendo nint5 = nintendo.getNintendo("Starfox");
     Nintendo nint6 = nintendo.getNintendo("Arwing");
     Nintendo nint7 = nintendo.getNintendo("Tanque");
+    Nintendo nint8 = nintendo.getNintendo("Koopa");
+    Nintendo nint9 = nintendo.getNintendo("Bayonetta");
     
     public void MenuRaza(Jugador jugador){
         Menu menu = new Menu(jugador);
@@ -105,7 +107,6 @@ public class Menu {
         do{
             System.out.println("----------------------RECURSOS---------------------");
             System.out.println("Acero: "+getJugador().getCm().getRecurso1());
-            //System.out.println("Cristal: "+getJugador().getRes2().getCristal().getCantidad());
             System.out.println("Cristal: "+getJugador().getCm().getRecurso2());
             System.out.println("Mushrooms: "+getJugador().getCm().getRecurso3());
             System.out.println("\n********FRANCISCO-MOLINA'S WORLD********");
@@ -137,6 +138,14 @@ public class Menu {
             
             switch(opc){
                 case 1:
+                    System.out.println("Que desea atacar?, 1.milicia o 2.Jefe?");
+                    answer = leer.next();
+                    if(answer.equals("1")){
+                        
+                    }else{
+                        
+                    }
+                    nint8.getAttack();
                 break; 
                 case 2:
                 break;
@@ -230,6 +239,24 @@ public class Menu {
                         break;
                     }
                 break;
+                case 11:
+                    System.out.println("Cuesta 100 cristal, 100 acero. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        nint8.entrenar(jugador);
+                    }else{
+                        break;
+                    }
+                break;
+                case 12:
+                    System.out.println("Cuesta 200 mushroom, 200 acero. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        nint9.entrenar(jugador);
+                    }else{
+                        break;
+                    }
+                break;
                 case 13:
                     System.out.println("hola: "+nint.recoger());
                     break;
@@ -240,13 +267,13 @@ public class Menu {
                     double ca1=c1+(c1*0.10); 
                     double ca2=c2+(c2*0.30); 
                     double ca3=c3+(c3*0.50); 
-                    double sum= (ca1+ca2+ca3);
-                    sum=sum*0.25;
-                    sum=(int)sum/3;
+                    double res= (ca1+ca2+ca3);
+                    res=res*0.25;
+                    res=(int)res/3;
                     
-                    System.out.println("El costo por recurso para la mejora es de: "+sum);
+                    System.out.println("El costo por recurso para la mejora es de: "+res);
                     
-                    if(getJugador().getCm().getRecurso1() >= sum && getJugador().getCm().getRecurso2() >= sum && getJugador().getCm().getRecurso3() >= sum){
+                    if(getJugador().getCm().getRecurso1() >= res && getJugador().getCm().getRecurso2() >= res && getJugador().getCm().getRecurso3() >= res){
                         getJugador().getCm().upgrade();
                         System.out.println("Recurso 1: "+getJugador().getCm().getRecurso1());
                         System.out.println("Recurso 2: "+getJugador().getCm().getRecurso3());
@@ -261,14 +288,12 @@ public class Menu {
     }  
     
     public void MenuPlay(Jugador jugador) {
-
-        System.out.println("----------------------RECURSOS---------------------");
-        p.getCantidad();
-        p1.getCantidad();
-        p2.getCantidad();
-        
         int opc=0;
         do{
+            System.out.println("----------------------RECURSOS---------------------");
+            System.out.println("Titanio: "+getJugador().getCm().getRecurso1());
+            System.out.println("Carbon: "+getJugador().getCm().getRecurso2());
+            System.out.println("Ecos: "+getJugador().getCm().getRecurso3());
             System.out.println("\n********FRANCISCO-MOLINA'S WORLD********");
             System.out.println("1. Atacar");
             System.out.println("2. Defender");
@@ -298,16 +323,8 @@ public class Menu {
             
             switch(opc){
                 case 1:
-                    Playstation plays = play.getPlayStation("Kratos");
-                    int total;
-                    System.out.println("Vida AceroStorage: "+nint.getLife());
-                    total = nint.getLife()-plays.getAttack();
-                    System.out.println("ataque successful");
-                    nint.setLife(total);
-                    System.out.println("Nueva vida AceroStorage: "+nint.getLife());
-                    break;
+                break;
                     case 2:
-                        System.out.println(":vidaL: "+nint.getLife());
                 break;
                 case 4:
                     break;
@@ -318,13 +335,13 @@ public class Menu {
                     double ca1=c1+(c1*0.10); 
                     double ca2=c2+(c2*0.30); 
                     double ca3=c3+(c3*0.50); 
-                    double sum= (ca1+ca2+ca3);
-                    sum=sum*0.25;
-                    sum=(int)sum/3;
+                    double res= (ca1+ca2+ca3);
+                    res=res*0.25;
+                    res=(int)res/3;
                     
-                    System.out.println("El costo por recurso para la mejora es de: "+sum);
+                    System.out.println("El costo por recurso para la mejora es de: "+res);
                     
-                    if(getJugador().getCm().getRecurso1() >= sum && getJugador().getCm().getRecurso2() >= sum && getJugador().getCm().getRecurso3() >= sum){
+                    if(getJugador().getCm().getRecurso1() >= res && getJugador().getCm().getRecurso2() >= res && getJugador().getCm().getRecurso3() >= res){
                         getJugador().getCm().upgrade();
                         System.out.println("Recurso 1: "+getJugador().getCm().getRecurso1());
                         System.out.println("Recurso 2: "+getJugador().getCm().getRecurso3());
@@ -344,14 +361,12 @@ public class Menu {
     }  
     
     public void MenuXbox(Jugador jugador){
-
-        System.out.println("----------------------RECURSOS---------------------");
-        x.getCantidad();
-        x1.getCantidad();
-        x2.getCantidad();
-        
         int opc=0;
         do{
+            System.out.println("----------------------RECURSOS---------------------");
+            System.out.println("Adamantium: "+getJugador().getCm().getRecurso1());
+            System.out.println("Polvora: "+getJugador().getCm().getRecurso2());
+            System.out.println("Energia: "+getJugador().getCm().getRecurso3());
             System.out.println("\n********FRANCISCO-MOLINA'S WORLD********");
             System.out.println("1. Atacar");
             System.out.println("2. Defender");
@@ -389,13 +404,13 @@ public class Menu {
                     double ca1=c1+(c1*0.10); 
                     double ca2=c2+(c2*0.30); 
                     double ca3=c3+(c3*0.50); 
-                    double sum= (ca1+ca2+ca3);
-                    sum=sum*0.25;
-                    sum=(int)sum/3;
+                    double res= (ca1+ca2+ca3);
+                    res=res*0.25;
+                    res=(int)res/3;
                     
-                    System.out.println("El costo por recurso para la mejora es de: "+sum);
+                    System.out.println("El costo por recurso para la mejora es de: "+res);
                     
-                    if(getJugador().getCm().getRecurso1() >= sum && getJugador().getCm().getRecurso2() >= sum && getJugador().getCm().getRecurso3() >= sum){
+                    if(getJugador().getCm().getRecurso1() >= res && getJugador().getCm().getRecurso2() >= res && getJugador().getCm().getRecurso3() >= res){
                         getJugador().getCm().upgrade();
                         System.out.println("Recurso 1: "+getJugador().getCm().getRecurso1());
                         System.out.println("Recurso 2: "+getJugador().getCm().getRecurso3());
