@@ -95,17 +95,14 @@ public class StarFoxBase implements Nintendo{
     }
     
     @Override
-    public int getLife(){
-        return health;
-    }
-    
-    @Override
-    public void setLife(int newLife){
-    }
-    
-    @Override
     public int getAttack(){
         return damage;
+    }
+    
+    @Override
+    public boolean entrenar(Jugador jugador){
+        boolean estado =false;
+        return estado;
     }
     
 }

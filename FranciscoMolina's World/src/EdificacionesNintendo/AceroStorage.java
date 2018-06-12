@@ -14,7 +14,7 @@ import Nintendo.Nintendo;
  * @author fmolina
  */
 public class AceroStorage implements Nintendo{
-    
+    boolean estado=false;
     int damage, cantidad;
     public int health = 500;
     public int costo = 100;
@@ -96,18 +96,12 @@ public class AceroStorage implements Nintendo{
     }
     
     @Override
-    public int getLife(){
-        return health;
-    }
-    
-    @Override
-    public void setLife(int newLife){
-        health = newLife;
-    }
-    
-    @Override
     public int getAttack(){
         return damage;
     }
     
+    @Override
+    public boolean entrenar(Jugador jugador){
+        return estado;
+    }
 }
