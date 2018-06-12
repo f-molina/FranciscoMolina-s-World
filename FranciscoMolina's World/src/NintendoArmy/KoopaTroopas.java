@@ -18,6 +18,7 @@ public class KoopaTroopas implements Nintendo {
     public int costo = 100;
     int cantidad;
     public Jugador jugador;
+    boolean estado = false;
 
     public KoopaTroopas() {
     }
@@ -65,6 +66,14 @@ public class KoopaTroopas implements Nintendo {
     public void setJugador(Jugador jugador) {
         this.jugador = jugador;
     }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
     
     @Override
     public void construir(Jugador jugador){
@@ -77,17 +86,32 @@ public class KoopaTroopas implements Nintendo {
     }
     
     @Override
-    public int getLife(){
-        return health;
-    }
-    
-    @Override
-    public void setLife(int newLife){
-        health = newLife;
-    }
-    
-    @Override
     public int getAttack(){
-        return health;
+        Bayonetta b = new Bayonetta();
+        int total;
+        System.out.println("antes "+b.getHealth());
+        total = b.getHealth()-getDamage();
+        b.setHealth(total);
+        System.out.println("despues "+b.getHealth());
+        return total;
+    }
+    
+    @Override
+    public boolean entrenar(Jugador jugador){
+        int total, total1;
+        KoopaTroopas kt = new KoopaTroopas(jugador);
+        if(kt.getJugador().getCm().getRecurso1() >= costo 
+           && kt.getJugador().getCm().getRecurso2() >= costo && estado==false){
+            total = kt.getJugador().getCm().getRecurso1()-costo;  
+            kt.getJugador().getCm().setRecurso1(total);
+            total1 = kt.getJugador().getCm().getRecurso2()-costo;
+            kt.getJugador().getCm().setRecurso2(total1);
+            setEstado(true);
+            System.out.println("Se entreno Koopa Troopas");
+        }else{
+            System.out.println("No tiene recursos suficientes");
+            setEstado(false);
+        }
+        return estado;
     }
 }

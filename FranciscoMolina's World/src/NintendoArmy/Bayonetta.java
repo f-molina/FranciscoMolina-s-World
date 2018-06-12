@@ -19,6 +19,7 @@ public class Bayonetta implements Nintendo {
     public int costo = 200;
     int cantidad;
     public Jugador jugador;
+    boolean estado = false;
 
     public Bayonetta() {
     }
@@ -66,6 +67,14 @@ public class Bayonetta implements Nintendo {
     public void setJugador(Jugador jugador) {
         this.jugador = jugador;
     }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
     
     @Override
     public void construir(Jugador jugador){
@@ -78,18 +87,27 @@ public class Bayonetta implements Nintendo {
     }
     
     @Override
-    public int getLife(){
+    public int getAttack(){
         return health;
     }
     
     @Override
-    public void setLife(int newLife){
-        health = newLife;
-    }
-    
-    @Override
-    public int getAttack(){
-        return damage;
+    public boolean entrenar(Jugador jugador){
+        int total, total1;
+        Bayonetta b = new Bayonetta(jugador);
+        if(b.getJugador().getCm().getRecurso1() >= costo 
+           && b.getJugador().getCm().getRecurso3() >= costo && estado==false){
+            total = b.getJugador().getCm().getRecurso1()-costo;  
+            b.getJugador().getCm().setRecurso1(total);
+            total1 = b.getJugador().getCm().getRecurso3()-costo;
+            b.getJugador().getCm().setRecurso3(total1);
+            setEstado(true);
+            System.out.println("Se entreno Bayonetta");
+        }else{
+            System.out.println("No tiene recursos suficientes");
+            setEstado(false);
+        }
+        return estado;
     }
     
 }
