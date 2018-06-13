@@ -110,4 +110,9 @@ public class Bayonetta implements Nintendo {
         return estado;
     }
     
+    @Override
+    public boolean estado(){
+        return estado;
+    }
+    
 }

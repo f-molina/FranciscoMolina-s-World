@@ -14,7 +14,7 @@ import Nintendo.Nintendo;
 public class KoopaTroopas implements Nintendo {
     
     public int health = 100;
-    public int damage = 50;
+    public int damage = 500;
     public int costo = 100;
     int cantidad;
     public Jugador jugador;
@@ -112,6 +112,11 @@ public class KoopaTroopas implements Nintendo {
             System.out.println("No tiene recursos suficientes");
             setEstado(false);
         }
+        return estado;
+    }
+    
+    @Override
+    public boolean estado(){
         return estado;
     }
 }
