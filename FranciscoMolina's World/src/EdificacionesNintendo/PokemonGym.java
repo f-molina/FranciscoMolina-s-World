@@ -105,4 +105,9 @@ public class PokemonGym implements Nintendo{
         return estado;
     }
     
+    @Override
+    public boolean estado(){
+        boolean estado = false;
+        return estado;
+    }
 }

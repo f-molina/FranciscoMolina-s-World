@@ -103,4 +103,10 @@ public class LuigisMansion implements Nintendo{
         boolean estado =false;
         return estado;
     }
+    
+    @Override
+    public boolean estado(){
+        boolean estado = false;
+        return estado;
+    }
 }

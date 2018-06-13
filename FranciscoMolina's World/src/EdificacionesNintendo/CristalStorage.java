@@ -102,4 +102,10 @@ public class CristalStorage implements Nintendo{
         boolean estado =false;
         return estado;
     }
+    
+    @Override
+    public boolean estado(){
+        boolean estado = false;
+        return estado;
+    }
 }
