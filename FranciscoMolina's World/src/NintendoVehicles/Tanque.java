@@ -18,7 +18,7 @@ public class Tanque implements Nintendo{
     
     public int health = 250;
     public int damage = 150;
-    public int costo = 125;
+    public int costo = 50;
     int cantidad;
     public Jugador jugador;
 
@@ -100,6 +100,12 @@ public class Tanque implements Nintendo{
     
     @Override
     public boolean entrenar(Jugador jugador){
+        boolean estado =false;
+        return estado;
+    }
+    
+    @Override
+    public boolean estado(){
         boolean estado =false;
         return estado;
     }

@@ -19,7 +19,7 @@ public class Arwing implements Nintendo{
     
     public int health = 200;
     public int damage = 100;
-    public int costo = 150;
+    public int costo = 50;
     int cantidad;
     public Jugador jugador;
 
@@ -83,7 +83,7 @@ public class Arwing implements Nintendo{
             total1 = ar.getJugador().getCm().getRecurso2()-costo;
             ar.getJugador().getCm().setRecurso2(total1);
             System.out.println("Construccion realizada");
-            ar.getJugador().getEd1().add(arwing);
+            ar.getJugador().getV1().add(arwing);
         }else{
             System.out.println("No tiene recursos suficientes");
         }
@@ -101,6 +101,12 @@ public class Arwing implements Nintendo{
     
     @Override
     public boolean entrenar(Jugador jugador){
+        boolean estado =false;
+        return estado;
+    }
+    
+    @Override
+    public boolean estado(){
         boolean estado =false;
         return estado;
     }
