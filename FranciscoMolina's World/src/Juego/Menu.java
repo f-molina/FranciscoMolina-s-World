@@ -138,16 +138,44 @@ public class Menu {
             
             switch(opc){
                 case 1:
-                    System.out.println("Que desea atacar?, 1.milicia o 2.Jefe?");
+                    System.out.println("Que desea atacar?\n");
+                    System.out.println("1. Edificacion recursos");
+                    System.out.println("2. Edificacion vehiculos");
+                    System.out.println("3. Edificacion milicias");
+                    System.out.println("4. Centro de Mando");
                     answer = leer.next();
-                    if(answer.equals("1")){
-                        
-                    }else{
-                        
+                    switch(answer){
+                        case "1":
+                            System.out.println("Que desea ocupar para el ataque?\n");
+                            System.out.println("1. Koopa Troopas");
+                            System.out.println("2. Bayonetta");
+                            String answer1;
+                            answer1 = leer.next();
+                            switch(answer1){
+                                case "1":
+                                    if(nint8.estado()==true){
+                                        System.out.println("Se encontraron Koopa Troopas listos");
+                                        nint.getAttack();
+                                        System.out.println("Ataque realizado!");
+                                    }else{
+                                        System.out.println("No tiene Koopa Troopas entrenados");
+                                    }
+                                break;
+                                case "2":
+                                    if(nint9.estado()==true){
+                                        System.out.println("Se encontro Bayonetta lista");
+                                        nint.getAttack();
+                                        System.out.println("Ataque realizado!");
+                                    }else{
+                                        System.out.println("No tiene Bayonetta entrenada");
+                                    }
+                                break;
+                            }
+                            break;
                     }
-                    nint8.getAttack();
                 break; 
                 case 2:
+                    System.out.println("health "+nint.recoger());
                 break;
                 case 3:
                     System.out.println("isEmpty: "+getJugador().getEd1().isEmpty());
@@ -260,6 +288,17 @@ public class Menu {
                 case 13:
                     System.out.println("hola: "+nint.recoger());
                     break;
+                case 14:
+                        System.out.println("ed-size "+getJugador().getEd1().size());
+                        System.out.println("ed-empty "+getJugador().getEd1().isEmpty());
+                        System.out.println("vh-size "+getJugador().getV1().size());
+                        System.out.println("vh-empty "+getJugador().getV1().isEmpty());
+                        for(Nintendo prueba : getJugador().getV1()){
+                            System.out.println(getJugador().getV1());
+                            
+                        }
+                    
+                    break;
                 case 15:
                     int c1 = getJugador().getCm().getCapacidad1();
                     int c2 = getJugador().getCm().getCapacidad2();
@@ -281,6 +320,10 @@ public class Menu {
                     }else{
                         System.out.println("No tiene recursos suficientes");
                     }
+                    break;
+                case 16:
+                    Menu m = new Menu(jugador);
+                    m.getJugador().addJugador2();
                     break;
             }
 
@@ -422,5 +465,5 @@ public class Menu {
             }
 
         }while(opc!=16); 
-    }  
+    }
 }
