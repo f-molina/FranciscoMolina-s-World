@@ -8,6 +8,7 @@ import AbstractFactory.AbstractFactory;
 import AbstractFactory.FactoryProducer;
 import Juego.Jugador;
 import Nintendo.Nintendo;
+import NintendoArmy.KoopaTroopas;
 
 /**
  *
@@ -89,19 +90,31 @@ public class AceroStorage implements Nintendo{
     
     @Override
     public int recoger(){
-        int num=0;
+        return getHealth();
+        /*int num=0;
         //num = a.getCantidad();
         setCantidad(0);
-        return num;
+        return num;*/
     }
     
     @Override
     public int getAttack(){
-        return damage;
+        int total;
+        KoopaTroopas kt = new KoopaTroopas();
+        System.out.println("antes: "+getHealth());
+        total = getHealth()-kt.getDamage();
+        setHealth(total);
+        System.out.println("despues: "+getHealth());
+        return total;
     }
     
     @Override
     public boolean entrenar(Jugador jugador){
+        return estado;
+    }
+    
+    @Override
+    public boolean estado(){
         return estado;
     }
 }
