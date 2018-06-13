@@ -33,6 +33,20 @@ public class Jugador {
     public ArrayList<Nintendo> es1;
     public ArrayList<Playstation> es2;
     public ArrayList<Xbox> es3;
+    
+    public Jugador jugador;
+
+    public Jugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
+
+    public Jugador getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
+    }
 
     public Jugador() {
     }
