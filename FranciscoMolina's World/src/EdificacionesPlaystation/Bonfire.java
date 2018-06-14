@@ -5,6 +5,8 @@
  */
 package EdificacionesPlaystation;
 
+import AbstractFactory.AbstractFactory;
+import AbstractFactory.FactoryProducer;
 import Juego.Jugador;
 import Playstation.Playstation;
 
@@ -78,6 +80,21 @@ public class Bonfire implements Playstation{
     
     @Override
     public void construir(Jugador jugador){
+        int total, total1;
+        AbstractFactory play = FactoryProducer.getFactory("Playstation");
+        Playstation bonfire = play.getPlayStation("Bonfire");
+        Bonfire b = new Bonfire(jugador);
+        if(b.getJugador().getCm().getRecurso1() >= costo 
+           && b.getJugador().getCm().getRecurso2() >= costo){
+            total = b.getJugador().getCm().getRecurso1()-costo;  
+            b.getJugador().getCm().setRecurso1(total);
+            total1 = b.getJugador().getCm().getRecurso2()-costo;
+            b.getJugador().getCm().setRecurso2(total1);
+            System.out.println("Construccion realizada");
+            b.getJugador().getEd2().add(bonfire);
+        }else{
+            System.out.println("No tiene recursos suficientes");
+        }
     }
     
     @Override

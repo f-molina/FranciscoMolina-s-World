@@ -5,6 +5,8 @@
  */
 package EdificacionesPlaystation;
 
+import AbstractFactory.AbstractFactory;
+import AbstractFactory.FactoryProducer;
 import Juego.Jugador;
 import Playstation.Playstation;
 
@@ -77,6 +79,21 @@ public class Puerto implements Playstation{
     
     @Override
     public void construir(Jugador jugador){
+        int total, total1;
+        AbstractFactory play = FactoryProducer.getFactory("Playstation");
+        Playstation puerto = play.getPlayStation("Puerto");
+        Puerto p = new Puerto(jugador);
+        if(p.getJugador().getCm().getRecurso1() >= costo 
+           && p.getJugador().getCm().getRecurso2() >= costo){
+            total = p.getJugador().getCm().getRecurso1()-costo;  
+            p.getJugador().getCm().setRecurso1(total);
+            total1 = p.getJugador().getCm().getRecurso2()-costo;
+            p.getJugador().getCm().setRecurso2(total1);
+            System.out.println("Construccion realizada");
+            p.getJugador().getEd2().add(puerto);
+        }else{
+            System.out.println("No tiene recursos suficientes");
+        }
     }
     
     @Override

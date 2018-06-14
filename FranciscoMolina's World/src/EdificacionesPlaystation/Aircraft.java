@@ -5,6 +5,8 @@
  */
 package EdificacionesPlaystation;
 
+import AbstractFactory.AbstractFactory;
+import AbstractFactory.FactoryProducer;
 import Juego.Jugador;
 import Playstation.Playstation;
 
@@ -77,6 +79,21 @@ public class Aircraft implements Playstation{
     
     @Override
     public void construir(Jugador jugador){
+        int total, total1;
+        AbstractFactory play = FactoryProducer.getFactory("Playstation");
+        Playstation air = play.getPlayStation("Aircraft");
+        Aircraft a = new Aircraft(jugador);
+        if(a.getJugador().getCm().getRecurso1() >= costo 
+           && a.getJugador().getCm().getRecurso2() >= costo){
+            total = a.getJugador().getCm().getRecurso1()-costo;  
+            a.getJugador().getCm().setRecurso1(total);
+            total1 = a.getJugador().getCm().getRecurso2()-costo;
+            a.getJugador().getCm().setRecurso2(total1);
+            System.out.println("Construccion realizada");
+            a.getJugador().getEd2().add(air);
+        }else{
+            System.out.println("No tiene recursos suficientes");
+        }
     }
     
     @Override

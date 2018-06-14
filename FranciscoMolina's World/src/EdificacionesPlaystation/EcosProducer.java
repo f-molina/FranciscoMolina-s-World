@@ -5,6 +5,8 @@
  */
 package EdificacionesPlaystation;
 
+import AbstractFactory.AbstractFactory;
+import AbstractFactory.FactoryProducer;
 import Juego.Jugador;
 import Playstation.Playstation;
 
@@ -77,6 +79,21 @@ public class EcosProducer implements Playstation{
     
     @Override
     public void construir(Jugador jugador){
+        int total, total1;
+        AbstractFactory play = FactoryProducer.getFactory("Playstation");
+        Playstation ecos = play.getPlayStation("EcosProducer");
+        EcosProducer ep = new EcosProducer(jugador);
+        if(ep.getJugador().getCm().getRecurso1() >= costo 
+           && ep.getJugador().getCm().getRecurso2() >= costo){
+            total = ep.getJugador().getCm().getRecurso1()-costo;  
+            ep.getJugador().getCm().setRecurso1(total);
+            total1 = ep.getJugador().getCm().getRecurso2()-costo;
+            ep.getJugador().getCm().setRecurso2(total1);
+            System.out.println("Construccion realizada");
+            ep.getJugador().getEd2().add(ecos);
+        }else{
+            System.out.println("No tiene recursos suficientes");
+        }
     }
     
     @Override

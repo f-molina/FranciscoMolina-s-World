@@ -5,6 +5,8 @@
  */
 package EdificacionesPlaystation;
 
+import AbstractFactory.AbstractFactory;
+import AbstractFactory.FactoryProducer;
 import Juego.Jugador;
 import Playstation.Playstation;
 
@@ -77,6 +79,21 @@ public class TitanioStorage implements Playstation{
     
     @Override
     public void construir(Jugador jugador){
+        int total, total1;
+        AbstractFactory play = FactoryProducer.getFactory("Playstation");
+        Playstation titanio = play.getPlayStation("TitanioStorage");
+        TitanioStorage ts = new TitanioStorage(jugador);
+        if(ts.getJugador().getCm().getRecurso1() >= costo 
+           && ts.getJugador().getCm().getRecurso2() >= costo){
+            total = ts.getJugador().getCm().getRecurso1()-costo;  
+            ts.getJugador().getCm().setRecurso1(total);
+            total1 = ts.getJugador().getCm().getRecurso2()-costo;
+            ts.getJugador().getCm().setRecurso2(total1);
+            System.out.println("Construccion realizada");
+            ts.getJugador().getEd2().add(titanio);
+        }else{
+            System.out.println("No tiene recursos suficientes");
+        }
     }
     
     @Override

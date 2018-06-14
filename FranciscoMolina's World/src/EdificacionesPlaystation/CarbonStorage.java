@@ -5,6 +5,8 @@
  */
 package EdificacionesPlaystation;
 
+import AbstractFactory.AbstractFactory;
+import AbstractFactory.FactoryProducer;
 import Juego.Jugador;
 import Playstation.Playstation;
 
@@ -77,6 +79,21 @@ public class CarbonStorage implements Playstation{
     
     @Override
     public void construir(Jugador jugador){
+        int total, total1;
+        AbstractFactory play = FactoryProducer.getFactory("Playstation");
+        Playstation carbon = play.getPlayStation("CarbonStorage");
+        CarbonStorage cs = new CarbonStorage(jugador);
+        if(cs.getJugador().getCm().getRecurso1() >= costo 
+           && cs.getJugador().getCm().getRecurso2() >= costo){
+            total = cs.getJugador().getCm().getRecurso1()-costo;  
+            cs.getJugador().getCm().setRecurso1(total);
+            total1 = cs.getJugador().getCm().getRecurso2()-costo;
+            cs.getJugador().getCm().setRecurso2(total1);
+            System.out.println("Construccion realizada");
+            cs.getJugador().getEd2().add(carbon);
+        }else{
+            System.out.println("No tiene recursos suficientes");
+        }
     }
     
     @Override
