@@ -5,6 +5,8 @@
  */
 package PlaystationVehicles;
 
+import AbstractFactory.AbstractFactory;
+import AbstractFactory.FactoryProducer;
 import Juego.Jugador;
 import Playstation.Playstation;
 
@@ -77,6 +79,21 @@ public class Submarino implements Playstation{
 
     @Override
     public void construir(Jugador jugador){
+        int total, total1;
+        AbstractFactory play = FactoryProducer.getFactory("Playstation");
+        Playstation submarino = play.getPlayStation("Submarino");
+        Submarino sub = new Submarino(jugador);
+        if(sub.getJugador().getCm().getRecurso1() >= costo 
+           && sub.getJugador().getCm().getRecurso2() >= costo){
+            total = sub.getJugador().getCm().getRecurso1()-costo;  
+            sub.getJugador().getCm().setRecurso1(total);
+            total1 = sub.getJugador().getCm().getRecurso2()-costo;
+            sub.getJugador().getCm().setRecurso2(total1);
+            System.out.println("Construccion realizada");
+            sub.getJugador().getV2().add(submarino);
+        }else{
+            System.out.println("No tiene recursos suficientes");
+        }
     }
     
     @Override

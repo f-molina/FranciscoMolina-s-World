@@ -5,6 +5,8 @@
  */
 package PlaystationVehicles;
 
+import AbstractFactory.AbstractFactory;
+import AbstractFactory.FactoryProducer;
 import Juego.Jugador;
 import Playstation.Playstation;
 
@@ -77,6 +79,21 @@ public class Xwing implements Playstation{
 
     @Override
     public void construir(Jugador jugador){
+        int total, total1;
+        AbstractFactory play = FactoryProducer.getFactory("Playstation");
+        Playstation xwing = play.getPlayStation("Xwing");
+        Xwing xw = new Xwing(jugador);
+        if(xw.getJugador().getCm().getRecurso1() >= costo 
+           && xw.getJugador().getCm().getRecurso2() >= costo){
+            total = xw.getJugador().getCm().getRecurso1()-costo;  
+            xw.getJugador().getCm().setRecurso1(total);
+            total1 = xw.getJugador().getCm().getRecurso2()-costo;
+            xw.getJugador().getCm().setRecurso2(total1);
+            System.out.println("Construccion realizada");
+            xw.getJugador().getV2().add(xwing);
+        }else{
+            System.out.println("No tiene recursos suficientes");
+        }
     }
     
     @Override
