@@ -119,4 +119,8 @@ public class KoopaTroopas implements Nintendo {
     public boolean estado(){
         return estado;
     }
+    
+    @Override
+    public void generar(Jugador jugador){
+    }
 }

@@ -16,5 +16,6 @@ public interface Nintendo {
     int getAttack();
     boolean entrenar(Jugador jugador);
     boolean estado();
+    void generar(Jugador jugador);
     
 }

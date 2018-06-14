@@ -111,4 +111,8 @@ public class Arwing implements Nintendo{
         return estado;
     }
     
+    @Override
+    public void generar(Jugador jugador){
+    }
+    
 }

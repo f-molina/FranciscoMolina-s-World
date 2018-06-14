@@ -110,4 +110,8 @@ public class StarFoxBase implements Nintendo{
         boolean estado = false;
         return estado;
     }
+    
+    @Override
+    public void generar(Jugador jugador){
+    }
 }

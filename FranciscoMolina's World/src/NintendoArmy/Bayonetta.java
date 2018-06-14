@@ -16,7 +16,7 @@ public class Bayonetta implements Nintendo {
     
     public int health=500;
     public int damage = 350;
-    public int costo = 200;
+    public int costo = 50;
     int cantidad;
     public Jugador jugador;
     boolean estado = false;
@@ -113,6 +113,10 @@ public class Bayonetta implements Nintendo {
     @Override
     public boolean estado(){
         return estado;
+    }
+    
+    @Override
+    public void generar(Jugador jugador){
     }
     
 }
