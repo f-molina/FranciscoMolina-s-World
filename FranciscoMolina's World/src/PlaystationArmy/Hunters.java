@@ -91,6 +91,20 @@ public class Hunters implements Playstation{
     
     @Override
     public boolean entrenar(Jugador jugador){
+        int total, total1;
+        Hunters h = new Hunters(jugador);
+        if(h.getJugador().getCm().getRecurso1() >= costo 
+           && h.getJugador().getCm().getRecurso3() >= costo && estado==false){
+            total = h.getJugador().getCm().getRecurso1()-costo;  
+            h.getJugador().getCm().setRecurso1(total);
+            total1 = h.getJugador().getCm().getRecurso3()-costo;
+            h.getJugador().getCm().setRecurso3(total1);
+            setEstado(true);
+            System.out.println("Se entrenaron Old Hunters");
+        }else{
+            System.out.println("No tiene recursos suficientes");
+            setEstado(false);
+        }
         return estado;
     }
     

@@ -91,6 +91,20 @@ public class Kratos implements Playstation{
     
     @Override
     public boolean entrenar(Jugador jugador){
+        int total, total1;
+        Kratos kr = new Kratos(jugador);
+        if(kr.getJugador().getCm().getRecurso1() >= costo 
+           && kr.getJugador().getCm().getRecurso3() >= costo && estado==false){
+            total = kr.getJugador().getCm().getRecurso1()-costo;  
+            kr.getJugador().getCm().setRecurso1(total);
+            total1 = kr.getJugador().getCm().getRecurso3()-costo;
+            kr.getJugador().getCm().setRecurso3(total1);
+            setEstado(true);
+            System.out.println("Se entreno a Kratos");
+        }else{
+            System.out.println("No tiene recursos suficientes");
+            setEstado(false);
+        }
         return estado;
     }
     
