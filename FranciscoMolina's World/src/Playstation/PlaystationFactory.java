@@ -6,12 +6,17 @@
 package Playstation;
 
 import AbstractFactory.AbstractFactory;
+import EdificacionesPlaystation.Aircraft;
+import EdificacionesPlaystation.Bonfire;
+import EdificacionesPlaystation.CarbonStorage;
+import EdificacionesPlaystation.EcosProducer;
+import EdificacionesPlaystation.Puerto;
+import EdificacionesPlaystation.TitanioStorage;
 import Nintendo.Nintendo;
 import PlaystationArmy.Hunters;
 import PlaystationArmy.Kratos;
-import PlaystationResources.Carbon;
-import PlaystationResources.Ecos;
-import PlaystationResources.Titanio;
+import PlaystationVehicles.Submarino;
+import PlaystationVehicles.Xwing;
 import Xbox.Xbox;
 
 /**
@@ -29,16 +34,26 @@ public class PlaystationFactory implements AbstractFactory{
     public Playstation getPlayStation(String type){
         
         switch(type){
-            case "Old Hunters":
+            case "Hunter":
                 return new Hunters();
             case "Kratos":
-                return new Kratos();
-            case "Titanio":
-                return new Titanio();   
-            case "Ecos":
-                return new Ecos();
-            case "Carbon":
-                return new Carbon();     
+                return new Kratos();  
+            case "TitanioStorage":
+                return new TitanioStorage();
+            case "CarbonStorage":
+                return new CarbonStorage();
+            case "EcosProducer":
+                return new EcosProducer();
+            case "Bonfire":
+                return new Bonfire();
+            case "Aircraft":
+                return new Aircraft();
+            case "Puerto":
+                return new Puerto();
+            case "Submarino":
+                return new Submarino();
+            case "Xwing":
+                return new Xwing();
         }
         return null;
     }
