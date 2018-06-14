@@ -9,7 +9,6 @@ import Nintendo.Nintendo;
 import Playstation.Playstation;
 import Xbox.Xbox;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -20,7 +19,6 @@ public class Jugador {
     
     public String nombre;
     public CentroMando cm;
-    public Resource res1, res2, res3;
     //edificaciones
     public ArrayList<Nintendo> ed1;
     public ArrayList<Playstation> ed2;
@@ -133,9 +131,6 @@ public class Jugador {
     
     public void addJugador(){
         CentroMando m1 = new CentroMando();
-        /*Resource r1 = new Resource();
-        Resource r2 = new Resource();
-        Resource r3 = new Resource();*/
         ArrayList<Nintendo> ed1 = new ArrayList();
         ArrayList<Playstation> ed2 = new ArrayList();
         ArrayList<Xbox> ed3 = new ArrayList();
@@ -149,12 +144,6 @@ public class Jugador {
         ArrayList<Jugador> jug1 = new ArrayList();
         //jug1.add(new Jugador(player1, m1, r1, r2, r3));
         jug1.add(j1);
-        System.out.println("size "+jug1.size());
-        System.out.println("vacio "+jug1.isEmpty());
-        for(Jugador j : jug1){
-            System.out.println("nombre: "+j.getNombre());
-            System.out.println("CM: "+j.getCm().getHealth());
-        }
         System.out.println("Jugador 1: "+j1.getNombre()+"\nVida centro mando: "+j1.getCm().getHealth());
         Menu me = new Menu(j1);
         me.MenuRaza(j1); 
@@ -162,17 +151,19 @@ public class Jugador {
     
     public void addJugador2(){
         CentroMando m2 = new CentroMando();
-        /*Resource r1 = new Resource();
-        Resource r2 = new Resource();
-        Resource r3 = new Resource();*/
-        /*ArrayList<Nintendo> r1 = new ArrayList();
-        ArrayList<Nintendo> r2 = new ArrayList();
-        ArrayList<Nintendo> r3 = new ArrayList();*/
+        ArrayList<Nintendo> ed1 = new ArrayList();
+        ArrayList<Playstation> ed2 = new ArrayList();
+        ArrayList<Xbox> ed3 = new ArrayList();
+        ArrayList<Nintendo> v1 = new ArrayList();
+        ArrayList<Playstation> v2 = new ArrayList();
+        ArrayList<Xbox> v3 = new ArrayList();
         Scanner leer = new Scanner(System.in);
         System.out.println("Jugador 2, digite su nombre: ");
         String player2 = leer.nextLine();
-        Jugador j2 = new Jugador(player2, m2);
-        System.out.println("Jugador 2: "+j2.getNombre()+" Vida centro mando: "+j2.cm.getHealth());
+        Jugador j2 = new Jugador(player2, m2, ed1, ed2, ed3, v1, v2, v3);
+        ArrayList<Jugador> jug2 = new ArrayList();
+        jug2.add(j2);
+        System.out.println("Jugador 2: "+j2.getNombre()+"\nVida centro mando: "+j2.getCm().getHealth());
         Menu m = new Menu(j2);
         m.MenuRaza(j2);
 
