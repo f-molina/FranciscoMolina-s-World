@@ -40,22 +40,7 @@ public class Menu {
     AbstractFactory play = FactoryProducer.getFactory("Playstation");
     AbstractFactory xbox = FactoryProducer.getFactory("Xbox");
     
-    //recursos play
-    Playstation p = play.getPlayStation("Titanio");
-    Playstation p1 = play.getPlayStation("Ecos");
-    Playstation p2 = play.getPlayStation("Carbon");
-    
-    //recursos nintendo    
-    Nintendo n = nintendo.getNintendo("Acero");
-    Nintendo n1 = nintendo.getNintendo("Cristal");
-    Nintendo n2 = nintendo.getNintendo("Mushrooms");
-    
-    //recursos xbox
-    Xbox x = xbox.getXbox("Adamantium");
-    Xbox x1 = xbox.getXbox("Energia");
-    Xbox x2 = xbox.getXbox("Polvora");
-    
-    //edificaciones nintendo
+    //edificaciones, vehiculos, milicia nintendo
     Nintendo nint = nintendo.getNintendo("AceroStorage");
     Nintendo nint1 = nintendo.getNintendo("CristalStorage");
     Nintendo nint2 = nintendo.getNintendo("MushroomGenerator");
@@ -66,6 +51,18 @@ public class Menu {
     Nintendo nint7 = nintendo.getNintendo("Tanque");
     Nintendo nint8 = nintendo.getNintendo("Koopa");
     Nintendo nint9 = nintendo.getNintendo("Bayonetta");
+    
+    //edificaciones, vehiculos, milicia play
+    Playstation ps = play.getPlayStation("TitanioStorage");
+    Playstation ps1 = play.getPlayStation("CarbonStorage");
+    Playstation ps2 = play.getPlayStation("EcosProducer");
+    Playstation ps3 = play.getPlayStation("Bonfire");
+    Playstation ps4 = play.getPlayStation("Aircraft");
+    Playstation ps5 = play.getPlayStation("Puerto");
+    Playstation ps6 = play.getPlayStation("Submarino");
+    Playstation ps7 = play.getPlayStation("Xwing");
+    Playstation ps8 = play.getPlayStation("Hunter");
+    Playstation ps9 = play.getPlayStation("Kratos");
     
     public void MenuRaza(Jugador jugador){
         Menu menu = new Menu(jugador);
@@ -111,7 +108,7 @@ public class Menu {
             System.out.println("Mushrooms: "+getJugador().getCm().getRecurso3());
             System.out.println("\n********FRANCISCO-MOLINA'S WORLD********");
             System.out.println("1. Atacar");
-            System.out.println("2. Defender");
+            System.out.println("2. Generar recursos");
             System.out.println("3. Construir Acero Storage");
             System.out.println("4. Construir Cristal Storage");
             System.out.println("5. Construir Mushroom Generator");
@@ -175,7 +172,7 @@ public class Menu {
                     }
                 break; 
                 case 2:
-                    System.out.println("health "+nint.recoger());
+                    
                 break;
                 case 3:
                     System.out.println("isEmpty: "+getJugador().getEd1().isEmpty());
@@ -248,8 +245,6 @@ public class Menu {
                     }
                 break;
                 case 9:
-                    System.out.println("isEmpty: "+getJugador().getV1().isEmpty());
-                    System.out.println("size: "+getJugador().getV1().size());
                     System.out.println("Cuesta 150 acero, 150 cristal. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
@@ -323,7 +318,7 @@ public class Menu {
                     break;
                 case 16:
                     Menu m = new Menu(jugador);
-                    m.getJugador().addJugador2();
+                    m.MenuPlay(jugador);
                     break;
             }
 
@@ -331,6 +326,7 @@ public class Menu {
     }  
     
     public void MenuPlay(Jugador jugador) {
+        String answer;
         int opc=0;
         do{
             System.out.println("----------------------RECURSOS---------------------");
@@ -367,10 +363,130 @@ public class Menu {
             switch(opc){
                 case 1:
                 break;
-                    case 2:
+                case 2:
+                break;
+                case 3:
+                    System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
+                    System.out.println("size: "+getJugador().getEd2().size());
+                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        ps.construir(jugador);
+                    }else{
+                        break;
+                    }
+                    System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
+                    System.out.println("size: "+getJugador().getEd2().size());
                 break;
                 case 4:
-                    break;
+                    System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
+                    System.out.println("size: "+getJugador().getEd2().size());
+                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        ps1.construir(jugador);
+                    }else{
+                        break;
+                    }
+                    System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
+                    System.out.println("size: "+getJugador().getEd2().size());
+                break;
+                case 5:
+                    System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
+                    System.out.println("size: "+getJugador().getEd2().size());
+                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        ps2.construir(jugador);
+                    }else{
+                        break;
+                    }
+                    System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
+                    System.out.println("size: "+getJugador().getEd2().size());
+                break;
+                case 6:
+                    System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
+                    System.out.println("size: "+getJugador().getEd2().size());
+                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        ps3.construir(jugador);
+                    }else{
+                        break;
+                    }
+                    System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
+                    System.out.println("size: "+getJugador().getEd2().size());
+                break;
+                case 7:
+                    System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
+                    System.out.println("size: "+getJugador().getEd2().size());
+                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        ps4.construir(jugador);
+                    }else{
+                        break;
+                    }
+                    System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
+                    System.out.println("size: "+getJugador().getEd2().size());
+                break;
+                case 8:
+                    System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
+                    System.out.println("size: "+getJugador().getEd2().size());
+                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        ps5.construir(jugador);
+                    }else{
+                        break;
+                    }
+                    System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
+                    System.out.println("size: "+getJugador().getEd2().size());
+                break;
+                case 9:
+                    System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
+                    System.out.println("size: "+getJugador().getEd2().size());
+                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        ps6.construir(jugador);
+                    }else{
+                        break;
+                    }
+                    System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
+                    System.out.println("size: "+getJugador().getEd2().size());
+                break;
+                case 10:
+                    System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
+                    System.out.println("size: "+getJugador().getEd2().size());
+                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        ps7.construir(jugador);
+                    }else{
+                        break;
+                    }
+                    System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
+                    System.out.println("size: "+getJugador().getEd2().size());
+                break;
+                case 11:
+                    System.out.println("Cuesta 100 cristal, 100 acero. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        ps8.entrenar(jugador);
+                    }else{
+                        break;
+                    }
+                break;
+                case 12:
+                    System.out.println("Cuesta 100 cristal, 100 acero. Desea continuar?((S/N)");
+                    answer = leer.next();
+                    if(answer.equalsIgnoreCase("S")){
+                        ps9.entrenar(jugador);
+                    }else{
+                        break;
+                    }
+                break;
                 case 15:
                     int c1 = getJugador().getCm().getCapacidad1();
                     int c2 = getJugador().getCm().getCapacidad2();
