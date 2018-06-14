@@ -122,7 +122,7 @@ public class MushroomGenerator implements Nintendo{
     @Override
     public void generar(Jugador jugador){
         MushroomGenerator m = new MushroomGenerator(jugador);
-        m.getJugador().getCm().setRecurso1(m.getJugador().getCm().getRecurso1()+150);
+        m.getJugador().getCm().setRecurso3(m.getJugador().getCm().getRecurso3()+150);
     }
     
 }
