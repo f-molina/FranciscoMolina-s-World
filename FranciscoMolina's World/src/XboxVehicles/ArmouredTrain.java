@@ -5,6 +5,9 @@
  */
 package XboxVehicles;
 
+import AbstractFactory.AbstractFactory;
+import AbstractFactory.FactoryProducer;
+import Juego.Jugador;
 import Xbox.Xbox;
 
 /**
@@ -13,40 +16,108 @@ import Xbox.Xbox;
  */
 public class ArmouredTrain implements Xbox{
     
-    int health;
-    int damage;
-    int cantidad;
-    
-    @Override
-    public int getCantidad(){
+    boolean estado=false;
+    int damage, cantidad;
+    public int health = 200;
+    public int costo = 100;
+    public Jugador jugador;
+
+    public ArmouredTrain() {
+    }
+
+    public ArmouredTrain(Jugador jugador) {
+        this.jugador = jugador;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+    public int getDamage() {
+        return damage;
+    }
+
+    public void setDamage(int damage) {
+        this.damage = damage;
+    }
+
+    public int getCantidad() {
         return cantidad;
     }
-    
-    @Override
-    public void setCantidad(int newCantidad){
-        cantidad = newCantidad;
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
     }
-    
-    @Override
-    public void construir(){
-    }
-    
-    @Override
-    public void recoger(){
-    }
-    
-    @Override
-    public int getLife(){
+
+    public int getHealth() {
         return health;
     }
-    
-    @Override
-    public void setLife(int newLife){
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getCosto() {
+        return costo;
+    }
+
+    public void setCosto(int costo) {
+        this.costo = costo;
+    }
+
+    public Jugador getJugador() {
+        return jugador;
+    }
+
+    public void setJugador(Jugador jugador) {
+        this.jugador = jugador;
     }
     
+    @Override
+    public void construir(Jugador jugador){
+        int total, total1;
+        AbstractFactory xbox = FactoryProducer.getFactory("Xbox");
+        Xbox train = xbox.getXbox("Train");
+        ArmouredTrain a = new ArmouredTrain(jugador);
+        if(a.getJugador().getCm().getRecurso1() >= costo 
+           && a.getJugador().getCm().getRecurso2() >= costo){
+            total = a.getJugador().getCm().getRecurso1()-costo;  
+            a.getJugador().getCm().setRecurso1(total);
+            total1 = a.getJugador().getCm().getRecurso2()-costo;
+            a.getJugador().getCm().setRecurso2(total1);
+            System.out.println("Construccion realizada");
+            a.getJugador().getEd3().add(train);
+        }else{
+            System.out.println("No tiene recursos suficientes");
+        }
+    }
+    
+    @Override
+    public int recoger(){
+        return cantidad;
+    }
+
     @Override
     public int getAttack(){
         return damage;
     }
     
+    @Override
+    public boolean entrenar(Jugador jugador){
+        return estado;
+    }
+    
+    @Override
+    public boolean estado(){
+        return estado;
+    }
+    
+    @Override
+    public void generar(Jugador jugador){
+        
+    }
 }
