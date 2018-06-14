@@ -14,9 +14,6 @@ import EdificacionesNintendo.PokemonGym;
 import EdificacionesNintendo.StarFoxBase;
 import NintendoArmy.Bayonetta;
 import NintendoArmy.KoopaTroopas;
-import NintendoResources.Acero;
-import NintendoResources.Cristal;
-import NintendoResources.Mushrooms;
 import NintendoVehicles.Arwing;
 import NintendoVehicles.Tanque;
 import Playstation.Playstation;
@@ -34,12 +31,6 @@ public class NintendoFactory implements AbstractFactory{
                 return new KoopaTroopas();
             case "Bayonetta":
                 return new Bayonetta();
-            case "Mushrooms":
-                return new Mushrooms();   
-            case "Acero":
-                return new Acero();
-            case "Cristal":
-                return new Cristal(); 
             case "AceroStorage":
                 return new AceroStorage();
             case "CristalStorage":
