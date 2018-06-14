@@ -5,13 +5,16 @@
  */
 package Xbox;
 import AbstractFactory.AbstractFactory;
+import EdificacionesXbox.AdamantiumStorage;
+import EdificacionesXbox.Campo;
+import EdificacionesXbox.EnergiaGenerator;
+import EdificacionesXbox.Fabrica;
+import EdificacionesXbox.MotherShip;
+import EdificacionesXbox.PolvoraStorage;
 import Nintendo.Nintendo;
 import Playstation.Playstation;
 import XboxArmy.Locust;
 import XboxArmy.MasterChief;
-import XboxResources.Adamantium;
-import XboxResources.Energia;
-import XboxResources.Polvora;
 
 /**
  *
@@ -35,14 +38,20 @@ public class XboxFactory implements AbstractFactory{
         switch(type){
             case "Locust":
                 return new Locust();
-            case "Master Chief":
+            case "Master":
                 return new MasterChief();
             case "Adamantium":
-                return new Adamantium();   
-            case "Energia":
-                return new Energia();
+                return new AdamantiumStorage();
             case "Polvora":
-                return new Polvora();     
+                return new PolvoraStorage();
+            case "Energia":
+                return new EnergiaGenerator();
+            case "Campo":
+                return new Campo();
+            case "Fabrica":
+                return new Fabrica();
+            case "Mothership":
+                return new MotherShip();
         }
         return null;
     }

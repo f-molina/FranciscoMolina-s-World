@@ -5,18 +5,19 @@
  */
 package Xbox;
 
+import Juego.Jugador;
+
 /**
  *
  * @author fmolina
  */
 public interface Xbox {
 
-    int getCantidad();
-    void setCantidad(int newCantidad);
-    void construir();
-    void recoger();
-    int getLife();
-    void setLife(int newLife);
+    void construir(Jugador jugador);
+    int recoger();
     int getAttack();
+    boolean entrenar(Jugador jugador);
+    boolean estado();
+    void generar(Jugador jugador);
     
 }
