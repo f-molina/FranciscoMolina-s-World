@@ -19,7 +19,7 @@ public class Arwing implements Nintendo{
     
     public int health = 200;
     public int damage = 100;
-    public int costo = 50;
+    public int costo = 1500;
     int cantidad;
     public Jugador jugador;
 
@@ -90,7 +90,7 @@ public class Arwing implements Nintendo{
     }
     
     @Override
-    public int recoger(){
+    public int recoger(Jugador jugador){
         return cantidad;
     }
     

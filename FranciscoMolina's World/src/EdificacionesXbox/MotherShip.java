@@ -20,7 +20,7 @@ public class MotherShip implements Xbox{
     boolean estado=false;
     int damage, cantidad;
     public int health = 200;
-    public int costo = 100;
+    public int costo = 1500;
     public Jugador jugador;
 
     public MotherShip() {

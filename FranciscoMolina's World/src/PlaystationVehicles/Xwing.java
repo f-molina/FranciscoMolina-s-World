@@ -19,7 +19,7 @@ public class Xwing implements Playstation{
     boolean estado=false;
     int damage, cantidad;
     public int health = 200;
-    public int costo = 100;
+    public int costo = 2500;
     public Jugador jugador;
 
     public Xwing() {
@@ -83,12 +83,12 @@ public class Xwing implements Playstation{
         AbstractFactory play = FactoryProducer.getFactory("Playstation");
         Playstation xwing = play.getPlayStation("Xwing");
         Xwing xw = new Xwing(jugador);
-        if(xw.getJugador().getCm().getRecurso1() >= costo 
-           && xw.getJugador().getCm().getRecurso2() >= costo){
-            total = xw.getJugador().getCm().getRecurso1()-costo;  
-            xw.getJugador().getCm().setRecurso1(total);
-            total1 = xw.getJugador().getCm().getRecurso2()-costo;
-            xw.getJugador().getCm().setRecurso2(total1);
+        if(xw.getJugador().getCm2().getRecurso1() >= costo 
+           && xw.getJugador().getCm2().getRecurso3() >= costo){
+            total = xw.getJugador().getCm2().getRecurso1()-costo;  
+            xw.getJugador().getCm2().setRecurso1(total);
+            total1 = xw.getJugador().getCm2().getRecurso3()-costo;
+            xw.getJugador().getCm2().setRecurso3(total1);
             System.out.println("Construccion realizada");
             xw.getJugador().getV2().add(xwing);
         }else{
@@ -97,7 +97,7 @@ public class Xwing implements Playstation{
     }
     
     @Override
-    public int recoger(){
+    public int recoger(Jugador jugador){
         return cantidad;
     }
 
@@ -109,5 +109,9 @@ public class Xwing implements Playstation{
     @Override
     public boolean entrenar(Jugador jugador){
         return estado;
+    }
+    
+    @Override
+    public void generar(Jugador jugador){
     }
 }

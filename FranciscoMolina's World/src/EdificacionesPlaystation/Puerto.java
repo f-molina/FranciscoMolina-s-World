@@ -19,7 +19,7 @@ public class Puerto implements Playstation{
     boolean estado=false;
     int damage, cantidad;
     public int health = 200;
-    public int costo = 100;
+    public int costo = 1500;
     public Jugador jugador;
 
     public Puerto() {
@@ -83,12 +83,12 @@ public class Puerto implements Playstation{
         AbstractFactory play = FactoryProducer.getFactory("Playstation");
         Playstation puerto = play.getPlayStation("Puerto");
         Puerto p = new Puerto(jugador);
-        if(p.getJugador().getCm().getRecurso1() >= costo 
-           && p.getJugador().getCm().getRecurso2() >= costo){
-            total = p.getJugador().getCm().getRecurso1()-costo;  
-            p.getJugador().getCm().setRecurso1(total);
-            total1 = p.getJugador().getCm().getRecurso2()-costo;
-            p.getJugador().getCm().setRecurso2(total1);
+        if(p.getJugador().getCm2().getRecurso3() >= costo 
+           && p.getJugador().getCm2().getRecurso2() >= costo){
+            total = p.getJugador().getCm2().getRecurso3()-costo;  
+            p.getJugador().getCm2().setRecurso3(total);
+            total1 = p.getJugador().getCm2().getRecurso2()-costo;
+            p.getJugador().getCm2().setRecurso2(total1);
             System.out.println("Construccion realizada");
             p.getJugador().getEd2().add(puerto);
         }else{
@@ -97,7 +97,7 @@ public class Puerto implements Playstation{
     }
     
     @Override
-    public int recoger(){
+    public int recoger(Jugador jugador){
         return cantidad;
     }
 
@@ -109,6 +109,10 @@ public class Puerto implements Playstation{
     @Override
     public boolean entrenar(Jugador jugador){
         return estado;
+    }
+    
+    @Override
+    public void generar(Jugador jugador){
     }
     
 }

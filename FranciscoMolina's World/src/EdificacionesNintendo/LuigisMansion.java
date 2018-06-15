@@ -17,8 +17,8 @@ import Nintendo.Nintendo;
 public class LuigisMansion implements Nintendo{
     
     int damage, cantidad;
-    public int health = 150;
-    public int costo = 25;
+    public int health = 500;
+    public int costo = 1000;
     
     public Jugador jugador;
 
@@ -89,7 +89,7 @@ public class LuigisMansion implements Nintendo{
     }
     
     @Override
-    public int recoger(){
+    public int recoger(Jugador jugador){
         return cantidad;
     }
     

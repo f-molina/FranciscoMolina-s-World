@@ -13,9 +13,9 @@ import Playstation.Playstation;
  */
 public class Hunters implements Playstation{
     
-    public int damage =75;
-    public int health = 75;
-    public int costo = 75;
+    public int damage =300;
+    public int health = 300;
+    public int costo = 1000;
     int cantidad;
     public Jugador jugador;
     boolean estado=false;
@@ -80,7 +80,7 @@ public class Hunters implements Playstation{
     }
     
     @Override
-    public int recoger(){
+    public int recoger(Jugador jugador){
         return cantidad;
     }
 
@@ -93,12 +93,12 @@ public class Hunters implements Playstation{
     public boolean entrenar(Jugador jugador){
         int total, total1;
         Hunters h = new Hunters(jugador);
-        if(h.getJugador().getCm().getRecurso1() >= costo 
-           && h.getJugador().getCm().getRecurso3() >= costo && estado==false){
-            total = h.getJugador().getCm().getRecurso1()-costo;  
-            h.getJugador().getCm().setRecurso1(total);
-            total1 = h.getJugador().getCm().getRecurso3()-costo;
-            h.getJugador().getCm().setRecurso3(total1);
+        if(h.getJugador().getCm2().getRecurso1() >= costo 
+           && h.getJugador().getCm2().getRecurso3() >= costo && estado==false){
+            total = h.getJugador().getCm2().getRecurso1()-costo;  
+            h.getJugador().getCm2().setRecurso1(total);
+            total1 = h.getJugador().getCm2().getRecurso3()-costo;
+            h.getJugador().getCm2().setRecurso3(total1);
             setEstado(true);
             System.out.println("Se entrenaron Old Hunters");
         }else{
@@ -106,6 +106,10 @@ public class Hunters implements Playstation{
             setEstado(false);
         }
         return estado;
+    }
+    
+    @Override
+    public void generar(Jugador jugador){
     }
     
 }

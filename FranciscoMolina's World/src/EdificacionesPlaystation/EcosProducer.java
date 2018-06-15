@@ -19,7 +19,7 @@ public class EcosProducer implements Playstation{
     boolean estado=false;
     int damage, cantidad;
     public int health = 500;
-    public int costo = 100;
+    public int costo = 2000;
     public Jugador jugador;
 
     public EcosProducer() {
@@ -83,12 +83,12 @@ public class EcosProducer implements Playstation{
         AbstractFactory play = FactoryProducer.getFactory("Playstation");
         Playstation ecos = play.getPlayStation("EcosProducer");
         EcosProducer ep = new EcosProducer(jugador);
-        if(ep.getJugador().getCm().getRecurso1() >= costo 
-           && ep.getJugador().getCm().getRecurso2() >= costo){
-            total = ep.getJugador().getCm().getRecurso1()-costo;  
-            ep.getJugador().getCm().setRecurso1(total);
-            total1 = ep.getJugador().getCm().getRecurso2()-costo;
-            ep.getJugador().getCm().setRecurso2(total1);
+        if(ep.getJugador().getCm2().getRecurso1() >= costo 
+           && ep.getJugador().getCm2().getRecurso3() >= costo){
+            total = ep.getJugador().getCm2().getRecurso1()-costo;  
+            ep.getJugador().getCm2().setRecurso1(total);
+            total1 = ep.getJugador().getCm2().getRecurso3()-costo;
+            ep.getJugador().getCm2().setRecurso3(total1);
             System.out.println("Construccion realizada");
             ep.getJugador().getEd2().add(ecos);
         }else{
@@ -97,7 +97,7 @@ public class EcosProducer implements Playstation{
     }
     
     @Override
-    public int recoger(){
+    public int recoger(Jugador jugador){
         return cantidad;
     }
 
@@ -109,5 +109,11 @@ public class EcosProducer implements Playstation{
     @Override
     public boolean entrenar(Jugador jugador){
         return estado;
+    }
+    
+    @Override
+    public void generar(Jugador jugador){
+        EcosProducer m = new EcosProducer(jugador);
+        m.getJugador().getCm2().setRecurso3(m.getJugador().getCm2().getRecurso3()+1500);
     }
 }

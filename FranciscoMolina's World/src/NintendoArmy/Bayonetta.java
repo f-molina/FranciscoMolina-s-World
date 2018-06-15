@@ -14,9 +14,9 @@ import Nintendo.Nintendo;
  */
 public class Bayonetta implements Nintendo {
     
-    public int health=500;
-    public int damage = 350;
-    public int costo = 50;
+    public int health=150;
+    public int damage = 150;
+    public int costo = 2000;
     int cantidad;
     public Jugador jugador;
     boolean estado = false;
@@ -82,7 +82,7 @@ public class Bayonetta implements Nintendo {
     }
     
     @Override
-    public int recoger(){
+    public int recoger(Jugador jugador){
         return cantidad;
     }
     

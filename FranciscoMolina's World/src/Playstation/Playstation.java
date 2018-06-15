@@ -13,8 +13,9 @@ import Juego.Jugador;
 public interface Playstation {
 
     void construir(Jugador jugador);
-    int recoger();
+    int recoger(Jugador jugador);
     int getAttack();
     boolean entrenar(Jugador jugador);
+    void generar(Jugador jugador);
     
 }

@@ -16,8 +16,8 @@ import Nintendo.Nintendo;
 //entrenar escuadrones
 public class PokemonGym implements Nintendo{
     
-    public int health = 350;
-    public int costo = 100;
+    public int health = 450;
+    public int costo = 1000;
     int damage;
     int cantidad;
     
@@ -90,7 +90,7 @@ public class PokemonGym implements Nintendo{
     }
     
     @Override
-    public int recoger(){
+    public int recoger(Jugador jugador){
         return cantidad;
     }
 

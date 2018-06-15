@@ -16,9 +16,9 @@ import NintendoArmy.KoopaTroopas;
  */
 public class AceroStorage implements Nintendo{
     boolean estado=false;
-    int damage, cantidad;
+    int damage, cantidad = 1000;
     public int health = 500;
-    public int costo = 100;
+    public int costo = 1000;
 
     public Jugador jugador;
 
@@ -89,12 +89,12 @@ public class AceroStorage implements Nintendo{
     }
     
     @Override
-    public int recoger(){
-        return getHealth();
-        /*int num=0;
-        //num = a.getCantidad();
-        setCantidad(0);
-        return num;*/
+    public int recoger(Jugador jugador){
+        int num;
+        AceroStorage a = new AceroStorage(jugador);
+        num = a.getCantidad();
+        a.getJugador().getCm().setRecurso1(a.getJugador().getCm().getRecurso1()+num);
+        return num;
     }
     
     @Override

@@ -13,9 +13,9 @@ import Nintendo.Nintendo;
  */
 public class KoopaTroopas implements Nintendo {
     
-    public int health = 100;
-    public int damage = 500;
-    public int costo = 100;
+    public int health = 75;
+    public int damage = 75;
+    public int costo = 1000;
     int cantidad;
     public Jugador jugador;
     boolean estado = false;
@@ -81,7 +81,7 @@ public class KoopaTroopas implements Nintendo {
     }
     
     @Override
-    public int recoger(){
+    public int recoger(Jugador jugador){
         return cantidad;
     }
     

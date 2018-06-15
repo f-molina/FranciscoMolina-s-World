@@ -5,6 +5,8 @@
  */
 package Juego;
 import CentroMando.CentroMando;
+import CentroMando.CentroMando2;
+import CentroMando.CentroMando3;
 import Nintendo.Nintendo;
 import Playstation.Playstation;
 import Xbox.Xbox;
@@ -19,6 +21,8 @@ public class Jugador {
     
     public String nombre;
     public CentroMando cm;
+    public CentroMando2 cm2;
+    public CentroMando3 cm3;
     //edificaciones
     public ArrayList<Nintendo> ed1;
     public ArrayList<Playstation> ed2;
@@ -54,7 +58,7 @@ public class Jugador {
         this.cm = cm;
     }
 
-    public Jugador(String nombre, CentroMando cm, ArrayList<Nintendo> ed1, ArrayList<Playstation> ed2, ArrayList<Xbox> ed3, ArrayList<Nintendo> v1, ArrayList<Playstation> v2, ArrayList<Xbox> v3) {
+    public Jugador(String nombre, CentroMando cm, CentroMando2 cm2, CentroMando3 cm3, ArrayList<Nintendo> ed1, ArrayList<Playstation> ed2, ArrayList<Xbox> ed3, ArrayList<Nintendo> v1, ArrayList<Playstation> v2, ArrayList<Xbox> v3) {
         this.nombre = nombre;
         this.cm = cm;
         this.ed1 = ed1;
@@ -63,6 +67,8 @@ public class Jugador {
         this.v1 = v1;
         this.v2 = v2;
         this.v3 = v3;
+        this.cm2 = cm2;
+        this.cm3 = cm3;
     }
 
     public String getNombre() {
@@ -128,9 +134,27 @@ public class Jugador {
     public void setV3(ArrayList<Xbox> v3) {
         this.v3 = v3;
     }
+
+    public CentroMando2 getCm2() {
+        return cm2;
+    }
+
+    public void setCm2(CentroMando2 cm2) {
+        this.cm2 = cm2;
+    }
+
+    public CentroMando3 getCm3() {
+        return cm3;
+    }
+
+    public void setCm3(CentroMando3 cm3) {
+        this.cm3 = cm3;
+    }
     
     public void addJugador(){
         CentroMando m1 = new CentroMando();
+        CentroMando2 m2 = new CentroMando2();
+        CentroMando3 m3 = new CentroMando3();
         ArrayList<Nintendo> ed1 = new ArrayList();
         ArrayList<Playstation> ed2 = new ArrayList();
         ArrayList<Xbox> ed3 = new ArrayList();
@@ -138,19 +162,21 @@ public class Jugador {
         ArrayList<Playstation> v2 = new ArrayList();
         ArrayList<Xbox> v3 = new ArrayList();
         Scanner leer = new Scanner(System.in);
+        System.out.println("\nEmpieza el jugador 1!");
         System.out.println("Jugador 1, digite su nombre: ");
         String player1 = leer.nextLine();
-        Jugador j1 = new Jugador(player1, m1, ed1, ed2, ed3, v1, v2, v3);
+        Jugador j1 = new Jugador(player1, m1, m2, m3, ed1, ed2, ed3, v1, v2, v3);
         ArrayList<Jugador> jug1 = new ArrayList();
-        //jug1.add(new Jugador(player1, m1, r1, r2, r3));
         jug1.add(j1);
-        System.out.println("Jugador 1: "+j1.getNombre()+"\nVida centro mando: "+j1.getCm().getHealth());
+        System.out.println("Jugador 1: "+j1.getNombre());
         Menu me = new Menu(j1);
-        me.MenuRaza(j1); 
+        me.MenuRaza(j1);
     }
     
     public void addJugador2(){
         CentroMando m2 = new CentroMando();
+        CentroMando2 m3 = new CentroMando2();
+        CentroMando3 m4 = new CentroMando3();
         ArrayList<Nintendo> ed1 = new ArrayList();
         ArrayList<Playstation> ed2 = new ArrayList();
         ArrayList<Xbox> ed3 = new ArrayList();
@@ -160,10 +186,10 @@ public class Jugador {
         Scanner leer = new Scanner(System.in);
         System.out.println("Jugador 2, digite su nombre: ");
         String player2 = leer.nextLine();
-        Jugador j2 = new Jugador(player2, m2, ed1, ed2, ed3, v1, v2, v3);
+        Jugador j2 = new Jugador(player2, m2, m3, m4, ed1, ed2, ed3, v1, v2, v3);
         ArrayList<Jugador> jug2 = new ArrayList();
         jug2.add(j2);
-        System.out.println("Jugador 2: "+j2.getNombre()+"\nVida centro mando: "+j2.getCm().getHealth());
+        System.out.println("Jugador 2: "+j2.getNombre());
         Menu m = new Menu(j2);
         m.MenuRaza(j2);
 

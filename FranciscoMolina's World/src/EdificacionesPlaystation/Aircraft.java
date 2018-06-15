@@ -19,7 +19,7 @@ public class Aircraft implements Playstation{
     boolean estado=false;
     int damage, cantidad;
     public int health = 200;
-    public int costo = 100;
+    public int costo = 1500;
     public Jugador jugador;
 
     public Aircraft() {
@@ -83,12 +83,12 @@ public class Aircraft implements Playstation{
         AbstractFactory play = FactoryProducer.getFactory("Playstation");
         Playstation air = play.getPlayStation("Aircraft");
         Aircraft a = new Aircraft(jugador);
-        if(a.getJugador().getCm().getRecurso1() >= costo 
-           && a.getJugador().getCm().getRecurso2() >= costo){
-            total = a.getJugador().getCm().getRecurso1()-costo;  
-            a.getJugador().getCm().setRecurso1(total);
-            total1 = a.getJugador().getCm().getRecurso2()-costo;
-            a.getJugador().getCm().setRecurso2(total1);
+        if(a.getJugador().getCm2().getRecurso1() >= costo 
+           && a.getJugador().getCm2().getRecurso2() >= costo){
+            total = a.getJugador().getCm2().getRecurso1()-costo;  
+            a.getJugador().getCm2().setRecurso1(total);
+            total1 = a.getJugador().getCm2().getRecurso2()-costo;
+            a.getJugador().getCm2().setRecurso2(total1);
             System.out.println("Construccion realizada");
             a.getJugador().getEd2().add(air);
         }else{
@@ -97,7 +97,7 @@ public class Aircraft implements Playstation{
     }
     
     @Override
-    public int recoger(){
+    public int recoger(Jugador jugador){
         return cantidad;
     }
 
@@ -109,6 +109,10 @@ public class Aircraft implements Playstation{
     @Override
     public boolean entrenar(Jugador jugador){
         return estado;
+    }
+    
+    @Override
+    public void generar(Jugador jugador){
     }
     
 }

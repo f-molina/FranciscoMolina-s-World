@@ -81,7 +81,7 @@ public class Menu {
         
         Scanner leer = new Scanner(System.in);
         int opc;
-        System.out.println("\nEliga su raza\n");
+        System.out.println("\n"+getJugador().getNombre() +"\nEliga su raza\n");
         System.out.println("1. Nintendo Army");
         System.out.println("2. PlayStation Army");
         System.out.println("3. Xbox Army\n");
@@ -118,9 +118,9 @@ public class Menu {
             System.out.println("Acero: "+getJugador().getCm().getRecurso1());
             System.out.println("Cristal: "+getJugador().getCm().getRecurso2());
             System.out.println("Mushrooms: "+getJugador().getCm().getRecurso3());
-            System.out.println("\n********FRANCISCO-MOLINA'S WORLD********");
+            System.out.println("\n********NINTENDO ARMY********");
             System.out.println("1. Atacar");
-            System.out.println("2. Generar recursos");
+            System.out.println("2. Generar Mushrooms");
             System.out.println("3. Construir Acero Storage");
             System.out.println("4. Construir Cristal Storage");
             System.out.println("5. Construir Mushroom Generator");
@@ -135,6 +135,7 @@ public class Menu {
             System.out.println("14. Recoger Cristal");
             System.out.println("15. Mejorar Centro Mando");
             System.out.println("16. Terminar turno");
+            System.out.println("17. Agregar segundo jugador");
             
             Scanner leer = new Scanner(System.in);
             try{
@@ -189,7 +190,7 @@ public class Menu {
                 case 3:
                     System.out.println("isEmpty: "+getJugador().getEd1().isEmpty());
                     System.out.println("size: "+getJugador().getEd1().size());
-                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 1000 acero, 1000 cristal. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         nint.construir(jugador);
@@ -202,7 +203,7 @@ public class Menu {
                 case 4:
                     System.out.println("isEmpty: "+getJugador().getEd1().isEmpty());
                     System.out.println("size: "+getJugador().getEd1().size());
-                    System.out.println("Cuesta 75 cristal, 75 mushroom. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 1500 cristal, 1500 mushroom. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         nint1.construir(jugador);
@@ -215,7 +216,7 @@ public class Menu {
                 case 5:
                     System.out.println("isEmpty: "+getJugador().getEd1().isEmpty());
                     System.out.println("size: "+getJugador().getEd1().size());
-                    System.out.println("Cuesta 150 cristal, 150 mushroom. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 1500 acero, 1500 mushroom. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         nint2.construir(jugador);
@@ -228,7 +229,7 @@ public class Menu {
                 case 6:
                     System.out.println("isEmpty: "+getJugador().getEd1().isEmpty());
                     System.out.println("size: "+getJugador().getEd1().size());
-                    System.out.println("Cuesta 25 cristal, 25 mushroom. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 1000 acero, 1000 mushroom. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         nint3.construir(jugador);
@@ -239,7 +240,7 @@ public class Menu {
                     System.out.println("size: "+getJugador().getEd1().size());
                 break;
                 case 7:
-                    System.out.println("Cuesta 100 cristal, 100 mushroom. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 1000 acero, 1000 cristal. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         nint4.construir(jugador);
@@ -248,7 +249,7 @@ public class Menu {
                     }
                 break;
                 case 8:
-                    System.out.println("Cuesta 25 cristal, 25 mushroom. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 2000 cristal, 2000 mushroom. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         nint5.construir(jugador);
@@ -257,7 +258,7 @@ public class Menu {
                     }
                 break;
                 case 9:
-                    System.out.println("Cuesta 150 acero, 150 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 1500 acero, 1500 cristal. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         nint6.construir(jugador);
@@ -266,7 +267,7 @@ public class Menu {
                     }
                 break;
                 case 10:
-                    System.out.println("Cuesta 125 cristal, 125 acero. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 1500 cristal, 1500 acero. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         nint7.construir(jugador);
@@ -275,7 +276,7 @@ public class Menu {
                     }
                 break;
                 case 11:
-                    System.out.println("Cuesta 100 cristal, 100 acero. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 1000 cristal, 1000 acero. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         nint8.entrenar(jugador);
@@ -284,7 +285,7 @@ public class Menu {
                     }
                 break;
                 case 12:
-                    System.out.println("Cuesta 200 mushroom, 200 acero. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 2000 mushroom, 2000 acero. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         nint9.entrenar(jugador);
@@ -293,18 +294,10 @@ public class Menu {
                     }
                 break;
                 case 13:
-                    System.out.println("hola: "+nint.recoger());
+                    System.out.println("Se recogio esta cantidad de Acero: "+nint.recoger(jugador));
                     break;
                 case 14:
-                        System.out.println("ed-size "+getJugador().getEd1().size());
-                        System.out.println("ed-empty "+getJugador().getEd1().isEmpty());
-                        System.out.println("vh-size "+getJugador().getV1().size());
-                        System.out.println("vh-empty "+getJugador().getV1().isEmpty());
-                        for(Nintendo prueba : getJugador().getV1()){
-                            System.out.println(getJugador().getV1());
-                            
-                        }
-                    
+                    System.out.println("Se recogio esta cantidad de Cristal: "+nint1.recoger(jugador));
                     break;
                 case 15:
                     int c1 = getJugador().getCm().getCapacidad1();
@@ -324,6 +317,12 @@ public class Menu {
                         System.out.println("Recurso 1: "+getJugador().getCm().getRecurso1());
                         System.out.println("Recurso 2: "+getJugador().getCm().getRecurso3());
                         System.out.println("Recurso 3: "+getJugador().getCm().getRecurso2());
+                        System.out.println("Desea continurar con la mejora?(S/N)");
+                        answer = leer.next();
+                        getJugador().getCm().setRecurso1(getJugador().getCm().getRecurso1()-1833);
+                        getJugador().getCm().setRecurso2(getJugador().getCm().getRecurso2()-1833);
+                        getJugador().getCm().setRecurso3(getJugador().getCm().getRecurso3()-1833);
+                        System.out.println("\nSe mejoro Centro de Mando!\n");
                     }else{
                         System.out.println("No tiene recursos suficientes");
                     }
@@ -342,12 +341,12 @@ public class Menu {
         int opc=0;
         do{
             System.out.println("----------------------RECURSOS---------------------");
-            System.out.println("Titanio: "+getJugador().getCm().getRecurso1());
-            System.out.println("Carbon: "+getJugador().getCm().getRecurso2());
-            System.out.println("Ecos: "+getJugador().getCm().getRecurso3());
-            System.out.println("\n********FRANCISCO-MOLINA'S WORLD********");
+            System.out.println("Titanio: "+getJugador().getCm2().getRecurso1());
+            System.out.println("Carbon: "+getJugador().getCm2().getRecurso2());
+            System.out.println("Ecos: "+getJugador().getCm2().getRecurso3());
+            System.out.println("\n********PLAYSTATION ARMY********");
             System.out.println("1. Atacar");
-            System.out.println("2. Generar recurso");
+            System.out.println("2. Generar Ecos");
             System.out.println("3. Construir Titanio Storage");
             System.out.println("4. Construir Carbon Storage");
             System.out.println("5. Construir Ecos Producer");
@@ -362,6 +361,7 @@ public class Menu {
             System.out.println("14. Recoger carbon");
             System.out.println("15. Mejorar Centro Mando");
             System.out.println("16. Terminar turno");
+            System.out.println("17. Agregar segundo jugador");
             
             Scanner leer = new Scanner(System.in);
             try{
@@ -376,11 +376,12 @@ public class Menu {
                 case 1:
                 break;
                 case 2:
+                    ps2.generar(jugador);
                 break;
                 case 3:
                     System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
                     System.out.println("size: "+getJugador().getEd2().size());
-                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 1500 titanio, 1500 carbon. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         ps.construir(jugador);
@@ -393,7 +394,7 @@ public class Menu {
                 case 4:
                     System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
                     System.out.println("size: "+getJugador().getEd2().size());
-                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 1500 titanio, 1500 carbon. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         ps1.construir(jugador);
@@ -406,7 +407,7 @@ public class Menu {
                 case 5:
                     System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
                     System.out.println("size: "+getJugador().getEd2().size());
-                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 2000 titanio, 2000 ecos. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         ps2.construir(jugador);
@@ -419,7 +420,7 @@ public class Menu {
                 case 6:
                     System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
                     System.out.println("size: "+getJugador().getEd2().size());
-                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 1000 carbon, 1000 ecos. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         ps3.construir(jugador);
@@ -432,7 +433,7 @@ public class Menu {
                 case 7:
                     System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
                     System.out.println("size: "+getJugador().getEd2().size());
-                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 1500 titanio, 1500 carbon. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         ps4.construir(jugador);
@@ -445,7 +446,7 @@ public class Menu {
                 case 8:
                     System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
                     System.out.println("size: "+getJugador().getEd2().size());
-                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 1500 carbon, 1500 ecos. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         ps5.construir(jugador);
@@ -458,7 +459,7 @@ public class Menu {
                 case 9:
                     System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
                     System.out.println("size: "+getJugador().getEd2().size());
-                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 2000 titanio, 2000 carbon. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         ps6.construir(jugador);
@@ -471,7 +472,7 @@ public class Menu {
                 case 10:
                     System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
                     System.out.println("size: "+getJugador().getEd2().size());
-                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 50 titanio, 50 ecos. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         ps7.construir(jugador);
@@ -482,7 +483,7 @@ public class Menu {
                     System.out.println("size: "+getJugador().getEd2().size());
                 break;
                 case 11:
-                    System.out.println("Cuesta 100 cristal, 100 acero. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 1000 titanio, 1000 ecos. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         ps8.entrenar(jugador);
@@ -491,7 +492,7 @@ public class Menu {
                     }
                 break;
                 case 12:
-                    System.out.println("Cuesta 100 cristal, 100 acero. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 2000 carbon, 2000 ecos. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         ps9.entrenar(jugador);
@@ -499,10 +500,16 @@ public class Menu {
                         break;
                     }
                 break;
+                case 13:
+                    System.out.println("Se recogio esta cantidad de Titanio: "+ps.recoger(jugador));
+                    break;
+                case 14:
+                    System.out.println("Se recogio esta cantidad de Carbon: "+ps1.recoger(jugador));
+                    break;
                 case 15:
-                    int c1 = getJugador().getCm().getCapacidad1();
-                    int c2 = getJugador().getCm().getCapacidad2();
-                    int c3 = getJugador().getCm().getCapacidad3();
+                    int c1 = getJugador().getCm2().getCapacidad1();
+                    int c2 = getJugador().getCm2().getCapacidad2();
+                    int c3 = getJugador().getCm2().getCapacidad3();
                     double ca1=c1+(c1*0.10); 
                     double ca2=c2+(c2*0.30); 
                     double ca3=c3+(c3*0.50); 
@@ -512,11 +519,18 @@ public class Menu {
                     
                     System.out.println("El costo por recurso para la mejora es de: "+res);
                     
-                    if(getJugador().getCm().getRecurso1() >= res && getJugador().getCm().getRecurso2() >= res && getJugador().getCm().getRecurso3() >= res){
-                        getJugador().getCm().upgrade();
-                        System.out.println("Recurso 1: "+getJugador().getCm().getRecurso1());
-                        System.out.println("Recurso 2: "+getJugador().getCm().getRecurso3());
-                        System.out.println("Recurso 3: "+getJugador().getCm().getRecurso2());
+                    if(getJugador().getCm2().getRecurso1() >= res && getJugador().getCm2().getRecurso2() >= res && getJugador().getCm2().getRecurso3() >= res){
+                        getJugador().getCm2().upgrade();
+                        System.out.println("Tienes: ");
+                        System.out.println("Recurso 1: "+getJugador().getCm2().getRecurso1());
+                        System.out.println("Recurso 2: "+getJugador().getCm2().getRecurso3());
+                        System.out.println("Recurso 3: "+getJugador().getCm2().getRecurso2());
+                        System.out.println("Desea continurar con la mejora?(S/N)");
+                        answer = leer.next();
+                        getJugador().getCm2().setRecurso1(getJugador().getCm2().getRecurso1()-1833);
+                        getJugador().getCm2().setRecurso2(getJugador().getCm2().getRecurso2()-1833);
+                        getJugador().getCm2().setRecurso3(getJugador().getCm2().getRecurso3()-1833);
+                        System.out.println("\nSe mejoro Centro de Mando!\n");
                     }else{
                         System.out.println("No tiene recursos suficientes");
                     }
@@ -525,6 +539,7 @@ public class Menu {
                 case 16:
                     Menu m = new Menu(jugador);
                     m.MenuNintendo(jugador);
+                    
                 break;  
             }
 
@@ -536,10 +551,10 @@ public class Menu {
         int opc=0;
         do{
             System.out.println("----------------------RECURSOS---------------------");
-            System.out.println("Adamantium: "+getJugador().getCm().getRecurso1());
-            System.out.println("Polvora: "+getJugador().getCm().getRecurso2());
-            System.out.println("Energia: "+getJugador().getCm().getRecurso3());
-            System.out.println("\n********FRANCISCO-MOLINA'S WORLD********");
+            System.out.println("Adamantium: "+getJugador().getCm3().getRecurso1());
+            System.out.println("Polvora: "+getJugador().getCm3().getRecurso2());
+            System.out.println("Energia: "+getJugador().getCm3().getRecurso3());
+            System.out.println("\n********XBOX ARMY********");
             System.out.println("1. Atacar");
             System.out.println("2. Generar recurso");
             System.out.println("3. Construir Adamantium Storage");
@@ -574,7 +589,7 @@ public class Menu {
                 case 3:
                     System.out.println("isEmpty: "+getJugador().getEd3().isEmpty());
                     System.out.println("size: "+getJugador().getEd3().size());
-                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 50 adamantium, 50 polvora. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         x.construir(jugador);
@@ -587,7 +602,7 @@ public class Menu {
                 case 4:
                     System.out.println("isEmpty: "+getJugador().getEd3().isEmpty());
                     System.out.println("size: "+getJugador().getEd3().size());
-                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 50 adamantium, 50 polvora. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         x1.construir(jugador);
@@ -600,7 +615,7 @@ public class Menu {
                 case 5:
                     System.out.println("isEmpty: "+getJugador().getEd3().isEmpty());
                     System.out.println("size: "+getJugador().getEd3().size());
-                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 50 adamantium, 50 energia. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         x2.construir(jugador);
@@ -613,7 +628,7 @@ public class Menu {
                 case 6:
                     System.out.println("isEmpty: "+getJugador().getEd3().isEmpty());
                     System.out.println("size: "+getJugador().getEd3().size());
-                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 50 energia, 50 polvora. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         x3.construir(jugador);
@@ -626,7 +641,7 @@ public class Menu {
                 case 7:
                     System.out.println("isEmpty: "+getJugador().getEd2().isEmpty());
                     System.out.println("size: "+getJugador().getEd2().size());
-                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 50 polvora, 50 energia. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         x4.construir(jugador);
@@ -639,7 +654,7 @@ public class Menu {
                 case 8:
                     System.out.println("isEmpty: "+getJugador().getEd3().isEmpty());
                     System.out.println("size: "+getJugador().getEd3().size());
-                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 50 adamantium, 50 energia. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         x5.construir(jugador);
@@ -652,7 +667,7 @@ public class Menu {
                 case 9:
                     System.out.println("isEmpty: "+getJugador().getEd3().isEmpty());
                     System.out.println("size: "+getJugador().getEd3().size());
-                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 50 adamantium, 50 polvora. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         x6.construir(jugador);
@@ -665,7 +680,7 @@ public class Menu {
                 case 10:
                     System.out.println("isEmpty: "+getJugador().getEd3().isEmpty());
                     System.out.println("size: "+getJugador().getEd3().size());
-                    System.out.println("Cuesta 50 acero, 50 cristal. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 50 polvora, 50 energia. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         x7.construir(jugador);
@@ -676,7 +691,7 @@ public class Menu {
                     System.out.println("size: "+getJugador().getEd3().size());
                 break;
                 case 11:
-                    System.out.println("Cuesta 100 cristal, 100 acero. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 100 energia, 100 adamantium. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         x8.entrenar(jugador);
@@ -685,7 +700,7 @@ public class Menu {
                     }
                 break;
                 case 12:
-                    System.out.println("Cuesta 100 cristal, 100 acero. Desea continuar?((S/N)");
+                    System.out.println("Cuesta 100 energia, 100 polvora. Desea continuar?((S/N)");
                     answer = leer.next();
                     if(answer.equalsIgnoreCase("S")){
                         x9.entrenar(jugador);
@@ -694,9 +709,9 @@ public class Menu {
                     }
                 break;
                 case 15:
-                    int c1 = getJugador().getCm().getCapacidad1();
-                    int c2 = getJugador().getCm().getCapacidad2();
-                    int c3 = getJugador().getCm().getCapacidad3();
+                    int c1 = getJugador().getCm3().getCapacidad1();
+                    int c2 = getJugador().getCm3().getCapacidad2();
+                    int c3 = getJugador().getCm3().getCapacidad3();
                     double ca1=c1+(c1*0.10); 
                     double ca2=c2+(c2*0.30); 
                     double ca3=c3+(c3*0.50); 
@@ -706,11 +721,17 @@ public class Menu {
                     
                     System.out.println("El costo por recurso para la mejora es de: "+res);
                     
-                    if(getJugador().getCm().getRecurso1() >= res && getJugador().getCm().getRecurso2() >= res && getJugador().getCm().getRecurso3() >= res){
+                    if(getJugador().getCm3().getRecurso1() >= res && getJugador().getCm3().getRecurso2() >= res && getJugador().getCm3().getRecurso3() >= res){
                         getJugador().getCm().upgrade();
-                        System.out.println("Recurso 1: "+getJugador().getCm().getRecurso1());
-                        System.out.println("Recurso 2: "+getJugador().getCm().getRecurso3());
-                        System.out.println("Recurso 3: "+getJugador().getCm().getRecurso2());
+                        System.out.println("Recurso 1: "+getJugador().getCm3().getRecurso1());
+                        System.out.println("Recurso 2: "+getJugador().getCm3().getRecurso3());
+                        System.out.println("Recurso 3: "+getJugador().getCm3().getRecurso2());
+                        System.out.println("Desea continurar con la mejora?(S/N)");
+                        answer = leer.next();
+                        getJugador().getCm3().setRecurso1(getJugador().getCm3().getRecurso1()-1833);
+                        getJugador().getCm3().setRecurso2(getJugador().getCm3().getRecurso2()-1833);
+                        getJugador().getCm3().setRecurso3(getJugador().getCm3().getRecurso3()-1833);
+                        System.out.println("\nSe mejoro Centro de Mando!\n");
                     }else{
                         System.out.println("No tiene recursos suficientes");
                     }

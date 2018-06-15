@@ -7,10 +7,9 @@ package CentroMando;
 
 /**
  *
- * @author fmolina
+ * @author Frank
  */
-public class CentroMando {
-    
+public class CentroMando3 {
     int health = 1000;
     int recurso1 = 1500, recurso2=1500, recurso3=1500;
     int capacidad1 = 10000;

@@ -15,9 +15,9 @@ import Nintendo.Nintendo;
  */
 public class CristalStorage implements Nintendo{
     
-    int damage, cantidad;
-    int health = 200;
-    int costo = 75;
+    int damage, cantidad=1000;
+    int health = 500;
+    int costo = 1500;
     public Jugador jugador;
     
     public CristalStorage(){
@@ -88,8 +88,12 @@ public class CristalStorage implements Nintendo{
     }
     
     @Override
-    public int recoger(){
-        return cantidad;
+    public int recoger(Jugador jugador){
+        int num;
+        CristalStorage a = new CristalStorage(jugador);
+        num = a.getCantidad();
+        a.getJugador().getCm().setRecurso2(a.getJugador().getCm().getRecurso2()+num);
+        return num;
     }
     
     @Override

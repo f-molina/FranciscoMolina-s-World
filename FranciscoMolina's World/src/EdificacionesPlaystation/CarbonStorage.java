@@ -17,9 +17,9 @@ import Playstation.Playstation;
 public class CarbonStorage implements Playstation{
     
     boolean estado=false;
-    int damage, cantidad;
+    int damage, cantidad=1000;
     public int health = 500;
-    public int costo = 100;
+    public int costo = 1500;
     public Jugador jugador;
 
     public CarbonStorage() {
@@ -83,12 +83,12 @@ public class CarbonStorage implements Playstation{
         AbstractFactory play = FactoryProducer.getFactory("Playstation");
         Playstation carbon = play.getPlayStation("CarbonStorage");
         CarbonStorage cs = new CarbonStorage(jugador);
-        if(cs.getJugador().getCm().getRecurso1() >= costo 
-           && cs.getJugador().getCm().getRecurso2() >= costo){
-            total = cs.getJugador().getCm().getRecurso1()-costo;  
-            cs.getJugador().getCm().setRecurso1(total);
-            total1 = cs.getJugador().getCm().getRecurso2()-costo;
-            cs.getJugador().getCm().setRecurso2(total1);
+        if(cs.getJugador().getCm2().getRecurso1() >= costo 
+           && cs.getJugador().getCm2().getRecurso2() >= costo){
+            total = cs.getJugador().getCm2().getRecurso1()-costo;  
+            cs.getJugador().getCm2().setRecurso1(total);
+            total1 = cs.getJugador().getCm2().getRecurso2()-costo;
+            cs.getJugador().getCm2().setRecurso2(total1);
             System.out.println("Construccion realizada");
             cs.getJugador().getEd2().add(carbon);
         }else{
@@ -97,8 +97,12 @@ public class CarbonStorage implements Playstation{
     }
     
     @Override
-    public int recoger(){
-        return cantidad;
+    public int recoger(Jugador jugador){
+        int num;
+        CarbonStorage a = new CarbonStorage(jugador);
+        num = a.getCantidad();
+        a.getJugador().getCm2().setRecurso2(a.getJugador().getCm2().getRecurso2()+num);
+        return num;
     }
 
     @Override
@@ -109,5 +113,9 @@ public class CarbonStorage implements Playstation{
     @Override
     public boolean entrenar(Jugador jugador){
         return estado;
+    }
+    
+    @Override
+    public void generar(Jugador jugador){
     }
 }

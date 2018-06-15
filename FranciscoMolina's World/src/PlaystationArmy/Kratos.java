@@ -13,9 +13,9 @@ import Playstation.Playstation;
  */
 public class Kratos implements Playstation{
     
-    public int damage =300;
-    public int health = 300;
-    public int costo = 200;
+    public int damage =500;
+    public int health = 500;
+    public int costo = 2000;
     int cantidad;
     public Jugador jugador;
     boolean estado=false;
@@ -80,7 +80,7 @@ public class Kratos implements Playstation{
     }
     
     @Override
-    public int recoger(){
+    public int recoger(Jugador jugador){
         return cantidad;
     }
 
@@ -93,12 +93,12 @@ public class Kratos implements Playstation{
     public boolean entrenar(Jugador jugador){
         int total, total1;
         Kratos kr = new Kratos(jugador);
-        if(kr.getJugador().getCm().getRecurso1() >= costo 
-           && kr.getJugador().getCm().getRecurso3() >= costo && estado==false){
-            total = kr.getJugador().getCm().getRecurso1()-costo;  
-            kr.getJugador().getCm().setRecurso1(total);
-            total1 = kr.getJugador().getCm().getRecurso3()-costo;
-            kr.getJugador().getCm().setRecurso3(total1);
+        if(kr.getJugador().getCm2().getRecurso2() >= costo 
+           && kr.getJugador().getCm2().getRecurso3() >= costo && estado==false){
+            total = kr.getJugador().getCm2().getRecurso2()-costo;  
+            kr.getJugador().getCm2().setRecurso2(total);
+            total1 = kr.getJugador().getCm2().getRecurso3()-costo;
+            kr.getJugador().getCm2().setRecurso3(total1);
             setEstado(true);
             System.out.println("Se entreno a Kratos");
         }else{
@@ -106,6 +106,10 @@ public class Kratos implements Playstation{
             setEstado(false);
         }
         return estado;
+    }
+    
+    @Override
+    public void generar(Jugador jugador){
     }
     
 }

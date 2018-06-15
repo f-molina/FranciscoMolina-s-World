@@ -16,8 +16,8 @@ import Nintendo.Nintendo;
 //edificacion vehiculo1
 public class StarFoxBase implements Nintendo{
     
-    public int health = 100;
-    public int costo = 25;
+    public int health = 450;
+    public int costo = 2000;
     int damage;
     int cantidad;
     
@@ -90,7 +90,7 @@ public class StarFoxBase implements Nintendo{
     }
     
     @Override
-    public int recoger(){
+    public int recoger(Jugador jugador){
         return cantidad;
     }
     

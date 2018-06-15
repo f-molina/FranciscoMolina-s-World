@@ -18,7 +18,7 @@ public class Tanque implements Nintendo{
     
     public int health = 250;
     public int damage = 150;
-    public int costo = 50;
+    public int costo = 1500;
     int cantidad;
     public Jugador jugador;
 
@@ -89,7 +89,7 @@ public class Tanque implements Nintendo{
     }
     
     @Override
-    public int recoger(){
+    public int recoger(Jugador jugador){
         return cantidad;
     }
     

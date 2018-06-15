@@ -19,7 +19,7 @@ public class Submarino implements Playstation{
     boolean estado=false;
     int damage, cantidad;
     public int health = 200;
-    public int costo = 100;
+    public int costo = 2000;
     public Jugador jugador;
 
     public Submarino() {
@@ -83,12 +83,12 @@ public class Submarino implements Playstation{
         AbstractFactory play = FactoryProducer.getFactory("Playstation");
         Playstation submarino = play.getPlayStation("Submarino");
         Submarino sub = new Submarino(jugador);
-        if(sub.getJugador().getCm().getRecurso1() >= costo 
-           && sub.getJugador().getCm().getRecurso2() >= costo){
-            total = sub.getJugador().getCm().getRecurso1()-costo;  
-            sub.getJugador().getCm().setRecurso1(total);
-            total1 = sub.getJugador().getCm().getRecurso2()-costo;
-            sub.getJugador().getCm().setRecurso2(total1);
+        if(sub.getJugador().getCm2().getRecurso1() >= costo 
+           && sub.getJugador().getCm2().getRecurso2() >= costo){
+            total = sub.getJugador().getCm2().getRecurso1()-costo;  
+            sub.getJugador().getCm2().setRecurso1(total);
+            total1 = sub.getJugador().getCm2().getRecurso2()-costo;
+            sub.getJugador().getCm2().setRecurso2(total1);
             System.out.println("Construccion realizada");
             sub.getJugador().getV2().add(submarino);
         }else{
@@ -97,7 +97,7 @@ public class Submarino implements Playstation{
     }
     
     @Override
-    public int recoger(){
+    public int recoger(Jugador jugador){
         return cantidad;
     }
 
@@ -109,6 +109,10 @@ public class Submarino implements Playstation{
     @Override
     public boolean entrenar(Jugador jugador){
         return estado;
+    }
+    
+    @Override
+    public void generar(Jugador jugador){
     }
     
 }

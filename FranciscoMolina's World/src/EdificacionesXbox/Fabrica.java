@@ -19,7 +19,7 @@ public class Fabrica implements Xbox{
     boolean estado=false;
     int damage, cantidad;
     public int health = 200;
-    public int costo = 100;
+    public int costo = 1000;
     public Jugador jugador;
 
     public Fabrica() {

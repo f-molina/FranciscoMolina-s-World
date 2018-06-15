@@ -17,7 +17,7 @@ public class MushroomGenerator implements Nintendo{
     
     int damage, cantidad;
     public int health = 500;
-    public int costo = 150;
+    public int costo = 1500;
     public Jugador jugador;
     int recurso;
 
@@ -98,7 +98,7 @@ public class MushroomGenerator implements Nintendo{
     }
     
     @Override
-    public int recoger(){
+    public int recoger(Jugador jugador){
         return cantidad;
     }
 
@@ -122,7 +122,7 @@ public class MushroomGenerator implements Nintendo{
     @Override
     public void generar(Jugador jugador){
         MushroomGenerator m = new MushroomGenerator(jugador);
-        m.getJugador().getCm().setRecurso3(m.getJugador().getCm().getRecurso3()+150);
+        m.getJugador().getCm().setRecurso3(m.getJugador().getCm().getRecurso3()+1500);
     }
     
 }
