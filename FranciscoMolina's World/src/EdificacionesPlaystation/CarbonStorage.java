@@ -118,4 +118,9 @@ public class CarbonStorage implements Playstation{
     @Override
     public void generar(Jugador jugador){
     }
+    
+    @Override
+    public boolean estado(){
+        return estado;
+    }
 }

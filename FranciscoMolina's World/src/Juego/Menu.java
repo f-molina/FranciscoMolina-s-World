@@ -165,7 +165,8 @@ public class Menu {
                                 case "1":
                                     if(nint8.estado()==true){
                                         System.out.println("Se encontraron Koopa Troopas listos");
-                                        nint.getAttack();
+                                        int total;
+                                        total = getJugador().getEd1().indexOf(ps)-nint8.getAttack();
                                         System.out.println("Ataque realizado!");
                                     }else{
                                         System.out.println("No tiene Koopa Troopas entrenados");
@@ -182,8 +183,96 @@ public class Menu {
                                 break;
                             }
                             break;
+                            case "2":
+                            System.out.println("Que desea ocupar para el ataque?\n");
+                            System.out.println("1. Koopa Troopas");
+                            System.out.println("2. Bayonetta");
+                            String answer12;
+                            answer12 = leer.next();
+                            switch(answer12){
+                                case "1":
+                                    if(nint8.estado()==true){
+                                        System.out.println("Se encontraron Koopa Troopas listos");
+                                        int total;
+                                        total = getJugador().getEd1().indexOf(ps)-nint8.getAttack();
+                                        System.out.println("Ataque realizado!");
+                                    }else{
+                                        System.out.println("No tiene Koopa Troopas entrenados");
+                                    }
+                                break;
+                                case "2":
+                                    if(nint9.estado()==true){
+                                        System.out.println("Se encontro Bayonetta lista");
+                                        nint.getAttack();
+                                        System.out.println("Ataque realizado!");
+                                    }else{
+                                        System.out.println("No tiene Bayonetta entrenada");
+                                    }
+                                break;
+                            }
+                            break;
+                            case "3":
+                            System.out.println("Que desea ocupar para el ataque?\n");
+                            System.out.println("1. Koopa Troopas");
+                            System.out.println("2. Bayonetta");
+                            String answer31;
+                            answer31 = leer.next();
+                            switch(answer31){
+                                case "1":
+                                    if(nint8.estado()==true){
+                                        System.out.println("Se encontraron Koopa Troopas listos");
+                                        int total;
+                                        total = getJugador().getEd1().indexOf(ps)-nint8.getAttack();
+                                        System.out.println("Ataque realizado!");
+                                    }else{
+                                        System.out.println("No tiene Koopa Troopas entrenados");
+                                    }
+                                break;
+                                case "2":
+                                    if(nint9.estado()==true){
+                                        System.out.println("Se encontro Bayonetta lista");
+                                        nint.getAttack();
+                                        System.out.println("Ataque realizado!");
+                                    }else{
+                                        System.out.println("No tiene Bayonetta entrenada");
+                                    }
+                                break;
+                            }
+                            break;
+                        case "4":
+                            System.out.println("Que desea ocupar para el ataque?\n");
+                            System.out.println("1. Koopa Troopas");
+                            System.out.println("2. Bayonetta");
+                            String answer11;
+                            answer11 = leer.next();
+                            switch(answer11){
+                                case "1":
+                                    if(nint8.estado()==true){
+                                        System.out.println("Se encontraron Koopa Troopas listos");
+                                        int total;
+                                        total = getJugador().getCm2().getHealth()-nint8.getAttack();
+                                        getJugador().getCm2().setHealth(total);
+                                        System.out.println("Ataque realizado!, se hizo "+nint8.getAttack()+" de danio");
+                                        System.out.println("Nueva vida centro mando de rival: "+getJugador().getCm2().getHealth());
+                                    }else{
+                                        System.out.println("No tiene Koopa Troopas entrenados");
+                                    }
+                                break;
+                                case "2":
+                                    if(nint9.estado()==true){
+                                        System.out.println("Se encontro Bayonetta lista");
+                                        int total;
+                                        total = getJugador().getCm2().getHealth()-nint9.getAttack();
+                                        getJugador().getCm2().setHealth(total);
+                                        System.out.println("Ataque realizado!, se hizo "+nint9.getAttack()+" de danio");
+                                        System.out.println("Nueva vida centro mando de rival: "+getJugador().getCm2().getHealth());
+                                    }else{
+                                        System.out.println("No tiene Bayonetta entrenada");
+                                    }
+                                break;
+                            }
                     }
-                break; 
+                break;                     
                 case 2:
                     nint2.generar(jugador);
                 break;
@@ -374,6 +463,124 @@ public class Menu {
             
             switch(opc){
                 case 1:
+                    System.out.println("Que desea atacar?\n");
+                    System.out.println("1. Edificacion recursos");
+                    System.out.println("2. Edificacion vehiculos");
+                    System.out.println("3. Edificacion milicias");
+                    System.out.println("4. Centro de Mando");
+                    answer = leer.next();
+                    switch(answer){
+                        case "1":
+                            System.out.println("Que desea ocupar para el ataque?\n");
+                            System.out.println("1. Old Hunters");
+                            System.out.println("2. Kratos");
+                            String answer1;
+                            answer1 = leer.next();
+                            switch(answer1){
+                                case "1":
+                                    if(ps8.estado()==true){
+                                        System.out.println("Se encontraron Old Hunters listos");
+                                        ps8.getAttack();
+                                        System.out.println("Ataque realizado!");
+                                    }else{
+                                        System.out.println("No tiene Old Hunters entrenados");
+                                    }
+                                break;
+                                case "2":
+                                    if(ps9.estado()==true){
+                                        System.out.println("Se encontro Kratos listo");
+                                        ps8.getAttack();
+                                        System.out.println("Ataque realizado!");
+                                    }else{
+                                        System.out.println("No tiene Kratos entrenado");
+                                    }
+                                break;
+                            }
+                            case "2":
+                            System.out.println("Que desea ocupar para el ataque?\n");
+                            System.out.println("1. Old Hunters");
+                            System.out.println("2. Kratos");
+                            String answer14;
+                            answer14 = leer.next();
+                            switch(answer14){
+                                case "1":
+                                    if(ps8.estado()==true){
+                                        System.out.println("Se encontraron Old Hunters listos");
+                                        ps8.getAttack();
+                                        System.out.println("Ataque realizado!");
+                                    }else{
+                                        System.out.println("No tiene Old Hunters entrenados");
+                                    }
+                                break;
+                                case "2":
+                                    if(ps9.estado()==true){
+                                        System.out.println("Se encontro Kratos listo");
+                                        ps8.getAttack();
+                                        System.out.println("Ataque realizado!");
+                                    }else{
+                                        System.out.println("No tiene Kratos entrenado");
+                                    }
+                                break;
+                                case "3":
+                            System.out.println("Que desea ocupar para el ataque?\n");
+                            System.out.println("1. Old Hunters");
+                            System.out.println("2. Kratos");
+                            String answer31;
+                            answer31 = leer.next();
+                            switch(answer31){
+                                case "1":
+                                    if(ps8.estado()==true){
+                                        System.out.println("Se encontraron Old Hunters listos");
+                                        ps8.getAttack();
+                                        System.out.println("Ataque realizado!");
+                                    }else{
+                                        System.out.println("No tiene Old Hunters entrenados");
+                                    }
+                                break;
+                                case "2":
+                                    if(ps9.estado()==true){
+                                        System.out.println("Se encontro Kratos listo");
+                                        ps8.getAttack();
+                                        System.out.println("Ataque realizado!");
+                                    }else{
+                                        System.out.println("No tiene Kratos entrenado");
+                                    }
+                                break;
+                            case "4":
+                            System.out.println("Que desea ocupar para el ataque?\n");
+                            System.out.println("1. Old Hunters");
+                            System.out.println("2. Kratos");
+                            String answer11;
+                            answer11 = leer.next();
+                            switch(answer11){
+                                case "1":
+                                    if(ps8.estado()==true){
+                                        System.out.println("Se encontraron Old hunters listos");
+                                        int total;
+                                        total = getJugador().getCm().getHealth()-ps8.getAttack();
+                                        getJugador().getCm().setHealth(total);
+                                        System.out.println("Ataque realizado!, se hizo "+ps8.getAttack()+" de danio");
+                                        System.out.println("Nueva vida centro mando de rival: "+getJugador().getCm().getHealth());
+                                    }else{
+                                        System.out.println("No tiene Old hunters entrenados");
+                                    }
+                                break;
+                                case "2":
+                                    if(ps9.estado()==true){
+                                        System.out.println("Se encontro Kratos listo");
+                                        int total;
+                                        total = getJugador().getCm().getHealth()-ps9.getAttack();
+                                        getJugador().getCm().setHealth(total);
+                                        System.out.println("Ataque realizado!, se hizo "+ps9.getAttack()+" de danio");
+                                        System.out.println("Nueva vida centro mando de rival: "+getJugador().getCm().getHealth());
+                                    }else{
+                                        System.out.println("No tiene Bayonetta entrenada");
+                                    }
+                                break;
+                        }
+                    }
+                }
+            }
                 break;
                 case 2:
                     ps2.generar(jugador);
@@ -583,6 +790,72 @@ public class Menu {
             
             switch(opc){
                 case 1:
+                    System.out.println("Que desea atacar?\n");
+                    System.out.println("1. Edificacion recursos");
+                    System.out.println("2. Edificacion vehiculos");
+                    System.out.println("3. Edificacion milicias");
+                    System.out.println("4. Centro de Mando");
+                    answer = leer.next();
+                    switch(answer){
+                        case "1":
+                            System.out.println("Que desea ocupar para el ataque?\n");
+                            System.out.println("1. Locust");
+                            System.out.println("2. Master Chief");
+                            String answer1;
+                            answer1 = leer.next();
+                            switch(answer1){
+                                case "1":
+                                    if(x8.estado()==true){
+                                        System.out.println("Se encontraron Locust listos");
+                                        x8.getAttack();
+                                        System.out.println("Ataque realizado!");
+                                    }else{
+                                        System.out.println("No tiene Locust entrenados");
+                                    }
+                                break;
+                                case "2":
+                                    if(x9.estado()==true){
+                                        System.out.println("Se encontro Master Chief listo");
+                                        x9.getAttack();
+                                        System.out.println("Ataque realizado!");
+                                    }else{
+                                        System.out.println("No tiene Master Chief entrenado");
+                                    }
+                                break;
+                            }
+                        case "4":
+                            System.out.println("Que desea ocupar para el ataque?\n");
+                            System.out.println("1. Locust");
+                            System.out.println("2. Master Chief");
+                            String answer11;
+                            answer11 = leer.next();
+                            switch(answer11){
+                                case "1":
+                                    if(x8.estado()==true){
+                                        System.out.println("Se encontraron Locust listos");
+                                        int total;
+                                        total = getJugador().getCm2().getHealth()-x8.getAttack();
+                                        getJugador().getCm2().setHealth(total);
+                                        System.out.println("Ataque realizado!, se hizo "+x8.getAttack()+" de danio");
+                                        System.out.println("Nueva vida centro mando de rival: "+getJugador().getCm2().getHealth());
+                                    }else{
+                                        System.out.println("No tiene Locust entrenados");
+                                    }
+                                break;
+                                case "2":
+                                    if(x9.estado()==true){
+                                        System.out.println("Se encontro Masterchief listo");
+                                        int total;
+                                        total = getJugador().getCm2().getHealth()-x9.getAttack();
+                                        getJugador().getCm2().setHealth(total);
+                                        System.out.println("Ataque realizado!, se hizo "+x9.getAttack()+" de danio");
+                                        System.out.println("Nueva vida centro mando de rival: "+getJugador().getCm2().getHealth());
+                                    }else{
+                                        System.out.println("No tiene Masterchief entrenado");
+                                    }
+                                break;
+                            }
+                    }
                 break;
                 case 2:
                 break;

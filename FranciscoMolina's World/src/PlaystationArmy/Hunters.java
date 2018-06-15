@@ -112,4 +112,8 @@ public class Hunters implements Playstation{
     public void generar(Jugador jugador){
     }
     
+    @Override
+    public boolean estado(){
+        return estado;
+    }
 }

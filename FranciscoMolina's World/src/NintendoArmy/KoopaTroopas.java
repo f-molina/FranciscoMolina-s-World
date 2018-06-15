@@ -87,13 +87,7 @@ public class KoopaTroopas implements Nintendo {
     
     @Override
     public int getAttack(){
-        Bayonetta b = new Bayonetta();
-        int total;
-        System.out.println("antes "+b.getHealth());
-        total = b.getHealth()-getDamage();
-        b.setHealth(total);
-        System.out.println("despues "+b.getHealth());
-        return total;
+        return damage;
     }
     
     @Override

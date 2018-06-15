@@ -17,5 +17,6 @@ public interface Playstation {
     int getAttack();
     boolean entrenar(Jugador jugador);
     void generar(Jugador jugador);
+    boolean estado();
     
 }

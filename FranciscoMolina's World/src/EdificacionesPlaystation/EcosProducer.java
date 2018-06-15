@@ -116,4 +116,9 @@ public class EcosProducer implements Playstation{
         EcosProducer m = new EcosProducer(jugador);
         m.getJugador().getCm2().setRecurso3(m.getJugador().getCm2().getRecurso3()+1500);
     }
+    
+    @Override
+    public boolean estado(){
+        return estado;
+    }
 }
