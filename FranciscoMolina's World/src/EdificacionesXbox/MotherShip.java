@@ -98,7 +98,7 @@ public class MotherShip implements Xbox{
     }
     
     @Override
-    public int recoger(){
+    public int recoger(Jugador jugador){
         return cantidad;
     }
 

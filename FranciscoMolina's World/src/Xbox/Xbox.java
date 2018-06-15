@@ -14,7 +14,7 @@ import Juego.Jugador;
 public interface Xbox {
 
     void construir(Jugador jugador);
-    int recoger();
+    int recoger(Jugador jugador);
     int getAttack();
     boolean entrenar(Jugador jugador);
     boolean estado();

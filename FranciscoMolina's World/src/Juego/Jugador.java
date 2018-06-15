@@ -194,21 +194,4 @@ public class Jugador {
         m.MenuRaza(j2);
 
     }
-    
-    /*public int getTurn(){
-        return turn;
-        
-    }*/
-    
-    /*public void addMadera(int cantidad){
-        madera += cantidad;
-    }
-    
-    public void addMetal(int cantidad){
-        metal += cantidad;
-    }
-    
-    public void addPocion(int cantidad){
-        pocion += cantidad;
-    }   */
 }

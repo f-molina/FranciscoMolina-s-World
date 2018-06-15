@@ -763,7 +763,7 @@ public class Menu {
             System.out.println("Energia: "+getJugador().getCm3().getRecurso3());
             System.out.println("\n********XBOX ARMY********");
             System.out.println("1. Atacar");
-            System.out.println("2. Generar recurso");
+            System.out.println("2. Generar Energia");
             System.out.println("3. Construir Adamantium Storage");
             System.out.println("4. Construir Polvora Storage");
             System.out.println("5. Construir Energia Generator");
@@ -858,6 +858,7 @@ public class Menu {
                     }
                 break;
                 case 2:
+                    x2.generar(jugador);
                 break;
                 case 3:
                     System.out.println("isEmpty: "+getJugador().getEd3().isEmpty());
@@ -981,6 +982,12 @@ public class Menu {
                         break;
                     }
                 break;
+                case 13:
+                    System.out.println("Se recogio esta cantidad de Adamantium: "+x.recoger(jugador));
+                    break;
+                case 14:
+                    System.out.println("Se recogio esta cantidad de Polvora: "+x1.recoger(jugador));
+                    break;
                 case 15:
                     int c1 = getJugador().getCm3().getCapacidad1();
                     int c2 = getJugador().getCm3().getCapacidad2();

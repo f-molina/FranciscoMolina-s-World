@@ -17,7 +17,7 @@ import Xbox.Xbox;
 public class AdamantiumStorage implements Xbox{
     
     boolean estado=false;
-    int damage, cantidad;
+    int damage, cantidad=1000;
     public int health = 350;
     public int costo = 1500;
     public Jugador jugador;
@@ -97,8 +97,12 @@ public class AdamantiumStorage implements Xbox{
     }
     
     @Override
-    public int recoger(){
-        return cantidad;
+    public int recoger(Jugador jugador){
+        int num;
+        AdamantiumStorage a = new AdamantiumStorage(jugador);
+        num = a.getCantidad();
+        a.getJugador().getCm3().setRecurso1(a.getJugador().getCm3().getRecurso1()+num);
+        return num;
     }
 
     @Override
